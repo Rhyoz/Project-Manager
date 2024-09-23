@@ -13,3 +13,4 @@ class Project:
     is_residential_complex: bool = False
     number_of_units: int = 0
     residential_details: str = ""
+    worker: str = ""

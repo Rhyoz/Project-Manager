@@ -15,13 +15,15 @@ class FinishedProjectsTab(QWidget):
 
         # Projects Table
         self.table = QTableWidget()
-        self.table.setColumnCount(8)
+        self.table.setColumnCount(11)  # Updated column count
         self.table.setHorizontalHeaderLabels([
             "Project Name",
             "Project Number",
+            "Complex",
             "Start Date",
             "End Date",
             "Status",
+            "Worker",
             "Innregulering",
             "Sjekkliste",
             "Move to Active",
@@ -41,31 +43,34 @@ class FinishedProjectsTab(QWidget):
 
             self.table.setItem(row_position, 0, QTableWidgetItem(project.name))
             self.table.setItem(row_position, 1, QTableWidgetItem(project.number))
-            self.table.setItem(row_position, 2, QTableWidgetItem(project.start_date))
-            self.table.setItem(row_position, 3, QTableWidgetItem(project.end_date if project.end_date else ""))
-            self.table.setItem(row_position, 4, QTableWidgetItem(project.status))
+            complex_text = "Yes" if project.is_residential_complex else "No"
+            self.table.setItem(row_position, 2, QTableWidgetItem(complex_text))
+            self.table.setItem(row_position, 3, QTableWidgetItem(project.start_date))
+            self.table.setItem(row_position, 4, QTableWidgetItem(project.end_date if project.end_date else ""))
+            self.table.setItem(row_position, 5, QTableWidgetItem(project.status))
+            self.table.setItem(row_position, 6, QTableWidgetItem(project.worker))  # Set worker
 
             # Innregulering Button
             innregulering_btn = QPushButton("View PDF")
             innregulering_btn.clicked.connect(lambda checked, p=project: self.view_pdf(p, "Innregulering"))
-            self.table.setCellWidget(row_position, 5, innregulering_btn)
+            self.table.setCellWidget(row_position, 7, innregulering_btn)
 
             # Sjekkliste Button
             sjekkliste_btn = QPushButton("View PDF")
             sjekkliste_btn.clicked.connect(lambda checked, p=project: self.view_pdf(p, "Sjekkliste"))
-            self.table.setCellWidget(row_position, 6, sjekkliste_btn)
+            self.table.setCellWidget(row_position, 8, sjekkliste_btn)
 
             # Move to Active Button
             move_active_btn = QPushButton("Active")
             move_active_btn.setStyleSheet("background-color: yellow")
             move_active_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
-            self.table.setCellWidget(row_position, 7, move_active_btn)
+            self.table.setCellWidget(row_position, 9, move_active_btn)
 
             # Move to Complete Button
             move_complete_btn = QPushButton("Complete")
             move_complete_btn.setStyleSheet("background-color: yellow")
             move_complete_btn.clicked.connect(lambda checked, p=project: self.move_to_complete(p))
-            self.table.setCellWidget(row_position, 8, move_complete_btn)
+            self.table.setCellWidget(row_position, 10, move_complete_btn)
 
     def view_pdf(self, project, doc_type):
         folder_name = sanitize_filename(f"{project.name}_{project.number}")

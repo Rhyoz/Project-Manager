@@ -22,7 +22,8 @@ class Database:
                 status TEXT,
                 is_residential_complex INTEGER,
                 number_of_units INTEGER,
-                residential_details TEXT
+                residential_details TEXT,
+                worker TEXT  -- New column added
             )
         """)
         self.conn.commit()
@@ -30,8 +31,8 @@ class Database:
     def add_project(self, project: Project):
         cursor = self.conn.cursor()
         cursor.execute("""
-            INSERT INTO projects (name, number, start_date, end_date, status, is_residential_complex, number_of_units, residential_details)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO projects (name, number, start_date, end_date, status, is_residential_complex, number_of_units, residential_details, worker)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             project.name,
             project.number,
@@ -40,7 +41,8 @@ class Database:
             project.status,
             int(project.is_residential_complex),
             project.number_of_units,
-            project.residential_details
+            project.residential_details,
+            project.worker
         ))
         self.conn.commit()
         return cursor.lastrowid
@@ -49,7 +51,7 @@ class Database:
         cursor = self.conn.cursor()
         cursor.execute("""
             UPDATE projects
-            SET name = ?, number = ?, start_date = ?, end_date = ?, status = ?, is_residential_complex = ?, number_of_units = ?, residential_details = ?
+            SET name = ?, number = ?, start_date = ?, end_date = ?, status = ?, is_residential_complex = ?, number_of_units = ?, residential_details = ?, worker = ?
             WHERE id = ?
         """, (
             project.name,
@@ -60,6 +62,7 @@ class Database:
             int(project.is_residential_complex),
             project.number_of_units,
             project.residential_details,
+            project.worker,
             project.id
         ))
         self.conn.commit()
@@ -87,7 +90,8 @@ class Database:
                 status=row[5],
                 is_residential_complex=bool(row[6]),
                 number_of_units=row[7],
-                residential_details=row[8]
+                residential_details=row[8],
+                worker=row[9]
             ))
         return projects
 
@@ -105,7 +109,8 @@ class Database:
                 status=row[5],
                 is_residential_complex=bool(row[6]),
                 number_of_units=row[7],
-                residential_details=row[8]
+                residential_details=row[8],
+                worker=row[9]
             )
         return None
 
