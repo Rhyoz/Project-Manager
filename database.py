@@ -36,13 +36,13 @@ class Database:
         """, (
             project.name,
             project.number,
-            project.start_date.isoformat(),
-            project.end_date.isoformat() if project.end_date else None,
+            project.start_date,  # Removed .isoformat()
+            project.end_date,    # Removed .isoformat() if exists
             project.status,
             int(project.is_residential_complex),
             project.number_of_units,
             project.residential_details,
-            project.worker
+            project.worker  # New field added
         ))
         self.conn.commit()
         return cursor.lastrowid
@@ -56,13 +56,13 @@ class Database:
         """, (
             project.name,
             project.number,
-            project.start_date.isoformat(),
-            project.end_date.isoformat() if project.end_date else None,
+            project.start_date,  # Removed .isoformat()
+            project.end_date,    # Removed .isoformat() if exists
             project.status,
             int(project.is_residential_complex),
             project.number_of_units,
             project.residential_details,
-            project.worker,
+            project.worker,  # New field added
             project.id
         ))
         self.conn.commit()
@@ -91,7 +91,7 @@ class Database:
                 is_residential_complex=bool(row[6]),
                 number_of_units=row[7],
                 residential_details=row[8],
-                worker=row[9]
+                worker=row[9]  # New field added
             ))
         return projects
 
@@ -110,7 +110,7 @@ class Database:
                 is_residential_complex=bool(row[6]),
                 number_of_units=row[7],
                 residential_details=row[8],
-                worker=row[9]
+                worker=row[9]  # New field added
             )
         return None
 

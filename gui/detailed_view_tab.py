@@ -6,6 +6,12 @@ from utils import sanitize_filename
 import os
 import shutil
 
+from utils import get_template_dir
+
+template_dir = get_template_dir()
+
+from datetime import datetime
+
 class DetailedViewTab(QWidget):
     def __init__(self, db):
         super().__init__()
@@ -32,11 +38,11 @@ class DetailedViewTab(QWidget):
         self.form_layout.addRow("Worker:", self.worker_input)  # New row
 
         self.start_date_input = QDateEdit(calendarPopup=True)
-        self.start_date_input.setDisplayFormat("yyyy-MM-dd")
+        self.start_date_input.setDisplayFormat("dd-MM-yyyy")
         self.form_layout.addRow("Start Date:", self.start_date_input)
 
         self.end_date_input = QDateEdit(calendarPopup=True)
-        self.end_date_input.setDisplayFormat("yyyy-MM-dd")
+        self.end_date_input.setDisplayFormat("dd-MM-yyyy")
         self.end_date_input.setSpecialValueText("")
         self.end_date_input.setDateRange(QDate(1900, 1, 1), QDate(9999, 12, 31))
         self.end_date_input.setDate(QDate())
@@ -61,6 +67,7 @@ class DetailedViewTab(QWidget):
         self.button_layout = QHBoxLayout()
         self.save_btn = QPushButton("Save Changes")
         self.save_btn.clicked.connect(self.save_changes)
+        self.button_layout.addWidget(self.save_btn)
         self.layout.addLayout(self.button_layout)
 
     def load_project_selector(self):
@@ -80,15 +87,21 @@ class DetailedViewTab(QWidget):
             self.name_input.setText(project.name)
             self.number_input.setText(project.number)
             self.worker_input.setText(project.worker)  # Set worker
-            self.start_date_input.setDate(QDate.fromString(project.start_date, "yyyy-MM-dd"))
+            self.start_date_input.setDate(self.format_qdate(project.start_date))
             if project.end_date:
-                self.end_date_input.setDate(QDate.fromString(project.end_date, "yyyy-MM-dd"))
+                self.end_date_input.setDate(self.format_qdate(project.end_date))
             else:
                 self.end_date_input.setDate(QDate())
             self.status_input.setCurrentText(project.status)
             self.residential_checkbox.setChecked(project.is_residential_complex)
             self.units_input.setValue(project.number_of_units)
             self.units_input.setEnabled(project.is_residential_complex)
+
+    def format_qdate(self, date_str):
+        try:
+            return QDate.fromString(datetime.strptime(date_str, "%Y-%m-%d").strftime("%d-%m-%Y"), "dd-MM-yyyy")
+        except:
+            return QDate()
 
     def toggle_units(self, state):
         self.units_input.setEnabled(state == Qt.Checked)
@@ -125,8 +138,8 @@ class DetailedViewTab(QWidget):
         self.current_project.name = name
         self.current_project.number = number
         self.current_project.worker = worker  # Update worker
-        self.current_project.start_date = start_date
-        self.current_project.end_date = end_date
+        self.current_project.start_date = start_date.strftime("%Y-%m-%d")
+        self.current_project.end_date = end_date.strftime("%Y-%m-%d") if end_date else None
         self.current_project.status = status
         self.current_project.is_residential_complex = is_residential
         self.current_project.number_of_units = units

@@ -1,10 +1,19 @@
 # gui/add_project_dialog.py
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit, QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout
+from PyQt5.QtWidgets import (
+    QDialog, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit,
+    QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout
+)
 from PyQt5.QtCore import Qt, QDate
 from project import Project
 from utils import sanitize_filename
 import os
 import shutil
+
+from utils import get_template_dir
+
+template_dir = get_template_dir()
+
+from datetime import datetime
 
 class AddProjectDialog(QDialog):
     def __init__(self, db):
@@ -27,6 +36,7 @@ class AddProjectDialog(QDialog):
 
         self.start_date_input = QDateEdit(calendarPopup=True)
         self.start_date_input.setDate(QDate.currentDate())
+        self.start_date_input.setDisplayFormat("dd-MM-yyyy")
         self.form_layout.addRow("Start Date:", self.start_date_input)
 
         self.end_date_input = QDateEdit(calendarPopup=True)
@@ -34,7 +44,7 @@ class AddProjectDialog(QDialog):
         self.end_date_input.setSpecialValueText("")
         self.end_date_input.setDateRange(QDate.currentDate(), QDate(9999, 12, 31))
         self.end_date_input.setDate(QDate())
-        self.end_date_input.setDisplayFormat("yyyy-MM-dd")
+        self.end_date_input.setDisplayFormat("dd-MM-yyyy")
         self.form_layout.addRow("End Date:", self.end_date_input)
 
         self.status_input = QComboBox()
@@ -87,8 +97,8 @@ class AddProjectDialog(QDialog):
         project = Project(
             name=name,
             number=number,
-            start_date=start_date,
-            end_date=end_date,
+            start_date=start_date.strftime("%Y-%m-%d"),  # Ensure YYYY-MM-DD
+            end_date=end_date.strftime("%Y-%m-%d") if end_date else None,
             status=status,
             is_residential_complex=is_residential,
             number_of_units=units,
@@ -103,10 +113,33 @@ class AddProjectDialog(QDialog):
         os.makedirs(project_folder, exist_ok=True)
 
         # Copy template files
-        template_dir = "Template"
-        for file in os.listdir(template_dir):
-            if file.endswith(".xlsx"):
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        template_dir = os.path.join(script_dir, "Template")
+
+        # Check if 'Template' directory exists
+        if not os.path.exists(template_dir):
+            QMessageBox.critical(self, "Template Missing", f"The 'Template' directory does not exist at:\n{template_dir}\nPlease run 'Setup Template' from the File menu.")
+            return
+
+        # Check if required template files exist
+        required_files = ["Innregulering.xlsx", "Sjekkliste.xlsx"]
+        missing_files = [f for f in required_files if not os.path.exists(os.path.join(template_dir, f))]
+
+        if missing_files:
+            QMessageBox.critical(
+                self,
+                "Template Files Missing",
+                f"The following template files are missing in the 'Template' folder:\n" + "\n".join(missing_files) + "\nPlease run 'Setup Template' from the File menu."
+            )
+            return
+
+        # Copy the required template files into the project folder
+        try:
+            for file in required_files:
                 shutil.copy(os.path.join(template_dir, file), project_folder)
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to copy template files:\n{str(e)}")
+            return
 
         QMessageBox.information(self, "Success", "Project added successfully.")
         self.accept()
