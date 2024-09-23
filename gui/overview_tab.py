@@ -7,7 +7,6 @@ import sys
 import os
 import shutil
 import subprocess
-# overview_tab.py
 from pdf_converter import PDFConverter
 from PyQt5.QtCore import QThread
 
@@ -25,16 +24,19 @@ class OverviewTab(QWidget):
 
         # Projects Table
         self.table = QTableWidget()
-        self.table.setColumnCount(8)
+        self.table.setColumnCount(11)  # Updated column count
         self.table.setHorizontalHeaderLabels([
             "Project Name",
             "Project Number",
+            "Complex",
             "Start Date",
             "End Date",
             "Status",
+            "Worker",
             "Innregulering",
             "Sjekkliste",
-            "Move to Complete"
+            "Move to Complete",
+            "Move to Finished"
         ])
         self.table.setEditTriggers(QTableWidget.NoEditTriggers)
         self.layout.addWidget(self.table)
@@ -50,25 +52,34 @@ class OverviewTab(QWidget):
 
             self.table.setItem(row_position, 0, QTableWidgetItem(project.name))
             self.table.setItem(row_position, 1, QTableWidgetItem(project.number))
-            self.table.setItem(row_position, 2, QTableWidgetItem(project.start_date))
-            self.table.setItem(row_position, 3, QTableWidgetItem(project.end_date if project.end_date else ""))
-            self.table.setItem(row_position, 4, QTableWidgetItem(project.status))
+            complex_text = "Yes" if project.is_residential_complex else "No"
+            self.table.setItem(row_position, 2, QTableWidgetItem(complex_text))
+            self.table.setItem(row_position, 3, QTableWidgetItem(project.start_date))
+            self.table.setItem(row_position, 4, QTableWidgetItem(project.end_date if project.end_date else ""))
+            self.table.setItem(row_position, 5, QTableWidgetItem(project.status))
+            self.table.setItem(row_position, 6, QTableWidgetItem(project.worker))  # Set worker
 
             # Innregulering Button
             innregulering_btn = QPushButton("View PDF")
             innregulering_btn.clicked.connect(lambda checked, p=project: self.view_pdf(p, "Innregulering"))
-            self.table.setCellWidget(row_position, 5, innregulering_btn)
+            self.table.setCellWidget(row_position, 7, innregulering_btn)
 
             # Sjekkliste Button
             sjekkliste_btn = QPushButton("View PDF")
             sjekkliste_btn.clicked.connect(lambda checked, p=project: self.view_pdf(p, "Sjekkliste"))
-            self.table.setCellWidget(row_position, 6, sjekkliste_btn)
+            self.table.setCellWidget(row_position, 8, sjekkliste_btn)
 
             # Move to Complete Button
             move_complete_btn = QPushButton("Complete")
             move_complete_btn.setStyleSheet("background-color: yellow")
             move_complete_btn.clicked.connect(lambda checked, p=project: self.move_to_complete(p))
-            self.table.setCellWidget(row_position, 7, move_complete_btn)
+            self.table.setCellWidget(row_position, 9, move_complete_btn)
+
+            # Move to Finished Button
+            move_finished_btn = QPushButton("Finish")
+            move_finished_btn.setStyleSheet("background-color: yellow")
+            move_finished_btn.clicked.connect(lambda checked, p=project: self.move_to_finished(p))
+            self.table.setCellWidget(row_position, 10, move_finished_btn)
 
     def open_add_project_dialog(self):
         dialog = AddProjectDialog(self.db)
@@ -100,3 +111,8 @@ class OverviewTab(QWidget):
         self.load_projects()
         QMessageBox.information(self, "Status Updated", f"Project '{project.name}' moved to Complete.")
 
+    def move_to_finished(self, project):
+        project.status = "Finished"
+        self.db.update_project(project)
+        self.load_projects()
+        QMessageBox.information(self, "Status Updated", f"Project '{project.name}' moved to Finished.")

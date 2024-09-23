@@ -28,6 +28,9 @@ class DetailedViewTab(QWidget):
         self.number_input = QLineEdit()
         self.form_layout.addRow("Project Number:", self.number_input)
 
+        self.worker_input = QLineEdit()  # New input field
+        self.form_layout.addRow("Worker:", self.worker_input)  # New row
+
         self.start_date_input = QDateEdit(calendarPopup=True)
         self.start_date_input.setDisplayFormat("yyyy-MM-dd")
         self.form_layout.addRow("Start Date:", self.start_date_input)
@@ -58,7 +61,6 @@ class DetailedViewTab(QWidget):
         self.button_layout = QHBoxLayout()
         self.save_btn = QPushButton("Save Changes")
         self.save_btn.clicked.connect(self.save_changes)
-        self.button_layout.addWidget(self.save_btn)
         self.layout.addLayout(self.button_layout)
 
     def load_project_selector(self):
@@ -77,6 +79,7 @@ class DetailedViewTab(QWidget):
             self.current_project = project
             self.name_input.setText(project.name)
             self.number_input.setText(project.number)
+            self.worker_input.setText(project.worker)  # Set worker
             self.start_date_input.setDate(QDate.fromString(project.start_date, "yyyy-MM-dd"))
             if project.end_date:
                 self.end_date_input.setDate(QDate.fromString(project.end_date, "yyyy-MM-dd"))
@@ -97,6 +100,7 @@ class DetailedViewTab(QWidget):
 
         name = self.name_input.text().strip()
         number = self.number_input.text().strip()
+        worker = self.worker_input.text().strip()  # Get worker input
         start_date = self.start_date_input.date().toPyDate()
         end_date = self.end_date_input.date().toPyDate() if self.end_date_input.date().isValid() else None
         status = self.status_input.currentText()
@@ -120,6 +124,7 @@ class DetailedViewTab(QWidget):
         # Update project details
         self.current_project.name = name
         self.current_project.number = number
+        self.current_project.worker = worker  # Update worker
         self.current_project.start_date = start_date
         self.current_project.end_date = end_date
         self.current_project.status = status

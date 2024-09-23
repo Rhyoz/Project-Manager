@@ -22,6 +22,9 @@ class AddProjectDialog(QDialog):
         self.number_input = QLineEdit()
         self.form_layout.addRow("Project Number:", self.number_input)
 
+        self.worker_input = QLineEdit()  # New input field
+        self.form_layout.addRow("Worker:", self.worker_input)  # New row
+
         self.start_date_input = QDateEdit(calendarPopup=True)
         self.start_date_input.setDate(QDate.currentDate())
         self.form_layout.addRow("Start Date:", self.start_date_input)
@@ -65,6 +68,7 @@ class AddProjectDialog(QDialog):
     def save_project(self):
         name = self.name_input.text().strip()
         number = self.number_input.text().strip()
+        worker = self.worker_input.text().strip()  # Get worker input
         start_date = self.start_date_input.date().toPyDate()
         end_date = self.end_date_input.date().toPyDate() if self.end_date_input.date().isValid() else None
         status = self.status_input.currentText()
@@ -87,7 +91,8 @@ class AddProjectDialog(QDialog):
             end_date=end_date,
             status=status,
             is_residential_complex=is_residential,
-            number_of_units=units
+            number_of_units=units,
+            worker=worker  # Set worker
         )
 
         project_id = self.db.add_project(project)

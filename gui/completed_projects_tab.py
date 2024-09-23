@@ -13,13 +13,17 @@ class CompletedProjectsTab(QWidget):
 
         # Projects Table
         self.table = QTableWidget()
-        self.table.setColumnCount(7)
+        self.table.setColumnCount(11)  # Updated column count
         self.table.setHorizontalHeaderLabels([
             "Project Name",
             "Project Number",
+            "Complex",
             "Start Date",
             "End Date",
             "Status",
+            "Worker",
+            "Innregulering",
+            "Sjekkliste",
             "Move to Active",
             "Move to Finished"
         ])
@@ -37,21 +41,53 @@ class CompletedProjectsTab(QWidget):
 
             self.table.setItem(row_position, 0, QTableWidgetItem(project.name))
             self.table.setItem(row_position, 1, QTableWidgetItem(project.number))
-            self.table.setItem(row_position, 2, QTableWidgetItem(project.start_date))
-            self.table.setItem(row_position, 3, QTableWidgetItem(project.end_date if project.end_date else ""))
-            self.table.setItem(row_position, 4, QTableWidgetItem(project.status))
+            complex_text = "Yes" if project.is_residential_complex else "No"
+            self.table.setItem(row_position, 2, QTableWidgetItem(complex_text))
+            self.table.setItem(row_position, 3, QTableWidgetItem(project.start_date))
+            self.table.setItem(row_position, 4, QTableWidgetItem(project.end_date if project.end_date else ""))
+            self.table.setItem(row_position, 5, QTableWidgetItem(project.status))
+            self.table.setItem(row_position, 6, QTableWidgetItem(project.worker))  # Set worker
+
+            # Innregulering Button
+            innregulering_btn = QPushButton("View PDF")
+            innregulering_btn.clicked.connect(lambda checked, p=project: self.view_pdf(p, "Innregulering"))
+            self.table.setCellWidget(row_position, 7, innregulering_btn)
+
+            # Sjekkliste Button
+            sjekkliste_btn = QPushButton("View PDF")
+            sjekkliste_btn.clicked.connect(lambda checked, p=project: self.view_pdf(p, "Sjekkliste"))
+            self.table.setCellWidget(row_position, 8, sjekkliste_btn)
 
             # Move to Active Button
             move_active_btn = QPushButton("Active")
             move_active_btn.setStyleSheet("background-color: yellow")
             move_active_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
-            self.table.setCellWidget(row_position, 5, move_active_btn)
+            self.table.setCellWidget(row_position, 9, move_active_btn)
 
             # Move to Finished Button
-            move_finished_btn = QPushButton("Finished")
+            move_finished_btn = QPushButton("Finish")
             move_finished_btn.setStyleSheet("background-color: yellow")
             move_finished_btn.clicked.connect(lambda checked, p=project: self.move_to_finished(p))
-            self.table.setCellWidget(row_position, 6, move_finished_btn)
+            self.table.setCellWidget(row_position, 10, move_finished_btn)
+
+    def view_pdf(self, project, doc_type):
+        folder_name = sanitize_filename(f"{project.name}_{project.number}")
+        project_folder = os.path.join("Boligventilasjon - Prosjekter", folder_name)
+        pdf_file = os.path.join(project_folder, f"{doc_type}.pdf")
+
+        if not os.path.exists(pdf_file):
+            QMessageBox.warning(self, "PDF Not Found", f"The PDF for {doc_type} does not exist.")
+            return
+
+        try:
+            if os.name == 'nt':
+                os.startfile(pdf_file)
+            elif sys.platform.startswith('darwin'):
+                subprocess.call(('open', pdf_file))
+            elif os.name == 'posix':
+                subprocess.call(('xdg-open', pdf_file))
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to open PDF: {str(e)}")
 
     def move_to_active(self, project):
         project.status = "Active"
