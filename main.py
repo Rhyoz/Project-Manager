@@ -39,6 +39,7 @@ class MainWindow(QMainWindow):
 
         self.setup_menu_bar()
         self.setup_shortcuts()
+        self.apply_stylesheet()
 
     def setup_menu_bar(self):
         menu_bar = self.menuBar()
@@ -133,6 +134,36 @@ class MainWindow(QMainWindow):
         QShortcut(QKeySequence("Alt+2"), self).activated.connect(lambda: self.tabs.setCurrentIndex(1))
         QShortcut(QKeySequence("Alt+3"), self).activated.connect(lambda: self.tabs.setCurrentIndex(2))
         QShortcut(QKeySequence("Alt+4"), self).activated.connect(lambda: self.tabs.setCurrentIndex(3))
+
+    def apply_stylesheet(self):
+        """
+        Applies a custom stylesheet to highlight the selected tab with a light blueish color.
+        """
+        stylesheet = """
+        QTabWidget::pane { /* The tab widget frame */
+            border-top: 2px solid #C2C7CB;
+        }
+
+        /* Style the tab using the tab selector */
+        QTabBar::tab {
+            background: lightgray;
+            border: 1px solid #C4C4C3;
+            padding: 10px;
+            margin-right: 2px;
+        }
+
+        /* Style the selected tab */
+        QTabBar::tab:selected {
+            background: #ADD8E6; /* Light Blue */
+            font-weight: bold;
+        }
+
+        /* Optional: Hover effect */
+        QTabBar::tab:hover {
+            background: #D3D3D3; /* Light Grey */
+        }
+        """
+        self.tabs.setStyleSheet(stylesheet)
 
     def closeEvent(self, event):
         self.db.close()

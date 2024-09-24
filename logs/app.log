@@ -48,3 +48,57 @@
 2024-09-24 19:13:59,130 - database - INFO - Loaded projects with status='Finished'
 2024-09-24 19:13:59,131 - database - INFO - Loaded all projects
 2024-09-24 19:14:02,756 - database - INFO - Database session closed.
+2024-09-24 19:26:15,960 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 19:26:16,204 - database - INFO - Loaded all projects
+2024-09-24 19:26:16,206 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 19:26:16,207 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 19:26:16,208 - database - INFO - Loaded all projects
+2024-09-24 19:26:18,020 - database - INFO - Database session closed.
+2024-09-24 19:30:56,229 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 19:30:56,464 - database - INFO - Loaded all projects
+2024-09-24 19:30:56,466 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 19:30:56,467 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 19:30:56,469 - database - INFO - Loaded all projects
+2024-09-24 19:46:42,228 - database - INFO - Database session closed.
+2024-09-24 20:10:57,331 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 20:10:57,577 - database - ERROR - Failed to load projects: (sqlite3.OperationalError) no such column: projects.main_contractor
+[SQL: SELECT projects.id AS projects_id, projects.name AS projects_name, projects.number AS projects_number, projects.start_date AS projects_start_date, projects.end_date AS projects_end_date, projects.status AS projects_status, projects.is_residential_complex AS projects_is_residential_complex, projects.number_of_units AS projects_number_of_units, projects.residential_details AS projects_residential_details, projects.worker AS projects_worker, projects.extra AS projects_extra, projects.main_contractor AS projects_main_contractor 
+FROM projects]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-24 20:11:53,210 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 20:11:53,461 - database - INFO - Loaded all projects
+2024-09-24 20:11:53,463 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 20:11:53,464 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 20:11:53,465 - database - INFO - Loaded all projects
+2024-09-24 20:12:55,876 - database - INFO - Database session closed.
+2024-09-24 20:13:10,170 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 20:13:10,404 - database - INFO - Loaded all projects
+2024-09-24 20:13:10,406 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 20:13:10,407 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 20:13:10,408 - database - INFO - Loaded all projects
+2024-09-24 20:13:34,981 - database - INFO - Added project: qweqwe ()
+2024-09-24 20:13:34,982 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\Lindal - qweqwe -
+2024-09-24 20:13:34,983 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\Lindal - qweqwe -
+2024-09-24 20:13:36,064 - gui.add_project_dialog - INFO - Project added successfully: qweqwe ()
+2024-09-24 20:13:36,068 - database - INFO - Loaded all projects
+2024-09-24 20:13:36,070 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-24 20:14:34,898 - gui.add_project_dialog - INFO - Added new main contractor: RA1
+2024-09-24 20:14:34,900 - database - INFO - Added project: his ()
+2024-09-24 20:14:34,901 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\RA1 - his -
+2024-09-24 20:14:34,902 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\RA1 - his -
+2024-09-24 20:14:35,711 - gui.add_project_dialog - INFO - Project added successfully: his ()
+2024-09-24 20:14:35,714 - database - INFO - Loaded all projects
+2024-09-24 20:14:35,716 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-24 20:15:03,004 - database - INFO - Database session closed.
+2024-09-24 20:15:41,841 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 20:15:42,074 - database - INFO - Loaded all projects
+2024-09-24 20:15:42,076 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 20:15:42,078 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 20:15:42,079 - database - INFO - Loaded all projects
+2024-09-24 20:15:55,150 - database - INFO - Database session closed.
+2024-09-24 20:16:07,486 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 20:16:07,724 - database - INFO - Loaded all projects
+2024-09-24 20:16:07,726 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 20:16:07,727 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 20:16:07,729 - database - INFO - Loaded all projects
+2024-09-24 20:19:24,369 - database - INFO - Database session closed.

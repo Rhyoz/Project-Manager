@@ -15,3 +15,4 @@ class Project:
     worker: str = ""
     residential_details: str = ""
     extra: str = ""
+    main_contractor: Optional[str] = None  # New Optional Attribute

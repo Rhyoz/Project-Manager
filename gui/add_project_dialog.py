@@ -3,9 +3,19 @@ from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit,
     QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QTextEdit
 )
-from PyQt5.QtCore import Qt, QDate
+from PyQt5.QtCore import Qt, QDate, QThread
+from gui.base_projects_tab import BaseProjectsTab
 from project import Project
-from utils import sanitize_filename, get_template_dir, check_template_files, open_docx_file, get_project_dir
+from utils import (
+    sanitize_filename,
+    get_template_dir,
+    check_template_files,
+    open_docx_file,
+    get_project_dir,
+    load_main_contractors,
+    add_main_contractor,
+    get_docx_temp_dir
+)
 from logger import get_logger
 from pdf_converter import PDFConverter
 import os
@@ -79,6 +89,19 @@ class AddProjectDialog(QDialog):
         self.extra_input = QLineEdit()
         self.form_layout.addRow("Extra:", self.extra_input)
 
+        # Main Contractor Checkbox
+        self.main_contractor_checkbox = QCheckBox("Add Main Contractor")
+        self.main_contractor_checkbox.stateChanged.connect(self.toggle_main_contractor)
+        self.form_layout.addRow(self.main_contractor_checkbox)
+
+        # Main Contractor ComboBox
+        self.main_contractor_input = QComboBox()
+        self.main_contractor_input.setEditable(True)
+        self.main_contractor_input.addItems(load_main_contractors())
+        self.main_contractor_input.setEnabled(False)
+        self.main_contractor_input.lineEdit().setPlaceholderText("Select or enter Main Contractor")
+        self.form_layout.addRow("Main Contractor:", self.main_contractor_input)
+
         self.layout.addLayout(self.form_layout)
 
         # Buttons Layout
@@ -96,6 +119,10 @@ class AddProjectDialog(QDialog):
         self.units_input.setEnabled(is_checked)
         self.residential_details_input.setEnabled(is_checked)  # Enable/disable residential details input
 
+    def toggle_main_contractor(self, state):
+        is_checked = state == Qt.Checked
+        self.main_contractor_input.setEnabled(is_checked)
+
     def save_project(self):
         # Gather data from input fields
         name = self.name_input.text().strip()
@@ -108,6 +135,9 @@ class AddProjectDialog(QDialog):
         units = self.units_input.value() if is_residential else 0
         residential_details = self.residential_details_input.toPlainText().strip() if is_residential else ""
         extra = self.extra_input.text().strip()
+
+        # Main Contractor
+        main_contractor = self.main_contractor_input.currentText().strip() if self.main_contractor_checkbox.isChecked() else None
 
         # Validation
         if not name and not number:
@@ -122,6 +152,27 @@ class AddProjectDialog(QDialog):
             QMessageBox.warning(self, "Validation Error", "Residential details must be provided for a residential complex.")
             return
 
+        if main_contractor:
+            if main_contractor not in load_main_contractors():
+                # Ask user to confirm adding a new contractor
+                reply = QMessageBox.question(
+                    self,
+                    "Add New Contractor",
+                    f"'{main_contractor}' is not in the existing list. Do you want to add it?",
+                    QMessageBox.Yes | QMessageBox.No
+                )
+                if reply == QMessageBox.Yes:
+                    try:
+                        add_main_contractor(main_contractor)
+                        QMessageBox.information(self, "Success", f"'{main_contractor}' has been added to the Main Contractors list.")
+                        # Update the ComboBox with the new contractor
+                        self.main_contractor_input.addItem(main_contractor)
+                        logger.info(f"Added new main contractor: {main_contractor}")
+                    except Exception as e:
+                        QMessageBox.critical(self, "Error", f"Failed to add new contractor: {str(e)}")
+                        logger.error(f"Failed to add main contractor '{main_contractor}': {e}")
+                        return
+
         # Create Project instance without 'id'
         project = Project(
             name=name,
@@ -133,7 +184,8 @@ class AddProjectDialog(QDialog):
             number_of_units=units,
             worker=worker,
             residential_details=residential_details,
-            extra=extra
+            extra=extra,
+            main_contractor=main_contractor  # Set New Attribute
         )
 
         # Add project to database
@@ -144,9 +196,19 @@ class AddProjectDialog(QDialog):
             return
 
         # Create Project Folder
-        folder_name = sanitize_filename(f"{name}_{number}") if name or number else f"Project_{project_id}"
+        folder_name = ""
+        if main_contractor:
+            folder_name = sanitize_filename(f"{main_contractor} - {name} - {number}") if (name or number) else f"{main_contractor} - Project_{project_id}"
+        else:
+            folder_name = sanitize_filename(f"{name}_{number}") if (name or number) else f"Project_{project_id}"
         project_folder = os.path.join(get_project_dir(), folder_name)
-        os.makedirs(project_folder, exist_ok=True)
+        try:
+            os.makedirs(project_folder, exist_ok=True)
+            logger.info(f"Created project folder at {project_folder}")
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to create project folder:\n{str(e)}")
+            logger.error(f"Failed to create project folder at {project_folder}: {e}")
+            return
 
         # Check for Template directory and required files
         valid, message = check_template_files()
@@ -179,7 +241,7 @@ class AddProjectDialog(QDialog):
     def convert_pdf(self, project):
         # Example method to convert a related Excel file to PDF
         excel_path = os.path.join(get_project_dir(), sanitize_filename(f"{project.name}_{project.number}"), "Data.xlsx")
-        pdf_path = os.path.join(get_project_dir(), sanitize_filename(f"{project.name}_{project.number}"), "Data.pdf")
+        pdf_path = os.path.join(get_docx_temp_dir(), f"{project.name}_{project.number}_Data.pdf")
 
         self.converter = PDFConverter(excel_path, pdf_path)
         self.thread = QThread()
