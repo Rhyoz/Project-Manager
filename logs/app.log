@@ -102,3 +102,9 @@ FROM projects]
 2024-09-24 20:16:07,727 - database - INFO - Loaded projects with status='Finished'
 2024-09-24 20:16:07,729 - database - INFO - Loaded all projects
 2024-09-24 20:19:24,369 - database - INFO - Database session closed.
+2024-09-24 20:25:20,196 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 20:25:20,458 - database - INFO - Loaded all projects
+2024-09-24 20:25:20,462 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 20:25:20,465 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 20:25:20,467 - database - INFO - Loaded all projects
+2024-09-24 20:25:23,032 - database - INFO - Database session closed.
