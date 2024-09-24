@@ -1,16 +1,17 @@
 # project.py
-from dataclasses import dataclass
-from datetime import date
+from dataclasses import dataclass, field
+from typing import Optional
 
 @dataclass
 class Project:
-    id: int = None
+    id: Optional[int] = field(default=None)
     name: str = ""
     number: str = ""
-    start_date: str = date.today().strftime("%Y-%m-%d")  # Stored as string in YYYY-MM-DD
-    end_date: str = None
-    status: str = "Active"
+    start_date: str = ""
+    end_date: Optional[str] = None
+    status: str = ""
     is_residential_complex: bool = False
     number_of_units: int = 0
+    worker: str = ""
     residential_details: str = ""
-    worker: str = ""  # New field added
+    extra: str = ""

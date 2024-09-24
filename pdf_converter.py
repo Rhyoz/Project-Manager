@@ -1,7 +1,11 @@
 # pdf_converter.py
 import subprocess
 import os
-from PyQt5.QtCore import QObject, pyqtSignal, QThread
+from PyQt5.QtCore import QObject, pyqtSignal
+import sys
+from logger import get_logger
+
+logger = get_logger(__name__)
 
 class PDFConverter(QObject):
     conversion_complete = pyqtSignal(str)
@@ -14,7 +18,6 @@ class PDFConverter(QObject):
 
     def run_conversion(self):
         try:
-            # This example uses Windows COM interface; adjust accordingly for other OS
             if os.name == 'nt':
                 import win32com.client
                 excel = win32com.client.Dispatch("Excel.Application")
@@ -23,11 +26,15 @@ class PDFConverter(QObject):
                 wb.ExportAsFixedFormat(0, self.pdf_path)
                 wb.Close(False)
                 excel.Quit()
+                logger.info(f"Converted Excel to PDF: {self.excel_path} -> {self.pdf_path}")
+                self.conversion_complete.emit(self.pdf_path)
+            elif sys.platform.startswith('darwin') or os.name == 'posix':
+                # Use LibreOffice for macOS and Linux
+                subprocess.run(['libreoffice', '--headless', '--convert-to', 'pdf', self.excel_path, '--outdir', os.path.dirname(self.pdf_path)], check=True)
+                logger.info(f"Converted Excel to PDF using LibreOffice: {self.excel_path} -> {self.pdf_path}")
                 self.conversion_complete.emit(self.pdf_path)
             else:
-                # For macOS or Linux, you might need to use LibreOffice or another tool
-                # Example using LibreOffice:
-                subprocess.run(['libreoffice', '--headless', '--convert-to', 'pdf', self.excel_path, '--outdir', os.path.dirname(self.pdf_path)], check=True)
-                self.conversion_complete.emit(self.pdf_path)
+                raise OSError("Unsupported operating system for PDF conversion.")
         except Exception as e:
+            logger.error(f"PDF conversion failed: {e}")
             self.conversion_failed.emit(str(e))

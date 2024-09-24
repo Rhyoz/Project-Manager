@@ -1,155 +1,72 @@
 # gui/detailed_view_tab.py
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit, QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout
-from PyQt5.QtCore import Qt, QDate
+from PyQt5.QtWidgets import (
+    QWidget, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit, QComboBox,
+    QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QTextEdit
+)
+from PyQt5.QtCore import Qt, QDate, QThread
+from gui.base_projects_tab import BaseProjectsTab
 from project import Project
-from utils import sanitize_filename
+from utils import sanitize_filename, get_project_dir, open_docx_file
+from pdf_converter import PDFConverter
+from logger import get_logger
 import os
-import shutil
 
-from utils import get_template_dir
+logger = get_logger(__name__)
 
-template_dir = get_template_dir()
-
-from datetime import datetime
-
-class DetailedViewTab(QWidget):
+class DetailedViewTab(BaseProjectsTab):
     def __init__(self, db):
-        super().__init__()
-        self.db = db
+        super().__init__(db, status_filter=None, title="Detailed Project View")
         self.current_project = None
+        self.setup_add_project_ui()
 
-        self.layout = QVBoxLayout()
-        self.setLayout(self.layout)
+    def setup_add_project_ui(self):
+        # Add Project Button
+        self.add_project_btn = QPushButton("Add New Project")
+        self.add_project_btn.clicked.connect(self.open_add_project_dialog)
+        self.layout.addWidget(self.add_project_btn)
 
-        self.form_layout = QFormLayout()
+    def open_add_project_dialog(self):
+        from gui.add_project_dialog import AddProjectDialog
+        dialog = AddProjectDialog(self.db)
+        if dialog.exec_():
+            self.load_projects()
+            logger.info("New project added via dialog.")
 
-        self.project_selector = QComboBox()
-        self.load_project_selector()
-        self.project_selector.currentIndexChanged.connect(self.load_selected_project)
-        self.form_layout.addRow("Select Project:", self.project_selector)
+    def move_to_active(self, project):
+        super().move_to_active(project)
+        self.load_projects()
 
-        self.name_input = QLineEdit()
-        self.form_layout.addRow("Project Name:", self.name_input)
+    def save_docx(self):
+        super().save_docx()
 
-        self.number_input = QLineEdit()
-        self.form_layout.addRow("Project Number:", self.number_input)
+    def open_docx(self):
+        super().open_docx()
 
-        self.worker_input = QLineEdit()  # New input field
-        self.form_layout.addRow("Worker:", self.worker_input)  # New row
+    def view_extra(self, project):
+        super().view_extra(project)
 
-        self.start_date_input = QDateEdit(calendarPopup=True)
-        self.start_date_input.setDisplayFormat("dd-MM-yyyy")
-        self.form_layout.addRow("Start Date:", self.start_date_input)
+    def view_docx(self, project, doc_type):
+        super().view_docx(project, doc_type)
 
-        self.end_date_input = QDateEdit(calendarPopup=True)
-        self.end_date_input.setDisplayFormat("dd-MM-yyyy")
-        self.end_date_input.setSpecialValueText("")
-        self.end_date_input.setDateRange(QDate(1900, 1, 1), QDate(9999, 12, 31))
-        self.end_date_input.setDate(QDate())
-        self.form_layout.addRow("End Date:", self.end_date_input)
+    def convert_to_pdf(self, project):
+        from utils import get_docx_temp_dir
+        excel_path = os.path.join(get_project_dir(), sanitize_filename(f"{project.name}_{project.number}"), f"{doc_type}.xlsx")
+        pdf_path = os.path.join(get_docx_temp_dir(), f"{project.name}_{project.number}_{doc_type}.pdf")
 
-        self.status_input = QComboBox()
-        self.status_input.addItems(["Active", "On Hold", "Complete", "Finished"])
-        self.form_layout.addRow("Status:", self.status_input)
+        self.converter = PDFConverter(excel_path, pdf_path)
+        self.thread = QThread()
+        self.converter.moveToThread(self.thread)
+        self.converter.conversion_complete.connect(self.on_conversion_complete)
+        self.converter.conversion_failed.connect(self.on_conversion_failed)
+        self.thread.started.connect(self.converter.run_conversion)
+        self.converter.conversion_complete.connect(self.thread.quit)
+        self.converter.conversion_failed.connect(self.thread.quit)
+        self.thread.start()
 
-        self.residential_checkbox = QCheckBox("Residential Complex")
-        self.residential_checkbox.stateChanged.connect(self.toggle_units)
-        self.form_layout.addRow(self.residential_checkbox)
+    def on_conversion_complete(self, pdf_path):
+        QMessageBox.information(self, "Conversion Complete", f"PDF saved at {pdf_path}")
+        logger.info(f"PDF conversion completed: {pdf_path}")
 
-        self.units_input = QSpinBox()
-        self.units_input.setRange(1, 1000)
-        self.units_input.setEnabled(False)
-        self.form_layout.addRow("Number of Units:", self.units_input)
-
-        self.layout.addLayout(self.form_layout)
-
-        # Buttons
-        self.button_layout = QHBoxLayout()
-        self.save_btn = QPushButton("Save Changes")
-        self.save_btn.clicked.connect(self.save_changes)
-        self.button_layout.addWidget(self.save_btn)
-        self.layout.addLayout(self.button_layout)
-
-    def load_project_selector(self):
-        self.project_selector.clear()
-        projects = self.db.load_projects()
-        for project in projects:
-            display_text = f"{project.name} ({project.number})" if project.name and project.number else project.name or project.number
-            self.project_selector.addItem(display_text, project.id)
-
-    def load_selected_project(self):
-        project_id = self.project_selector.currentData()
-        if project_id is None:
-            return
-        project = self.db.get_project_by_id(project_id)
-        if project:
-            self.current_project = project
-            self.name_input.setText(project.name)
-            self.number_input.setText(project.number)
-            self.worker_input.setText(project.worker)  # Set worker
-            self.start_date_input.setDate(self.format_qdate(project.start_date))
-            if project.end_date:
-                self.end_date_input.setDate(self.format_qdate(project.end_date))
-            else:
-                self.end_date_input.setDate(QDate())
-            self.status_input.setCurrentText(project.status)
-            self.residential_checkbox.setChecked(project.is_residential_complex)
-            self.units_input.setValue(project.number_of_units)
-            self.units_input.setEnabled(project.is_residential_complex)
-
-    def format_qdate(self, date_str):
-        try:
-            return QDate.fromString(datetime.strptime(date_str, "%Y-%m-%d").strftime("%d-%m-%Y"), "dd-MM-yyyy")
-        except:
-            return QDate()
-
-    def toggle_units(self, state):
-        self.units_input.setEnabled(state == Qt.Checked)
-
-    def save_changes(self):
-        if not self.current_project:
-            QMessageBox.warning(self, "No Project Selected", "Please select a project to edit.")
-            return
-
-        name = self.name_input.text().strip()
-        number = self.number_input.text().strip()
-        worker = self.worker_input.text().strip()  # Get worker input
-        start_date = self.start_date_input.date().toPyDate()
-        end_date = self.end_date_input.date().toPyDate() if self.end_date_input.date().isValid() else None
-        status = self.status_input.currentText()
-        is_residential = self.residential_checkbox.isChecked()
-        units = self.units_input.value() if is_residential else 0
-
-        # Validation
-        if not name and not number:
-            QMessageBox.warning(self, "Validation Error", "At least one of Project Name or Project Number must be provided.")
-            return
-
-        if end_date and end_date < start_date:
-            QMessageBox.warning(self, "Validation Error", "End Date cannot be earlier than Start Date.")
-            return
-
-        old_folder_name = sanitize_filename(f"{self.current_project.name}_{self.current_project.number}")
-        new_folder_name = sanitize_filename(f"{name}_{number}") if name or number else f"Project_{self.current_project.id}"
-        old_project_folder = os.path.join("Boligventilasjon - Prosjekter", old_folder_name)
-        new_project_folder = os.path.join("Boligventilasjon - Prosjekter", new_folder_name)
-
-        # Update project details
-        self.current_project.name = name
-        self.current_project.number = number
-        self.current_project.worker = worker  # Update worker
-        self.current_project.start_date = start_date.strftime("%Y-%m-%d")
-        self.current_project.end_date = end_date.strftime("%Y-%m-%d") if end_date else None
-        self.current_project.status = status
-        self.current_project.is_residential_complex = is_residential
-        self.current_project.number_of_units = units
-
-        self.db.update_project(self.current_project)
-
-        # Rename project folder if name or number changed
-        if old_folder_name != new_folder_name:
-            if os.path.exists(old_project_folder):
-                os.rename(old_project_folder, new_project_folder)
-
-        QMessageBox.information(self, "Success", "Project details updated successfully.")
-        self.load_project_selector()
+    def on_conversion_failed(self, error_message):
+        QMessageBox.critical(self, "Conversion Failed", f"Failed to convert PDF:\n{error_message}")
+        logger.error(f"PDF conversion failed: {error_message}")

@@ -1,3 +1,5 @@
 PyQt5==5.15.4
-pywin32==303
+SQLAlchemy==1.4.46
+pywin32==303; platform_system == "Windows"
 openpyxl==3.0.10
+python-docx==0.8.11
