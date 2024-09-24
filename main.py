@@ -1,9 +1,8 @@
 # main.py
 import sys
 import os
-import shutil
 from PyQt5.QtWidgets import (
-    QApplication, QMainWindow, QTabWidget, QMessageBox, QShortcut, QAction, QFileDialog
+    QApplication, QMainWindow, QTabWidget, QMessageBox, QFileDialog, QShortcut
 )
 from PyQt5.QtGui import QKeySequence
 from PyQt5.QtCore import Qt
@@ -12,6 +11,9 @@ from gui.overview_tab import OverviewTab
 from gui.completed_projects_tab import CompletedProjectsTab
 from gui.finished_projects_tab import FinishedProjectsTab
 from gui.detailed_view_tab import DetailedViewTab
+from logger import get_logger
+
+logger = get_logger(__name__)
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -24,7 +26,7 @@ class MainWindow(QMainWindow):
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
-        # Initialize tabs in the new order
+        # Initialize tabs
         self.overview_tab = OverviewTab(self.db)
         self.completed_projects_tab = CompletedProjectsTab(self.db)
         self.finished_projects_tab = FinishedProjectsTab(self.db)
@@ -45,91 +47,92 @@ class MainWindow(QMainWindow):
         file_menu = menu_bar.addMenu("File")
 
         # Setup Template Action
-        setup_template_action = QAction("Setup Template", self)
+        setup_template_action = file_menu.addAction("Setup Template")
         setup_template_action.triggered.connect(self.setup_template)
-        file_menu.addAction(setup_template_action)
-
-        # Shortcuts Menu
-        shortcuts_menu = menu_bar.addMenu("Shortcuts")
-        # You can add shortcut-related actions here if needed
 
     def setup_template(self):
         """
         Handles the Setup Template functionality:
         - Creates the 'Template' folder if it doesn't exist.
-        - Prompts the user to select 'Innregulering.xlsx' and 'Sjekkliste.xlsx' files.
+        - Prompts the user to select 'Innregulering.docx' and 'Sjekkliste.docx' files.
         - Copies the selected files into the 'Template' folder.
         """
-        # Define the Template directory path
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        template_dir = os.path.join(script_dir, "gui", "Template")
+        from utils import get_template_dir
+        from shutil import copy
+        from logger import get_logger
+
+        logger = get_logger(__name__)
+
+        template_dir = get_template_dir()
 
         # Create 'Template' folder if it doesn't exist
         if not os.path.exists(template_dir):
             try:
                 os.makedirs(template_dir)
                 QMessageBox.information(self, "Template Folder Created", f"'Template' folder created at:\n{template_dir}")
+                logger.info(f"Created template directory at {template_dir}")
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Failed to create 'Template' folder:\n{str(e)}")
+                logger.error(f"Failed to create template directory: {e}")
                 return
         else:
             QMessageBox.information(self, "Template Folder Exists", f"'Template' folder already exists at:\n{template_dir}")
+            logger.info(f"Template directory already exists at {template_dir}")
 
-        # Prompt user to select 'Innregulering.xlsx'
+        # Prompt user to select 'Innregulering.docx'
         innregulering_path, _ = QFileDialog.getOpenFileName(
             self,
-            "Select 'Innregulering.xlsx' Template File",
+            "Select 'Innregulering.docx' Template File",
             "",
-            "Excel Files (*.xlsx)"
+            "Word Documents (*.docx)"
         )
 
         if not innregulering_path:
-            QMessageBox.warning(self, "Operation Cancelled", "No 'Innregulering.xlsx' file selected.")
+            QMessageBox.warning(self, "Operation Cancelled", "No 'Innregulering.docx' file selected.")
+            logger.warning("User cancelled selecting 'Innregulering.docx'")
             return
 
         # Validate selected file name
-        if os.path.basename(innregulering_path).lower() != "innregulering.xlsx":
-            QMessageBox.warning(self, "Invalid File", "Please select a file named 'Innregulering.xlsx'.")
+        if os.path.basename(innregulering_path).lower() != "innregulering.docx":
+            QMessageBox.warning(self, "Invalid File", "Please select a file named 'Innregulering.docx'.")
+            logger.warning("User selected an invalid 'Innregulering.docx' file.")
             return
 
-        # Prompt user to select 'Sjekkliste.xlsx'
+        # Prompt user to select 'Sjekkliste.docx'
         sjekkliste_path, _ = QFileDialog.getOpenFileName(
             self,
-            "Select 'Sjekkliste.xlsx' Template File",
+            "Select 'Sjekkliste.docx' Template File",
             "",
-            "Excel Files (*.xlsx)"
+            "Word Documents (*.docx)"
         )
 
         if not sjekkliste_path:
-            QMessageBox.warning(self, "Operation Cancelled", "No 'Sjekkliste.xlsx' file selected.")
+            QMessageBox.warning(self, "Operation Cancelled", "No 'Sjekkliste.docx' file selected.")
+            logger.warning("User cancelled selecting 'Sjekkliste.docx'")
             return
 
         # Validate selected file name
-        if os.path.basename(sjekkliste_path).lower() != "sjekkliste.xlsx":
-            QMessageBox.warning(self, "Invalid File", "Please select a file named 'Sjekkliste.xlsx'.")
+        if os.path.basename(sjekkliste_path).lower() != "sjekkliste.docx":
+            QMessageBox.warning(self, "Invalid File", "Please select a file named 'Sjekkliste.docx'.")
+            logger.warning("User selected an invalid 'Sjekkliste.docx' file.")
             return
 
         # Copy the selected files into the 'Template' folder
         try:
-            shutil.copy(innregulering_path, os.path.join(template_dir, "Innregulering.xlsx"))
-            shutil.copy(sjekkliste_path, os.path.join(template_dir, "Sjekkliste.xlsx"))
+            copy(innregulering_path, os.path.join(template_dir, "Innregulering.docx"))
+            copy(sjekkliste_path, os.path.join(template_dir, "Sjekkliste.docx"))
             QMessageBox.information(self, "Success", f"Templates have been set up successfully in:\n{template_dir}")
+            logger.info("Templates copied successfully.")
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to copy template files:\n{str(e)}")
+            logger.error(f"Failed to copy templates: {e}")
 
     def setup_shortcuts(self):
-        # Update shortcuts to reflect new tab order
-        shortcut1 = QShortcut(QKeySequence("Alt+1"), self)
-        shortcut1.activated.connect(lambda: self.tabs.setCurrentIndex(0))
-
-        shortcut2 = QShortcut(QKeySequence("Alt+2"), self)
-        shortcut2.activated.connect(lambda: self.tabs.setCurrentIndex(1))
-
-        shortcut3 = QShortcut(QKeySequence("Alt+3"), self)
-        shortcut3.activated.connect(lambda: self.tabs.setCurrentIndex(2))
-
-        shortcut4 = QShortcut(QKeySequence("Alt+4"), self)
-        shortcut4.activated.connect(lambda: self.tabs.setCurrentIndex(3))
+        # Shortcuts to switch tabs
+        QShortcut(QKeySequence("Alt+1"), self).activated.connect(lambda: self.tabs.setCurrentIndex(0))
+        QShortcut(QKeySequence("Alt+2"), self).activated.connect(lambda: self.tabs.setCurrentIndex(1))
+        QShortcut(QKeySequence("Alt+3"), self).activated.connect(lambda: self.tabs.setCurrentIndex(2))
+        QShortcut(QKeySequence("Alt+4"), self).activated.connect(lambda: self.tabs.setCurrentIndex(3))
 
     def closeEvent(self, event):
         self.db.close()

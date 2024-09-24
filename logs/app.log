@@ -1,0 +1,50 @@
+2024-09-24 19:08:12,262 - database - ERROR - Failed to initialize database: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-24 19:11:21,250 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 19:11:21,493 - database - INFO - Loaded all projects
+2024-09-24 19:11:21,495 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 19:11:21,496 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 19:11:21,497 - database - INFO - Loaded all projects
+2024-09-24 19:11:55,439 - __main__ - INFO - Template directory already exists at C:\Users\JohnPC\Desktop\Project Manager\templates
+2024-09-24 19:11:58,635 - __main__ - WARNING - User cancelled selecting 'Innregulering.docx'
+2024-09-24 19:12:00,060 - database - INFO - Loaded all projects
+2024-09-24 19:12:04,064 - database - INFO - Database session closed.
+2024-09-24 19:12:08,386 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 19:12:08,620 - database - INFO - Loaded all projects
+2024-09-24 19:12:08,622 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 19:12:08,624 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 19:12:08,625 - database - INFO - Loaded all projects
+2024-09-24 19:12:10,955 - database - INFO - Database session closed.
+2024-09-24 19:12:12,591 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 19:12:12,828 - database - INFO - Loaded all projects
+2024-09-24 19:12:12,830 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 19:12:12,832 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 19:12:12,833 - database - INFO - Loaded all projects
+2024-09-24 19:12:44,949 - database - INFO - Added project: qwewqe ()
+2024-09-24 19:12:44,951 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qwewqe_
+2024-09-24 19:12:46,358 - gui.add_project_dialog - INFO - Project added successfully: qwewqe ()
+2024-09-24 19:12:46,361 - database - INFO - Loaded all projects
+2024-09-24 19:12:46,363 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-24 19:13:03,848 - database - INFO - Updated project ID 1: qwewqe ()
+2024-09-24 19:13:03,849 - database - INFO - Loaded all projects
+2024-09-24 19:13:04,939 - gui.base_projects_tab - INFO - Moved project ID 1 to Active.
+2024-09-24 19:13:04,940 - database - INFO - Loaded all projects
+2024-09-24 19:13:25,839 - database - INFO - Database session closed.
+2024-09-24 19:13:38,590 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 19:13:38,830 - database - INFO - Loaded all projects
+2024-09-24 19:13:38,837 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 19:13:38,838 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 19:13:38,840 - database - INFO - Loaded all projects
+2024-09-24 19:13:40,199 - database - INFO - Database session closed.
+2024-09-24 19:13:49,678 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 19:13:49,912 - database - INFO - Loaded all projects
+2024-09-24 19:13:49,920 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 19:13:49,920 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 19:13:49,922 - database - INFO - Loaded all projects
+2024-09-24 19:13:52,639 - database - INFO - Database session closed.
+2024-09-24 19:13:58,887 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-24 19:13:59,127 - database - INFO - Loaded all projects
+2024-09-24 19:13:59,129 - database - INFO - Loaded projects with status='Completed'
+2024-09-24 19:13:59,130 - database - INFO - Loaded projects with status='Finished'
+2024-09-24 19:13:59,131 - database - INFO - Loaded all projects
+2024-09-24 19:14:02,756 - database - INFO - Database session closed.
