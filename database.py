@@ -45,6 +45,7 @@ class ProjectModel(Base):
     residential_details = Column(String, default="")
     worker = Column(String, nullable=False)
     extra = Column(String, default="")
+    main_contractor = Column(String, nullable=True)  # New Field
 
 class Database:
     def __init__(self):
@@ -70,7 +71,8 @@ class Database:
                 number_of_units=project.number_of_units,
                 residential_details=project.residential_details,
                 worker=project.worker,
-                extra=project.extra
+                extra=project.extra,
+                main_contractor=project.main_contractor  # Map New Attribute
             )
             self.session.add(project_model)
             self.session.commit()
@@ -95,6 +97,7 @@ class Database:
                 project_model.residential_details = project.residential_details
                 project_model.worker = project.worker
                 project_model.extra = project.extra
+                project_model.main_contractor = project.main_contractor  # Update New Attribute
                 self.session.commit()
                 logger.info(f"Updated project ID {project.id}: {project.name} ({project.number})")
         except Exception as e:
@@ -120,7 +123,10 @@ class Database:
             if status:
                 query = query.filter_by(status=status)
             projects = query.all()
-            logger.info(f"Loaded projects with status='{status}'" if status else "Loaded all projects")
+            if status:
+                logger.info(f"Loaded projects with status='{status}'")
+            else:
+                logger.info("Loaded all projects")
             return [Project(
                 id=p.id,
                 name=p.name,
@@ -132,7 +138,8 @@ class Database:
                 number_of_units=p.number_of_units,
                 residential_details=p.residential_details,
                 worker=p.worker,
-                extra=p.extra
+                extra=p.extra,
+                main_contractor=p.main_contractor  # Map New Attribute
             ) for p in projects]
         except Exception as e:
             logger.error(f"Failed to load projects: {e}")
@@ -154,7 +161,8 @@ class Database:
                     number_of_units=p.number_of_units,
                     residential_details=p.residential_details,
                     worker=p.worker,
-                    extra=p.extra
+                    extra=p.extra,
+                    main_contractor=p.main_contractor  # Map New Attribute
                 )
             logger.warning(f"Project ID {project_id} not found.")
             return None

@@ -20,6 +20,13 @@ def get_project_dir():
 def get_docx_temp_dir():
     return os.path.abspath(config['Paths']['docx_temp_dir'])
 
+def get_logs_dir():
+    return os.path.abspath(config['Paths']['logs_dir'])
+
+def get_main_contractors_file():
+    project_dir = get_project_dir()
+    return os.path.join(project_dir, "main_contractors.txt")
+
 def check_template_files():
     template_dir = get_template_dir()
     required_files = ["Innregulering.docx", "Sjekkliste.docx"]
@@ -39,3 +46,26 @@ def open_docx_file(filepath):
         return True, "Opened successfully."
     except Exception as e:
         return False, f"Failed to open file: {str(e)}"
+
+def load_main_contractors():
+    """
+    Loads the list of main contractors from a text file.
+    """
+    contractors_file = get_main_contractors_file()
+    if not os.path.exists(contractors_file):
+        # If the file doesn't exist, create it with default contractors
+        with open(contractors_file, 'w') as f:
+            f.write("Lindal\nLohne\n")
+    with open(contractors_file, 'r') as f:
+        contractors = [line.strip() for line in f if line.strip()]
+    return contractors
+
+def add_main_contractor(contractor_name):
+    """
+    Adds a new main contractor to the storage file.
+    """
+    contractors_file = get_main_contractors_file()
+    contractors = load_main_contractors()
+    if contractor_name not in contractors:
+        with open(contractors_file, 'a') as f:
+            f.write(f"{contractor_name}\n")

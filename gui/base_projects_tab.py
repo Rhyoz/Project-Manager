@@ -9,7 +9,7 @@ import sys
 import subprocess
 import tempfile
 from logger import get_logger
-from utils import sanitize_filename, open_docx_file
+from utils import sanitize_filename, open_docx_file, get_project_dir
 from docx import Document
 
 logger = get_logger(__name__)
@@ -45,10 +45,11 @@ class BaseProjectsTab(QWidget):
 
         # Projects Table
         self.table = QTableWidget()
-        self.table.setColumnCount(11)  # Adjust as needed
+        self.table.setColumnCount(12)  # Increased from 11 to 12 for "Main Contractor"
         self.table.setHorizontalHeaderLabels([
             "Project Name",
             "Project Number",
+            "Main Contractor",  # New Column
             "Complex",
             "Start Date",
             "End Date",
@@ -77,17 +78,18 @@ class BaseProjectsTab(QWidget):
 
         self.table.setItem(row_position, 0, QTableWidgetItem(project.name))
         self.table.setItem(row_position, 1, QTableWidgetItem(project.number))
+        self.table.setItem(row_position, 2, QTableWidgetItem(project.main_contractor if project.main_contractor else ""))
         complex_text = "Yes" if project.is_residential_complex else "No"
-        self.table.setItem(row_position, 2, QTableWidgetItem(complex_text))
-        self.table.setItem(row_position, 3, QTableWidgetItem(self.format_date(project.start_date)))
-        self.table.setItem(row_position, 4, QTableWidgetItem(self.format_date(project.end_date) if project.end_date else ""))
-        self.table.setItem(row_position, 5, QTableWidgetItem(project.status))
-        self.table.setItem(row_position, 6, QTableWidgetItem(project.worker))
-        self.table.setItem(row_position, 9, QTableWidgetItem(project.extra if project.extra else ""))  # "Extra" field
+        self.table.setItem(row_position, 3, QTableWidgetItem(complex_text))
+        self.table.setItem(row_position, 4, QTableWidgetItem(self.format_date(project.start_date)))
+        self.table.setItem(row_position, 5, QTableWidgetItem(self.format_date(project.end_date) if project.end_date else ""))
+        self.table.setItem(row_position, 6, QTableWidgetItem(project.status))
+        self.table.setItem(row_position, 7, QTableWidgetItem(project.worker))
+        self.table.setItem(row_position, 10, QTableWidgetItem(project.extra if project.extra else ""))  # "Extra" field
 
         # Apply background color based on status
         if project.status in ["Awaiting Completion", "Paused"]:
-            for col in range(11):  # Apply to entire row
+            for col in range(12):  # Apply to entire row
                 item = self.table.item(row_position, col)
                 if item:
                     item.setBackground(QColor('yellow'))
@@ -96,13 +98,13 @@ class BaseProjectsTab(QWidget):
         innregulering_btn = QPushButton("View DOCX")
         innregulering_btn.setToolTip("View Innregulering DOCX")
         innregulering_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
-        self.table.setCellWidget(row_position, 7, innregulering_btn)
+        self.table.setCellWidget(row_position, 8, innregulering_btn)
 
         # Sjekkliste Button
         sjekkliste_btn = QPushButton("View DOCX")
         sjekkliste_btn.setToolTip("View Sjekkliste DOCX")
         sjekkliste_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
-        self.table.setCellWidget(row_position, 8, sjekkliste_btn)
+        self.table.setCellWidget(row_position, 9, sjekkliste_btn)
 
         # Extra Button
         extra_btn = QPushButton("View")
@@ -111,14 +113,14 @@ class BaseProjectsTab(QWidget):
             extra_btn.setEnabled(False)  # Gray out if "Extra" is empty
         else:
             extra_btn.clicked.connect(lambda checked, p=project: self.view_extra(p))
-        self.table.setCellWidget(row_position, 9, extra_btn)
+        self.table.setCellWidget(row_position, 10, extra_btn)
 
         # Move to Active Button
         move_active_btn = QPushButton("Active")
         move_active_btn.setToolTip("Move Project to Active")
         move_active_btn.setStyleSheet("background-color: yellow")
         move_active_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
-        self.table.setCellWidget(row_position, 10, move_active_btn)
+        self.table.setCellWidget(row_position, 11, move_active_btn)
 
     def format_date(self, date_str):
         try:
@@ -127,8 +129,7 @@ class BaseProjectsTab(QWidget):
             return date_str
 
     def view_docx(self, project, doc_type):
-        from utils import get_project_dir
-        folder_name = sanitize_filename(f"{project.name}_{project.number}")
+        folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
         project_folder = os.path.join(get_project_dir(), folder_name)
         docx_file = os.path.join(project_folder, f"{doc_type}.docx")
 
@@ -174,7 +175,7 @@ class BaseProjectsTab(QWidget):
                 QMessageBox.information(self, "No Data", f"There are no {self.title.lower()} to export.")
                 return
 
-            headers = ["Project Name", "Project Number", "Complex", "Start Date", "End Date", "Status", "Worker", "Extra"]
+            headers = ["Project Name", "Project Number", "Main Contractor", "Complex", "Start Date", "End Date", "Status", "Worker", "Extra"]
             table = document.add_table(rows=1, cols=len(headers))
             table.style = 'Light List Accent 1'
 
@@ -186,12 +187,13 @@ class BaseProjectsTab(QWidget):
                 row_cells = table.add_row().cells
                 row_cells[0].text = project.name
                 row_cells[1].text = project.number
-                row_cells[2].text = "Yes" if project.is_residential_complex else "No"
-                row_cells[3].text = self.format_date(project.start_date)
-                row_cells[4].text = self.format_date(project.end_date) if project.end_date else ""
-                row_cells[5].text = project.status
-                row_cells[6].text = project.worker
-                row_cells[7].text = project.extra if project.extra else ""
+                row_cells[2].text = project.main_contractor if project.main_contractor else ""
+                row_cells[3].text = "Yes" if project.is_residential_complex else "No"
+                row_cells[4].text = self.format_date(project.start_date)
+                row_cells[5].text = self.format_date(project.end_date) if project.end_date else ""
+                row_cells[6].text = project.status
+                row_cells[7].text = project.worker
+                row_cells[8].text = project.extra if project.extra else ""
 
             document.add_paragraph(f"Generated on: {datetime.now().strftime('%d-%m-%Y')}", style='Intense Quote')
             document.save(self.docx_path)
