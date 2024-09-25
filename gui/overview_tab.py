@@ -1,4 +1,4 @@
-# gui/overview_tab.py
+# File: gui/overview_tab.py
 from gui.base_projects_tab import BaseProjectsTab
 from logger import get_logger
 

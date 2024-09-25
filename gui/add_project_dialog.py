@@ -1,4 +1,4 @@
-# gui/add_project_dialog.py
+# File: gui/add_project_dialog.py
 from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit,
     QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QWidget, QGridLayout
@@ -105,6 +105,8 @@ class AddProjectDialog(QDialog):
         self.unit_names_widget.setVisible(False)
         self.form_layout.addRow("Unit Names:", self.unit_names_widget)
 
+        self.unit_line_edits = []  # Initialize here to prevent AttributeError
+
         self.layout.addLayout(self.form_layout)
 
         # Buttons Layout
@@ -127,6 +129,7 @@ class AddProjectDialog(QDialog):
                 widget_to_remove = self.unit_names_layout.itemAt(i).widget()
                 if widget_to_remove is not None:
                     widget_to_remove.setParent(None)
+            self.unit_line_edits = []  # Reset the list
 
     def toggle_main_contractor(self, state):
         is_checked = state == Qt.Checked

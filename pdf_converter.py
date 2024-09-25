@@ -1,4 +1,4 @@
-# pdf_converter.py
+# File: pdf_converter.py
 import subprocess
 import os
 from PyQt5.QtCore import QObject, pyqtSignal
