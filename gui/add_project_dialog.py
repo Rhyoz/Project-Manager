@@ -1,7 +1,7 @@
 # gui/add_project_dialog.py
 from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit,
-    QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QTextEdit
+    QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QTextEdit, QWidget, QGridLayout
 )
 from PyQt5.QtCore import Qt, QDate, QThread
 from gui.base_projects_tab import BaseProjectsTab
@@ -77,6 +77,7 @@ class AddProjectDialog(QDialog):
         self.units_input = QSpinBox()
         self.units_input.setRange(1, 1000)
         self.units_input.setEnabled(False)
+        self.units_input.valueChanged.connect(self.generate_unit_name_fields)
         self.form_layout.addRow("Number of Units:", self.units_input)
 
         # Residential Details (New Field)
@@ -102,6 +103,13 @@ class AddProjectDialog(QDialog):
         self.main_contractor_input.lineEdit().setPlaceholderText("Select or enter Main Contractor")
         self.form_layout.addRow("Main Contractor:", self.main_contractor_input)
 
+        # Unit Names Layout
+        self.unit_names_widget = QWidget()
+        self.unit_names_layout = QVBoxLayout()
+        self.unit_names_widget.setLayout(self.unit_names_layout)
+        self.unit_names_widget.setVisible(False)
+        self.form_layout.addRow("Unit Names:", self.unit_names_widget)
+
         self.layout.addLayout(self.form_layout)
 
         # Buttons Layout
@@ -118,10 +126,31 @@ class AddProjectDialog(QDialog):
         is_checked = state == Qt.Checked
         self.units_input.setEnabled(is_checked)
         self.residential_details_input.setEnabled(is_checked)  # Enable/disable residential details input
+        self.unit_names_widget.setVisible(is_checked)
+        if not is_checked:
+            # Clear unit names fields
+            for i in reversed(range(self.unit_names_layout.count())):
+                widget_to_remove = self.unit_names_layout.itemAt(i).widget()
+                if widget_to_remove is not None:
+                    widget_to_remove.setParent(None)
 
     def toggle_main_contractor(self, state):
         is_checked = state == Qt.Checked
         self.main_contractor_input.setEnabled(is_checked)
+
+    def generate_unit_name_fields(self, value):
+        # Clear existing fields
+        for i in reversed(range(self.unit_names_layout.count())):
+            widget_to_remove = self.unit_names_layout.itemAt(i).widget()
+            if widget_to_remove is not None:
+                widget_to_remove.setParent(None)
+        # Generate new fields
+        self.unit_line_edits = []
+        for i in range(1, value + 1):
+            line_edit = QLineEdit()
+            line_edit.setText(str(i))
+            self.unit_names_layout.addWidget(line_edit)
+            self.unit_line_edits.append(line_edit)
 
     def save_project(self):
         # Gather data from input fields
@@ -132,8 +161,12 @@ class AddProjectDialog(QDialog):
         end_date = self.end_date_input.date().toPyDate() if self.end_date_input.date().isValid() else None
         status = self.status_input.currentText()
         is_residential = self.residential_checkbox.isChecked()
-        units = self.units_input.value() if is_residential else 0
-        residential_details = self.residential_details_input.toPlainText().strip() if is_residential else ""
+        units = []
+        if is_residential:
+            for line_edit in self.unit_line_edits:
+                unit_name = line_edit.text().strip()
+                if unit_name:
+                    units.append(unit_name)
         extra = self.extra_input.text().strip()
 
         # Main Contractor
@@ -148,9 +181,16 @@ class AddProjectDialog(QDialog):
             QMessageBox.warning(self, "Validation Error", "End Date cannot be earlier than Start Date.")
             return
 
-        if is_residential and not residential_details:
-            QMessageBox.warning(self, "Validation Error", "Residential details must be provided for a residential complex.")
-            return
+        if is_residential:
+            if not units:
+                QMessageBox.warning(self, "Validation Error", "At least one unit name must be provided for a residential complex.")
+                return
+            if len(units) != self.units_input.value():
+                QMessageBox.warning(self, "Validation Error", "Number of unit names does not match the number of units specified.")
+                return
+            if len(units) != len(set(units)):
+                QMessageBox.warning(self, "Validation Error", "Unit names must be unique.")
+                return
 
         if main_contractor:
             if main_contractor not in load_main_contractors():
@@ -181,11 +221,12 @@ class AddProjectDialog(QDialog):
             end_date=end_date.strftime("%Y-%m-%d") if end_date else None,
             status=status,
             is_residential_complex=is_residential,
-            number_of_units=units,
+            number_of_units=self.units_input.value() if is_residential else 0,
             worker=worker,
-            residential_details=residential_details,
+            residential_details=self.residential_details_input.toPlainText().strip() if is_residential else "",
             extra=extra,
-            main_contractor=main_contractor  # Set New Attribute
+            main_contractor=main_contractor,  # Set New Attribute
+            units=units  # Set Unit Names
         )
 
         # Add project to database

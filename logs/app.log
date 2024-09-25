@@ -108,3 +108,63 @@ FROM projects]
 2024-09-24 20:25:20,465 - database - INFO - Loaded projects with status='Finished'
 2024-09-24 20:25:20,467 - database - INFO - Loaded all projects
 2024-09-24 20:25:23,032 - database - INFO - Database session closed.
+2024-09-25 15:58:48,654 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 15:58:48,939 - database - INFO - Loaded all projects
+2024-09-25 15:58:48,942 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 15:58:48,943 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 15:58:48,944 - database - INFO - Loaded all projects
+2024-09-25 16:01:25,782 - database - INFO - Added project: qwe ()
+2024-09-25 16:01:25,784 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qwe_
+2024-09-25 16:01:25,803 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qwe_
+2024-09-25 16:01:26,940 - gui.add_project_dialog - INFO - Project added successfully: qwe ()
+2024-09-25 16:01:26,944 - database - INFO - Loaded all projects
+2024-09-25 16:01:26,948 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 16:02:05,237 - database - INFO - Database session closed.
+2024-09-25 16:03:29,114 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 16:03:29,343 - database - INFO - Loaded all projects
+2024-09-25 16:03:29,351 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 16:03:29,353 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 16:03:29,354 - database - INFO - Loaded all projects
+2024-09-25 16:25:02,346 - database - INFO - Database session closed.
+2024-09-25 17:01:38,562 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:01:38,809 - database - INFO - Loaded all projects
+2024-09-25 17:01:38,814 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:01:38,815 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:01:38,816 - database - INFO - Loaded all projects
+2024-09-25 17:02:01,851 - database - INFO - Added project: qweqweqwe ()
+2024-09-25 17:02:01,852 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqweqwe_
+2024-09-25 17:02:01,873 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqweqwe_
+2024-09-25 17:02:02,825 - gui.add_project_dialog - INFO - Project added successfully: qweqweqwe ()
+2024-09-25 17:02:02,829 - database - INFO - Loaded all projects
+2024-09-25 17:02:02,833 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:03:07,242 - database - INFO - Database session closed.
+2024-09-25 17:03:23,930 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:03:24,162 - database - INFO - Loaded all projects
+2024-09-25 17:03:24,163 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:03:24,165 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:03:24,165 - database - INFO - Loaded all projects
+2024-09-25 17:03:51,141 - database - INFO - Added project: wqwe ()
+2024-09-25 17:03:51,142 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\wqwe_
+2024-09-25 17:03:51,143 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\wqwe_
+2024-09-25 17:03:52,846 - gui.add_project_dialog - INFO - Project added successfully: wqwe ()
+2024-09-25 17:03:52,850 - database - INFO - Loaded all projects
+2024-09-25 17:03:52,855 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:04:41,046 - database - INFO - Added project: asdfsadf ()
+2024-09-25 17:04:41,047 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\asdfsadf_
+2024-09-25 17:04:41,048 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\asdfsadf_
+2024-09-25 17:04:41,880 - gui.add_project_dialog - INFO - Project added successfully: asdfsadf ()
+2024-09-25 17:04:41,884 - database - INFO - Loaded all projects
+2024-09-25 17:04:41,886 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:05:16,052 - database - INFO - Database session closed.
+2024-09-25 17:16:49,647 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:16:49,879 - database - INFO - Loaded all projects
+2024-09-25 17:16:49,893 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:16:49,895 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:16:49,896 - database - INFO - Loaded all projects
+2024-09-25 17:17:58,427 - database - INFO - Added project: qweqweqwewq ()
+2024-09-25 17:17:58,428 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqweqwewq_
+2024-09-25 17:17:58,430 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqweqwewq_
+2024-09-25 17:17:59,600 - gui.add_project_dialog - INFO - Project added successfully: qweqweqwewq ()
+2024-09-25 17:17:59,604 - database - INFO - Loaded all projects
+2024-09-25 17:17:59,631 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:18:28,936 - database - INFO - Database session closed.

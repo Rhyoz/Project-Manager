@@ -1,8 +1,8 @@
 # database.py
-from sqlalchemy import create_engine, Column, Integer, String, Boolean
+from sqlalchemy import create_engine, Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-from project import Project
+from sqlalchemy.orm import sessionmaker, relationship
+from project import Project, Unit
 from logger import get_logger
 import os
 from configparser import ConfigParser
@@ -46,6 +46,18 @@ class ProjectModel(Base):
     worker = Column(String, nullable=False)
     extra = Column(String, default="")
     main_contractor = Column(String, nullable=True)  # New Field
+    
+    units = relationship("UnitModel", back_populates="project", cascade="all, delete-orphan")
+
+class UnitModel(Base):
+    __tablename__ = 'units'
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    project_id = Column(Integer, ForeignKey('projects.id'))
+    name = Column(String, nullable=False)
+    is_done = Column(Boolean, default=False)
+    
+    project = relationship("ProjectModel", back_populates="units")
 
 class Database:
     def __init__(self):
@@ -74,6 +86,11 @@ class Database:
                 extra=project.extra,
                 main_contractor=project.main_contractor  # Map New Attribute
             )
+            # Add units if residential complex
+            if project.is_residential_complex and project.units:
+                for unit_name in project.units:
+                    unit_model = UnitModel(name=unit_name)
+                    project_model.units.append(unit_model)
             self.session.add(project_model)
             self.session.commit()
             logger.info(f"Added project: {project.name} ({project.number})")
@@ -98,6 +115,17 @@ class Database:
                 project_model.worker = project.worker
                 project_model.extra = project.extra
                 project_model.main_contractor = project.main_contractor  # Update New Attribute
+                # Update units
+                if project.is_residential_complex:
+                    # Clear existing units
+                    project_model.units.clear()
+                    # Add new units
+                    if project.units:
+                        for unit_name in project.units:
+                            unit_model = UnitModel(name=unit_name)
+                            project_model.units.append(unit_model)
+                else:
+                    project_model.units = []
                 self.session.commit()
                 logger.info(f"Updated project ID {project.id}: {project.name} ({project.number})")
         except Exception as e:
@@ -139,7 +167,8 @@ class Database:
                 residential_details=p.residential_details,
                 worker=p.worker,
                 extra=p.extra,
-                main_contractor=p.main_contractor  # Map New Attribute
+                main_contractor=p.main_contractor,
+                units=[unit.name for unit in p.units]  # Map Units
             ) for p in projects]
         except Exception as e:
             logger.error(f"Failed to load projects: {e}")
@@ -162,12 +191,25 @@ class Database:
                     residential_details=p.residential_details,
                     worker=p.worker,
                     extra=p.extra,
-                    main_contractor=p.main_contractor  # Map New Attribute
+                    main_contractor=p.main_contractor,
+                    units=[unit.name for unit in p.units]
                 )
             logger.warning(f"Project ID {project_id} not found.")
             return None
         except Exception as e:
             logger.error(f"Failed to retrieve project ID {project_id}: {e}")
+            raise
+
+    def toggle_unit_status(self, project_id: int, unit_id: int, is_done: bool):
+        try:
+            unit = self.session.query(UnitModel).filter_by(id=unit_id, project_id=project_id).first()
+            if unit:
+                unit.is_done = is_done
+                self.session.commit()
+                logger.info(f"Unit ID {unit_id} in Project ID {project_id} marked as {'done' if is_done else 'undone'}.")
+        except Exception as e:
+            logger.error(f"Failed to toggle unit status for Unit ID {unit_id} in Project ID {project_id}: {e}")
+            self.session.rollback()
             raise
 
     def close(self):
