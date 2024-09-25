@@ -1553,3 +1553,4 @@ FROM projects]
 2024-09-25 20:15:22,090 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
 2024-09-25 20:15:22,090 - gui.base_projects_tab - DEBUG - Added project 'aaaa' with status 'Active' to the tree.
 2024-09-25 20:15:22,090 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-09-25 20:16:32,341 - database - INFO - Database session closed.
