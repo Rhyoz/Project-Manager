@@ -1,7 +1,7 @@
 # gui/add_project_dialog.py
 from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit,
-    QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QTextEdit, QWidget, QGridLayout
+    QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QWidget, QGridLayout
 )
 from PyQt5.QtCore import Qt, QDate, QThread
 from gui.base_projects_tab import BaseProjectsTab
@@ -65,7 +65,8 @@ class AddProjectDialog(QDialog):
 
         # Status Selection
         self.status_input = QComboBox()
-        self.status_input.addItems(["Active", "Awaiting Completion", "Paused", "Completed", "Finished"])
+        self.status_input.addItems(["Active", "Awaiting Completion", "Paused", "Finished"])  # Removed "Completed"
+        self.status_input.setCurrentText("Active")  # Default to "Active"
         self.form_layout.addRow("Status:", self.status_input)
 
         # Residential Complex Checkbox
@@ -79,12 +80,6 @@ class AddProjectDialog(QDialog):
         self.units_input.setEnabled(False)
         self.units_input.valueChanged.connect(self.generate_unit_name_fields)
         self.form_layout.addRow("Number of Units:", self.units_input)
-
-        # Residential Details (New Field)
-        self.residential_details_input = QTextEdit()
-        self.residential_details_input.setPlaceholderText("Enter residential details here...")
-        self.residential_details_input.setEnabled(False)  # Enabled only if Residential Complex is checked
-        self.form_layout.addRow("Residential Details:", self.residential_details_input)
 
         # Extra Field
         self.extra_input = QLineEdit()
@@ -125,7 +120,6 @@ class AddProjectDialog(QDialog):
     def toggle_units(self, state):
         is_checked = state == Qt.Checked
         self.units_input.setEnabled(is_checked)
-        self.residential_details_input.setEnabled(is_checked)  # Enable/disable residential details input
         self.unit_names_widget.setVisible(is_checked)
         if not is_checked:
             # Clear unit names fields
@@ -158,7 +152,8 @@ class AddProjectDialog(QDialog):
         number = self.number_input.text().strip()
         worker = self.worker_input.currentText().strip()
         start_date = self.start_date_input.date().toPyDate()
-        end_date = self.end_date_input.date().toPyDate() if self.end_date_input.date().isValid() else None
+        # Ensure end_date is None upon creation
+        end_date = None  # Always None when adding a new project
         status = self.status_input.currentText()
         is_residential = self.residential_checkbox.isChecked()
         units = []
@@ -175,10 +170,6 @@ class AddProjectDialog(QDialog):
         # Validation
         if not name and not number:
             QMessageBox.warning(self, "Validation Error", "At least one of Project Name or Project Number must be provided.")
-            return
-
-        if end_date and end_date < start_date:
-            QMessageBox.warning(self, "Validation Error", "End Date cannot be earlier than Start Date.")
             return
 
         if is_residential:
@@ -213,17 +204,16 @@ class AddProjectDialog(QDialog):
                         logger.error(f"Failed to add main contractor '{main_contractor}': {e}")
                         return
 
-        # Create Project instance without 'id'
+        # Create Project instance without 'id' and ensure end_date is None
         project = Project(
             name=name,
             number=number,
             start_date=start_date.strftime("%Y-%m-%d"),
-            end_date=end_date.strftime("%Y-%m-%d") if end_date else None,
+            end_date=None,  # Explicitly set to None
             status=status,
             is_residential_complex=is_residential,
             number_of_units=self.units_input.value() if is_residential else 0,
             worker=worker,
-            residential_details=self.residential_details_input.toPlainText().strip() if is_residential else "",
             extra=extra,
             main_contractor=main_contractor,  # Set New Attribute
             units=units  # Set Unit Names
@@ -232,8 +222,10 @@ class AddProjectDialog(QDialog):
         # Add project to database
         try:
             project_id = self.db.add_project(project)
+            logger.info(f"Project '{project.name}' with ID {project_id} added successfully. Residential Complex: {is_residential}")
         except Exception as e:
             QMessageBox.critical(self, "Database Error", f"Failed to add project: {str(e)}")
+            logger.error(f"Failed to add project '{project.name}': {e}")
             return
 
         # Create Project Folder

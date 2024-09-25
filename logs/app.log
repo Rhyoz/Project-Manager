@@ -168,3 +168,693 @@ FROM projects]
 2024-09-25 17:17:59,604 - database - INFO - Loaded all projects
 2024-09-25 17:17:59,631 - gui.detailed_view_tab - INFO - New project added via dialog.
 2024-09-25 17:18:28,936 - database - INFO - Database session closed.
+2024-09-25 17:21:49,622 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:21:49,845 - database - INFO - Loaded all projects
+2024-09-25 17:21:49,847 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:21:49,848 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:21:49,849 - database - INFO - Loaded all projects
+2024-09-25 17:22:53,771 - database - INFO - Database session closed.
+2024-09-25 17:24:17,952 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:24:18,180 - database - INFO - Loaded all projects
+2024-09-25 17:24:18,182 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:24:18,183 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:24:18,184 - database - INFO - Loaded all projects
+2024-09-25 17:24:47,212 - database - INFO - Database session closed.
+2024-09-25 17:25:42,066 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:25:42,290 - database - INFO - Loaded all projects
+2024-09-25 17:25:42,291 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:25:42,292 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:25:42,293 - database - INFO - Loaded all projects
+2024-09-25 17:29:17,891 - database - INFO - Added project: asdfasdf ()
+2024-09-25 17:29:17,893 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\asdfasdf_
+2024-09-25 17:29:17,894 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\asdfasdf_
+2024-09-25 17:29:18,618 - gui.add_project_dialog - INFO - Project added successfully: asdfasdf ()
+2024-09-25 17:29:18,622 - database - INFO - Loaded all projects
+2024-09-25 17:29:18,628 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:32:52,824 - database - INFO - Updated project ID 1: asdfasdf ()
+2024-09-25 17:32:52,825 - database - INFO - Loaded all projects
+2024-09-25 17:32:53,909 - gui.base_projects_tab - INFO - Moved project ID 1 to Completed.
+2024-09-25 17:33:07,290 - database - INFO - Updated project ID 1: asdfasdf ()
+2024-09-25 17:33:07,290 - database - INFO - Loaded all projects
+2024-09-25 17:33:09,075 - gui.base_projects_tab - INFO - Moved project ID 1 to Active.
+2024-09-25 17:33:17,158 - database - INFO - Database session closed.
+2024-09-25 17:37:34,912 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:38:00,178 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:46:36,056 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:46:36,279 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:46:36,281 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:46:36,282 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:46:36,284 - database - INFO - Loaded all projects
+2024-09-25 17:47:03,406 - database - INFO - Added project: aasde ()
+2024-09-25 17:47:03,406 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:47:03,413 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:03,414 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:03,415 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:03,415 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:03,415 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:03,416 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:03,416 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:03,417 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:03,417 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:03,417 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:47:03,418 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:47:03,418 - database - INFO - Loaded all projects
+2024-09-25 17:47:03,419 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:03,420 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:03,421 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:03,421 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:03,422 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:03,422 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:03,422 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:03,423 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:03,423 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:03,423 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_
+2024-09-25 17:47:03,425 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_
+2024-09-25 17:47:04,519 - gui.add_project_dialog - INFO - Project added successfully: aasde ()
+2024-09-25 17:47:04,523 - database - INFO - Loaded all projects
+2024-09-25 17:47:04,525 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:04,526 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:04,526 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:47:04,526 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:04,527 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:04,528 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:47:04,528 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:04,528 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:04,529 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:47:04,529 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:48:02,285 - database - INFO - Updated project ID 1: aasde ()
+2024-09-25 17:48:02,286 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:48:02,286 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:48:02,288 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,289 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,290 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,290 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,290 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,291 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,291 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:02,292 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:02,292 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:02,293 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:48:02,293 - database - INFO - Loaded all projects
+2024-09-25 17:48:02,295 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,295 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,296 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,296 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,297 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,297 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,297 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:02,298 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:02,299 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:02,299 - database - INFO - Loaded all projects
+2024-09-25 17:48:02,301 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,302 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,302 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:02,302 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,303 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,304 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:02,304 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:02,304 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:02,305 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:03,636 - gui.base_projects_tab - INFO - Moved project ID 1 to Completed.
+2024-09-25 17:48:09,944 - database - INFO - Updated project ID 1: aasde ()
+2024-09-25 17:48:09,944 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:48:09,946 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:09,947 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:09,947 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:09,948 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:09,948 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:09,949 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:09,949 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:09,949 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:09,950 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:09,950 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:48:09,951 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:48:09,951 - database - INFO - Loaded all projects
+2024-09-25 17:48:09,953 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:09,953 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:09,954 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:09,954 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:09,955 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:09,956 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:09,956 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:09,956 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:09,957 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:09,957 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:48:10,358 - gui.base_projects_tab - INFO - Moved project ID 1 to Active.
+2024-09-25 17:48:14,519 - database - INFO - Updated project ID 1: aasde ()
+2024-09-25 17:48:14,519 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:48:14,519 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:48:14,522 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:14,522 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:14,523 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:14,523 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:14,524 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:14,524 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:14,524 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:14,525 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:14,525 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:14,526 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:48:14,526 - database - INFO - Loaded all projects
+2024-09-25 17:48:14,528 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:14,528 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:14,529 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:14,529 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:14,530 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:14,530 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:14,530 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:14,532 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:14,532 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:14,532 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:48:15,236 - gui.base_projects_tab - INFO - Moved project ID 1 to Completed.
+2024-09-25 17:48:33,671 - database - INFO - Added project: sadfasdf ()
+2024-09-25 17:48:33,672 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:48:33,673 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:48:33,676 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:33,676 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:33,677 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:33,677 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:33,677 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:33,678 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:33,678 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:33,679 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:33,679 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:33,680 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:48:33,680 - database - INFO - Loaded all projects
+2024-09-25 17:48:33,682 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:33,683 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:33,683 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:33,683 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:33,684 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:33,685 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:33,685 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:33,685 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:33,686 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:33,686 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\sadfasdf_
+2024-09-25 17:48:33,687 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\sadfasdf_
+2024-09-25 17:48:34,732 - gui.add_project_dialog - INFO - Project added successfully: sadfasdf ()
+2024-09-25 17:48:34,736 - database - INFO - Loaded all projects
+2024-09-25 17:48:34,739 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:34,739 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:34,740 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:48:34,740 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:34,741 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:34,741 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:48:34,741 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:34,742 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:34,743 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:48:34,743 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:49:08,498 - database - INFO - Added project: aaaaaaaa ()
+2024-09-25 17:49:08,499 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:49:08,500 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:49:08,502 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:08,503 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:08,503 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:08,504 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:08,504 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:08,505 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:08,505 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:08,505 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:08,506 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:08,506 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:49:08,507 - database - INFO - Loaded all projects
+2024-09-25 17:49:08,509 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:08,509 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:08,510 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:08,510 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:08,511 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:08,511 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:08,511 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:08,512 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:08,513 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:08,513 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaaaa_
+2024-09-25 17:49:08,514 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaaaa_
+2024-09-25 17:49:09,571 - gui.add_project_dialog - INFO - Project added successfully: aaaaaaaa ()
+2024-09-25 17:49:09,574 - database - INFO - Loaded all projects
+2024-09-25 17:49:09,577 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:09,578 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:09,579 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:09,579 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:09,579 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:09,580 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:09,580 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:09,580 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:09,581 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:09,582 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:49:34,530 - database - INFO - Added project: aaaaaassssss ()
+2024-09-25 17:49:34,530 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:49:34,531 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:49:34,534 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:34,534 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:34,535 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:34,535 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:34,536 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:34,536 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:34,536 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:34,537 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:34,538 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:34,538 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:49:34,539 - database - INFO - Loaded all projects
+2024-09-25 17:49:34,541 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:34,542 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:34,542 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:34,542 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:34,543 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:34,544 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:34,544 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:34,544 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:34,545 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:34,545 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaassssss_
+2024-09-25 17:49:34,547 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaassssss_
+2024-09-25 17:49:35,553 - gui.add_project_dialog - INFO - Project added successfully: aaaaaassssss ()
+2024-09-25 17:49:35,557 - database - INFO - Loaded all projects
+2024-09-25 17:49:35,560 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:35,560 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:35,561 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:35,561 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:35,562 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:35,562 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:35,562 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:35,563 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:35,564 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:35,564 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:49:48,761 - database - INFO - Database session closed.
+2024-09-25 17:49:51,672 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:49:51,900 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:49:51,905 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:49:51,912 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:51,913 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:51,913 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:51,913 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:51,914 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:51,915 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:51,915 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:51,915 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:51,916 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:51,917 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:49:51,919 - database - INFO - Loaded all projects
+2024-09-25 17:49:51,921 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:51,922 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:51,923 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:49:51,923 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:51,923 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:51,924 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:49:51,924 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:51,925 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:49:51,926 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:13,029 - database - INFO - Added project: qqqqqqqqq ()
+2024-09-25 17:50:13,029 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:50:13,030 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:50:13,033 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:13,033 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:13,034 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:13,034 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:13,035 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:13,035 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:13,035 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:13,036 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:13,036 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:13,037 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:50:13,039 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:13,040 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:13,041 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:13,041 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:13,042 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:13,042 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:13,043 - database - INFO - Loaded all projects
+2024-09-25 17:50:13,046 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:13,046 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:13,047 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:13,047 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:13,047 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:13,048 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:13,048 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:13,049 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:13,049 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:13,052 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:13,053 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:13,054 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:13,054 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:13,054 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:13,055 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:13,055 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_
+2024-09-25 17:50:13,056 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_
+2024-09-25 17:50:14,307 - gui.add_project_dialog - INFO - Project added successfully: qqqqqqqqq ()
+2024-09-25 17:50:14,311 - database - INFO - Loaded all projects
+2024-09-25 17:50:14,314 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:14,315 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:14,315 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:14,316 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:14,316 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:14,317 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:14,317 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:14,317 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:14,318 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:14,321 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:14,321 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:14,322 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:14,322 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:14,323 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:14,323 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:14,323 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:50:31,594 - database - INFO - Added project: wwwwwwww ()
+2024-09-25 17:50:31,594 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:50:31,596 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:50:31,598 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:31,598 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:31,599 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:31,599 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:31,600 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:31,600 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:31,601 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:31,601 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:31,602 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:31,603 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:50:31,605 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:31,606 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:31,606 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:31,606 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:31,607 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:31,607 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:31,608 - database - INFO - Loaded all projects
+2024-09-25 17:50:31,611 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:31,611 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:31,612 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:31,612 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:31,613 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:31,613 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:31,613 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:31,614 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:31,615 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:31,618 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:31,618 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:31,619 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:31,619 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:31,620 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:31,620 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:31,621 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\wwwwwwww_
+2024-09-25 17:50:31,622 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\wwwwwwww_
+2024-09-25 17:50:32,516 - gui.add_project_dialog - INFO - Project added successfully: wwwwwwww ()
+2024-09-25 17:50:32,520 - database - INFO - Loaded all projects
+2024-09-25 17:50:32,523 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:32,524 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:32,524 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\ein
+2024-09-25 17:50:32,524 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:32,525 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:32,526 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\to
+2024-09-25 17:50:32,526 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:32,526 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:32,527 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aasde_\tri
+2024-09-25 17:50:32,530 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:32,530 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:32,531 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\1
+2024-09-25 17:50:32,531 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:32,532 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:32,532 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqqqqqqq_\2
+2024-09-25 17:50:32,533 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 17:50:37,790 - database - INFO - Database session closed.
+2024-09-25 17:57:53,367 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 17:57:53,603 - database - INFO - Loaded projects with status='Active'
+2024-09-25 17:57:53,605 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 17:57:53,606 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 17:57:53,607 - database - INFO - Loaded all projects
+2024-09-25 17:57:57,726 - database - INFO - Database session closed.
+2024-09-25 18:00:17,038 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 18:00:17,265 - database - INFO - Loaded projects with status='Active'
+2024-09-25 18:00:17,267 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 18:00:17,268 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 18:00:17,270 - database - INFO - Loaded all projects
+2024-09-25 18:00:28,845 - database - INFO - Added project: qqq ()
+2024-09-25 18:00:28,846 - database - INFO - Loaded projects with status='Active'
+2024-09-25 18:00:28,849 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 18:00:28,849 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 18:00:28,850 - database - INFO - Loaded all projects
+2024-09-25 18:00:28,850 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqq_
+2024-09-25 18:00:28,851 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqq_
+2024-09-25 18:00:29,818 - gui.add_project_dialog - INFO - Project added successfully: qqq ()
+2024-09-25 18:00:29,821 - database - INFO - Loaded all projects
+2024-09-25 18:00:29,822 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 18:00:41,498 - database - INFO - Added project: qqqwww ()
+2024-09-25 18:00:41,499 - database - INFO - Loaded projects with status='Active'
+2024-09-25 18:00:41,503 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:41,504 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:41,504 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:41,505 - database - INFO - Loaded projects with status='Completed'
+2024-09-25 18:00:41,505 - database - INFO - Loaded projects with status='Finished'
+2024-09-25 18:00:41,505 - database - INFO - Loaded all projects
+2024-09-25 18:00:41,507 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:41,508 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:41,508 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:41,508 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_
+2024-09-25 18:00:41,510 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_
+2024-09-25 18:00:45,931 - gui.add_project_dialog - INFO - Project added successfully: qqqwww ()
+2024-09-25 18:00:45,935 - database - INFO - Loaded all projects
+2024-09-25 18:00:45,937 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:45,938 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:45,939 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qqqwww_\1
+2024-09-25 18:00:45,939 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 18:05:37,187 - database - INFO - Database session closed.
+2024-09-25 18:39:12,546 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 18:40:54,145 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 18:47:52,803 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 18:48:19,279 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 18:52:06,283 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 18:52:06,517 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-25 18:52:06,517 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-09-25 18:52:06,519 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-25 18:52:06,519 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-25 18:52:06,520 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:52:06,520 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:52:06,521 - database - INFO - Loaded all projects. Count: 0
+2024-09-25 18:52:06,521 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Detailed Project View' tab.
+2024-09-25 18:52:06,522 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-09-25 18:52:20,496 - database - INFO - Added project: qwe () with ID 1
+2024-09-25 18:52:20,496 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-25 18:52:20,497 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-09-25 18:52:20,499 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:52:20,499 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-25 18:52:20,499 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-25 18:52:20,500 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:52:20,500 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:52:20,500 - database - INFO - Loaded all projects. Count: 1
+2024-09-25 18:52:20,500 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-25 18:52:20,500 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:52:20,500 - gui.add_project_dialog - INFO - Project 'qwe' with ID 1 added successfully. Residential Complex: False
+2024-09-25 18:52:20,500 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qwe_
+2024-09-25 18:52:20,502 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qwe_
+2024-09-25 18:52:22,143 - gui.add_project_dialog - INFO - Project added successfully: qwe ()
+2024-09-25 18:52:22,146 - database - INFO - Loaded all projects. Count: 1
+2024-09-25 18:52:22,147 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-25 18:52:22,147 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:52:22,147 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 18:52:50,577 - database - INFO - Added project: qweqwe () with ID 2
+2024-09-25 18:52:50,577 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-25 18:52:50,578 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-09-25 18:52:50,578 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:52:50,578 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-25 18:52:50,578 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-25 18:52:50,579 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:52:50,579 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:52:50,579 - database - INFO - Loaded all projects. Count: 2
+2024-09-25 18:52:50,579 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-25 18:52:50,580 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:52:50,584 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:52:50,584 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:52:50,585 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:52:50,585 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:52:50,586 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:52:50,586 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:52:50,587 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Awaiting Completion' to the tree.
+2024-09-25 18:52:50,587 - gui.add_project_dialog - INFO - Project 'qweqwe' with ID 2 added successfully. Residential Complex: True
+2024-09-25 18:52:50,587 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_
+2024-09-25 18:52:50,588 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_
+2024-09-25 18:52:53,014 - gui.add_project_dialog - INFO - Project added successfully: qweqwe ()
+2024-09-25 18:52:53,018 - database - INFO - Loaded all projects. Count: 2
+2024-09-25 18:52:53,019 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-25 18:52:53,019 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:52:53,021 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:52:53,021 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:52:53,022 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:52:53,022 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:52:53,022 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:52:53,023 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:52:53,023 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Awaiting Completion' to the tree.
+2024-09-25 18:52:53,023 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 18:53:14,347 - database - INFO - Updated project ID 2: qweqwe ()
+2024-09-25 18:53:14,347 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-25 18:53:14,348 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-09-25 18:53:14,348 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:14,349 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,350 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,351 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,351 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,351 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,352 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,352 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Active' to the tree.
+2024-09-25 18:53:14,352 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-25 18:53:14,352 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-25 18:53:14,353 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:53:14,353 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:53:14,353 - database - INFO - Loaded all projects. Count: 2
+2024-09-25 18:53:14,353 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-25 18:53:14,354 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:14,355 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,356 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,356 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,356 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,357 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,357 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,357 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Active' to the tree.
+2024-09-25 18:53:14,358 - database - INFO - Loaded all projects. Count: 2
+2024-09-25 18:53:14,358 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-25 18:53:14,358 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:14,360 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,361 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,361 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:14,361 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,362 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,362 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:14,362 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Active' to the tree.
+2024-09-25 18:53:14,988 - gui.base_projects_tab - INFO - Moved project ID 2 to Active.
+2024-09-25 18:53:21,099 - database - INFO - Updated project ID 2: qweqwe ()
+2024-09-25 18:53:21,100 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-25 18:53:21,100 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-09-25 18:53:21,100 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:21,100 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-25 18:53:21,101 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-09-25 18:53:21,102 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:21,103 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:21,104 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:21,104 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:21,105 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:21,105 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:21,105 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Completed' to the tree.
+2024-09-25 18:53:21,105 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:53:21,106 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:53:21,106 - database - INFO - Loaded all projects. Count: 2
+2024-09-25 18:53:21,106 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-25 18:53:21,106 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:21,108 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:21,108 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:21,109 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:21,109 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:21,110 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:21,110 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:21,110 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Completed' to the tree.
+2024-09-25 18:53:21,111 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-25 18:53:21,111 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-09-25 18:53:21,111 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:22,108 - gui.base_projects_tab - INFO - Moved project ID 2 to Completed with end_date set to 2024-09-25.
+2024-09-25 18:53:40,121 - database - INFO - Added project: ffff () with ID 3
+2024-09-25 18:53:40,121 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-25 18:53:40,122 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-09-25 18:53:40,122 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:40,122 - gui.base_projects_tab - DEBUG - Added non-residential project 'ffff' with status 'Active' to the tree.
+2024-09-25 18:53:40,123 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-25 18:53:40,123 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-09-25 18:53:40,125 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:40,125 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:40,126 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:40,126 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:40,126 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:40,127 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:40,127 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Completed' to the tree.
+2024-09-25 18:53:40,127 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:53:40,127 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:53:40,128 - database - INFO - Loaded all projects. Count: 3
+2024-09-25 18:53:40,128 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Detailed Project View' tab.
+2024-09-25 18:53:40,128 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:40,130 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:40,131 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:40,132 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:40,132 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:40,132 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:40,133 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:40,133 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Completed' to the tree.
+2024-09-25 18:53:40,134 - gui.base_projects_tab - DEBUG - Added non-residential project 'ffff' with status 'Active' to the tree.
+2024-09-25 18:53:40,134 - gui.add_project_dialog - INFO - Project 'ffff' with ID 3 added successfully. Residential Complex: False
+2024-09-25 18:53:40,134 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\ffff_
+2024-09-25 18:53:40,135 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\ffff_
+2024-09-25 18:53:41,778 - gui.add_project_dialog - INFO - Project added successfully: ffff ()
+2024-09-25 18:53:41,782 - database - INFO - Loaded all projects. Count: 3
+2024-09-25 18:53:41,783 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Detailed Project View' tab.
+2024-09-25 18:53:41,783 - gui.base_projects_tab - DEBUG - Added non-residential project 'qwe' with status 'Active' to the tree.
+2024-09-25 18:53:41,785 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:41,785 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:41,786 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\1
+2024-09-25 18:53:41,786 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:41,787 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:41,788 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\qweqwe_\2
+2024-09-25 18:53:41,788 - gui.base_projects_tab - DEBUG - Added residential project 'qweqwe' with status 'Completed' to the tree.
+2024-09-25 18:53:41,788 - gui.base_projects_tab - DEBUG - Added non-residential project 'ffff' with status 'Active' to the tree.
+2024-09-25 18:53:41,788 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 18:54:00,864 - database - INFO - Database session closed.
+2024-09-25 18:54:11,256 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 18:54:11,482 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-25 18:54:11,482 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-09-25 18:54:11,483 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-25 18:54:11,483 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-25 18:54:11,484 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:54:11,484 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:54:11,486 - database - INFO - Loaded all projects. Count: 0
+2024-09-25 18:54:11,486 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Detailed Project View' tab.
+2024-09-25 18:54:11,486 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-09-25 18:54:20,814 - database - INFO - Added project: aaaa () with ID 1
+2024-09-25 18:54:20,814 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-25 18:54:20,815 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-09-25 18:54:20,817 - gui.base_projects_tab - DEBUG - Added non-residential project 'aaaa' with status 'Active' to the tree.
+2024-09-25 18:54:20,817 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-25 18:54:20,818 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-25 18:54:20,818 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:54:20,818 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:54:20,818 - database - INFO - Loaded all projects. Count: 1
+2024-09-25 18:54:20,818 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-25 18:54:20,818 - gui.base_projects_tab - DEBUG - Added non-residential project 'aaaa' with status 'Active' to the tree.
+2024-09-25 18:54:20,818 - gui.add_project_dialog - INFO - Project 'aaaa' with ID 1 added successfully. Residential Complex: False
+2024-09-25 18:54:20,819 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_
+2024-09-25 18:54:20,820 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_
+2024-09-25 18:54:21,879 - gui.add_project_dialog - INFO - Project added successfully: aaaa ()
+2024-09-25 18:54:21,883 - database - INFO - Loaded all projects. Count: 1
+2024-09-25 18:54:21,883 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-25 18:54:21,884 - gui.base_projects_tab - DEBUG - Added non-residential project 'aaaa' with status 'Active' to the tree.
+2024-09-25 18:54:21,884 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 18:54:38,127 - database - INFO - Added project: bbbb () with ID 2
+2024-09-25 18:54:38,128 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-25 18:54:38,128 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-09-25 18:54:38,128 - gui.base_projects_tab - DEBUG - Added non-residential project 'aaaa' with status 'Active' to the tree.
+2024-09-25 18:54:38,133 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:38,133 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:38,134 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:38,134 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:38,135 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:38,135 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:38,135 - gui.base_projects_tab - DEBUG - Added residential project 'bbbb' with status 'Active' to the tree.
+2024-09-25 18:54:38,136 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-25 18:54:38,136 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-25 18:54:38,136 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 18:54:38,136 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 18:54:38,136 - database - INFO - Loaded all projects. Count: 2
+2024-09-25 18:54:38,137 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-25 18:54:38,137 - gui.base_projects_tab - DEBUG - Added non-residential project 'aaaa' with status 'Active' to the tree.
+2024-09-25 18:54:38,139 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:38,139 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:38,140 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:38,140 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:38,141 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:38,141 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:38,141 - gui.base_projects_tab - DEBUG - Added residential project 'bbbb' with status 'Active' to the tree.
+2024-09-25 18:54:38,141 - gui.add_project_dialog - INFO - Project 'bbbb' with ID 2 added successfully. Residential Complex: True
+2024-09-25 18:54:38,141 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_
+2024-09-25 18:54:38,143 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_
+2024-09-25 18:54:40,741 - gui.add_project_dialog - INFO - Project added successfully: bbbb ()
+2024-09-25 18:54:40,745 - database - INFO - Loaded all projects. Count: 2
+2024-09-25 18:54:40,745 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-25 18:54:40,746 - gui.base_projects_tab - DEBUG - Added non-residential project 'aaaa' with status 'Active' to the tree.
+2024-09-25 18:54:40,747 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:40,748 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:40,749 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\1
+2024-09-25 18:54:40,749 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:40,749 - gui.base_projects_tab - INFO - Copied Innregulering.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:40,750 - gui.base_projects_tab - INFO - Copied Sjekkliste.docx to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbb_\2
+2024-09-25 18:54:40,750 - gui.base_projects_tab - DEBUG - Added residential project 'bbbb' with status 'Active' to the tree.
+2024-09-25 18:54:40,750 - gui.detailed_view_tab - INFO - New project added via dialog.
+2024-09-25 18:58:02,435 - database - INFO - Database session closed.

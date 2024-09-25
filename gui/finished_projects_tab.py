@@ -7,3 +7,4 @@ logger = get_logger(__name__)
 class FinishedProjectsTab(BaseProjectsTab):
     def __init__(self, db):
         super().__init__(db, status_filter="Finished", title="Finished Projects")
+        self.db.project_updated.connect(self.load_projects)
