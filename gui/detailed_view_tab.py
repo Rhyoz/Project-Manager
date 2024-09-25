@@ -1,4 +1,4 @@
-# gui/detailed_view_tab.py
+# File: gui/detailed_view_tab.py
 from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QPushButton
 )

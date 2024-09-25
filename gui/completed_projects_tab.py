@@ -1,4 +1,4 @@
-# gui/completed_projects_tab.py
+# File: gui/completed_projects_tab.py
 from gui.base_projects_tab import BaseProjectsTab
 from logger import get_logger
 
