@@ -32,10 +32,10 @@ class MainWindow(QMainWindow):
         self.finished_projects_tab = FinishedProjectsTab(self.db)
         self.detailed_view_tab = DetailedViewTab(self.db)
 
-        self.tabs.addTab(self.overview_tab, "Project Overview")
-        self.tabs.addTab(self.completed_projects_tab, "Completed Projects")
-        self.tabs.addTab(self.finished_projects_tab, "Finished Projects")
-        self.tabs.addTab(self.detailed_view_tab, "Detailed Project View")
+        self.tabs.addTab(self.overview_tab, "  Project Overview  ")
+        self.tabs.addTab(self.completed_projects_tab, "  Completed Projects  ")
+        self.tabs.addTab(self.finished_projects_tab, "  Finished Projects  ")
+        self.tabs.addTab(self.detailed_view_tab, "  Detailed Project View  ")
 
         self.setup_menu_bar()
         self.setup_shortcuts()
@@ -137,7 +137,9 @@ class MainWindow(QMainWindow):
 
     def apply_stylesheet(self):
         """
-        Applies a custom stylesheet to highlight the selected tab with a light blueish color.
+        Applies a custom stylesheet to highlight the selected tab with a light blueish color
+        and ensures bold text fits within the tab boundaries.
+        Adds spacing only before the last tab.
         """
         stylesheet = """
         QTabWidget::pane { /* The tab widget frame */
@@ -150,6 +152,7 @@ class MainWindow(QMainWindow):
             border: 1px solid #C4C4C3;
             padding: 10px;
             margin-right: 2px;
+            min-width: 120px; /* Increased to accommodate bold text with spaces */
         }
 
         /* Style the selected tab */

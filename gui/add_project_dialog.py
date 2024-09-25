@@ -270,7 +270,9 @@ class AddProjectDialog(QDialog):
         # Optional: Initiate PDF conversion if needed
         # self.convert_pdf(project)
 
-        QMessageBox.information(self, "Success", "Project added successfully.")
+        # Removed the following line as per instruction:
+        # QMessageBox.information(self, "Success", "Project added successfully.")
+        
         logger.info(f"Project added successfully: {project.name} ({project.number})")
         self.accept()
 
