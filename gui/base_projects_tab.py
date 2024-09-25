@@ -1,8 +1,9 @@
 # gui/base_projects_tab.py
 from PyQt5.QtWidgets import (
-    QWidget, QVBoxLayout, QPushButton, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox
+    QWidget, QVBoxLayout, QPushButton, QTreeWidget, QTreeWidgetItem, QHBoxLayout, QMessageBox, QCheckBox
 )
 from PyQt5.QtGui import QColor
+from PyQt5.QtCore import Qt
 from datetime import datetime
 import os
 import sys
@@ -11,6 +12,7 @@ import tempfile
 from logger import get_logger
 from utils import sanitize_filename, open_docx_file, get_project_dir
 from docx import Document
+from database import UnitModel, ProjectModel  # Ensure ProjectModel is also imported
 
 logger = get_logger(__name__)
 
@@ -43,84 +45,180 @@ class BaseProjectsTab(QWidget):
 
         self.layout.addLayout(self.buttons_layout)
 
-        # Projects Table
-        self.table = QTableWidget()
-        self.table.setColumnCount(12)  # Increased from 11 to 12 for "Main Contractor"
-        self.table.setHorizontalHeaderLabels([
+        # Projects Tree
+        self.tree = QTreeWidget()
+        self.tree.setHeaderLabels([
             "Project Name",
             "Project Number",
-            "Main Contractor",  # New Column
+            "Main Contractor",
             "Complex",
-            "Start Date",
-            "End Date",
+            "Completed Units",
             "Status",
-            "Worker",
+            "Extra",
             "Innregulering",
             "Sjekkliste",
-            "Extra",
-            "Move"
+            "Move(1)",
+            "Move(2)",
+            "Start Date",
+            "End Date",
+            "Worker"
         ])
-        self.table.setEditTriggers(QTableWidget.NoEditTriggers)
-        self.layout.addWidget(self.table)
+        self.tree.setColumnCount(14)
+        self.layout.addWidget(self.tree)
 
         # Temporary DOCX path
         self.docx_path = os.path.join(tempfile.gettempdir(), f"{self.title.replace(' ', '_')}_Projects.docx")
 
     def load_projects(self):
-        self.table.setRowCount(0)
+        self.tree.clear()
         projects = self.db.load_projects(status=self.status_filter)
         for project in projects:
-            self.add_project_row(project)
+            project_item = QTreeWidgetItem([
+                project.name,
+                project.number,
+                project.main_contractor if project.main_contractor else "",
+                "Yes" if project.is_residential_complex else "No",
+                "",
+                project.status,
+                project.extra if project.extra else "",
+                "",
+                "",
+                "",
+                "",
+                self.format_date(project.start_date),
+                self.format_date(project.end_date) if project.end_date else "",
+                project.worker
+            ])
+            if project.is_residential_complex and project.units:
+                # Calculate completed units
+                completed = self.db.session.query(UnitModel).filter_by(project_id=project.id, is_done=True).count()
+                total = len(project.units)
+                project_item.setText(4, f"{completed}/{total}")
+                
+                self.tree.addTopLevelItem(project_item)
+                for unit_name in project.units:
+                    unit_item = QTreeWidgetItem([
+                        unit_name,
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ])
+                    # Add a checkbox for done/undone
+                    checkbox = QCheckBox()
+                    # Retrieve the unit model to get its current status
+                    unit_model = self.db.session.query(UnitModel).filter_by(project_id=project.id, name=unit_name).first()
+                    if unit_model:
+                        checkbox.setChecked(unit_model.is_done)
+                    checkbox.stateChanged.connect(lambda state, p=project, u=unit_name: self.toggle_unit_status(p, u, state))
+                    self.tree.setItemWidget(unit_item, 0, checkbox)
+                    project_item.addChild(unit_item)
+                
+                # Innregulering Button
+                innregulering_btn = QPushButton("View DOCX")
+                innregulering_btn.setToolTip("View Innregulering DOCX")
+                innregulering_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
+                self.tree.setItemWidget(project_item, 7, innregulering_btn)
 
-    def add_project_row(self, project):
-        row_position = self.table.rowCount()
-        self.table.insertRow(row_position)
+                # Sjekkliste Button
+                sjekkliste_btn = QPushButton("View DOCX")
+                sjekkliste_btn.setToolTip("View Sjekkliste DOCX")
+                sjekkliste_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
+                self.tree.setItemWidget(project_item, 8, sjekkliste_btn)
 
-        self.table.setItem(row_position, 0, QTableWidgetItem(project.name))
-        self.table.setItem(row_position, 1, QTableWidgetItem(project.number))
-        self.table.setItem(row_position, 2, QTableWidgetItem(project.main_contractor if project.main_contractor else ""))
-        complex_text = "Yes" if project.is_residential_complex else "No"
-        self.table.setItem(row_position, 3, QTableWidgetItem(complex_text))
-        self.table.setItem(row_position, 4, QTableWidgetItem(self.format_date(project.start_date)))
-        self.table.setItem(row_position, 5, QTableWidgetItem(self.format_date(project.end_date) if project.end_date else ""))
-        self.table.setItem(row_position, 6, QTableWidgetItem(project.status))
-        self.table.setItem(row_position, 7, QTableWidgetItem(project.worker))
-        self.table.setItem(row_position, 10, QTableWidgetItem(project.extra if project.extra else ""))  # "Extra" field
+                # Move(1) Button
+                move1_btn = QPushButton("Active")
+                move1_btn.setToolTip("Move Project to Active")
+                move1_btn.setStyleSheet("background-color: yellow")
+                move1_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
+                self.tree.setItemWidget(project_item, 9, move1_btn)
 
-        # Apply background color based on status
-        if project.status in ["Awaiting Completion", "Paused"]:
-            for col in range(12):  # Apply to entire row
-                item = self.table.item(row_position, col)
-                if item:
-                    item.setBackground(QColor('yellow'))
+                # Move(2) Button
+                move2_btn = QPushButton("Completed")
+                move2_btn.setToolTip("Move Project to Completed")
+                move2_btn.setStyleSheet("background-color: green")
+                move2_btn.clicked.connect(lambda checked, p=project: self.move_to_completed(p))
+                self.tree.setItemWidget(project_item, 10, move2_btn)
 
-        # Innregulering Button
-        innregulering_btn = QPushButton("View DOCX")
-        innregulering_btn.setToolTip("View Innregulering DOCX")
-        innregulering_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
-        self.table.setCellWidget(row_position, 8, innregulering_btn)
+            else:
+                # Innregulering Button
+                innregulering_btn = QPushButton("View DOCX")
+                innregulering_btn.setToolTip("View Innregulering DOCX")
+                innregulering_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
+                self.tree.setItemWidget(project_item, 7, innregulering_btn)
 
-        # Sjekkliste Button
-        sjekkliste_btn = QPushButton("View DOCX")
-        sjekkliste_btn.setToolTip("View Sjekkliste DOCX")
-        sjekkliste_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
-        self.table.setCellWidget(row_position, 9, sjekkliste_btn)
+                # Sjekkliste Button
+                sjekkliste_btn = QPushButton("View DOCX")
+                sjekkliste_btn.setToolTip("View Sjekkliste DOCX")
+                sjekkliste_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
+                self.tree.setItemWidget(project_item, 8, sjekkliste_btn)
 
-        # Extra Button
-        extra_btn = QPushButton("View")
-        extra_btn.setToolTip("View Extra Details")
-        if not project.extra:
-            extra_btn.setEnabled(False)  # Gray out if "Extra" is empty
-        else:
-            extra_btn.clicked.connect(lambda checked, p=project: self.view_extra(p))
-        self.table.setCellWidget(row_position, 10, extra_btn)
+                # Move(1) Button
+                move1_btn = QPushButton("Active")
+                move1_btn.setToolTip("Move Project to Active")
+                move1_btn.setStyleSheet("background-color: yellow")
+                move1_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
+                self.tree.setItemWidget(project_item, 9, move1_btn)
 
-        # Move to Active Button
-        move_active_btn = QPushButton("Active")
-        move_active_btn.setToolTip("Move Project to Active")
-        move_active_btn.setStyleSheet("background-color: yellow")
-        move_active_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
-        self.table.setCellWidget(row_position, 11, move_active_btn)
+                # Move(2) Button
+                move2_btn = QPushButton("Completed")
+                move2_btn.setToolTip("Move Project to Completed")
+                move2_btn.setStyleSheet("background-color: green")
+                move2_btn.clicked.connect(lambda checked, p=project: self.move_to_completed(p))
+                self.tree.setItemWidget(project_item, 10, move2_btn)
+
+                # Set Completed Units to N/A
+                project_item.setText(4, "N/A")
+
+    def move_to_completed(self, project):
+        reply = QMessageBox.question(
+            self,
+            "Confirm Status Change",
+            f"Are you sure you want to move project '{project.name}' to Completed?",
+            QMessageBox.Yes | QMessageBox.No
+        )
+        if reply == QMessageBox.Yes:
+            try:
+                project.status = "Completed"
+                if not project.is_residential_complex:
+                    project.end_date = datetime.now().strftime("%Y-%m-%d")
+                self.db.update_project(project)
+                self.load_projects()
+                QMessageBox.information(self, "Status Updated", f"Project '{project.name}' moved to Completed.")
+                logger.info(f"Moved project ID {project.id} to Completed.")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to move to Completed: {str(e)}")
+                logger.error(f"Failed to move project ID {project.id} to Completed: {e}")
+
+    def get_completed_units(self, project):
+        if project.is_residential_complex:
+            completed = self.db.session.query(UnitModel).filter_by(project_id=project.id, is_done=True).count()
+            return completed
+        return 0
+
+    def toggle_unit_status(self, project, unit_name, state):
+        is_done = state == Qt.Checked
+        # Fetch unit by name and project
+        unit = self.db.session.query(UnitModel).join(ProjectModel).filter(
+            ProjectModel.id == project.id,
+            UnitModel.name == unit_name
+        ).first()
+        if unit:
+            try:
+                self.db.toggle_unit_status(project.id, unit.id, is_done)
+                self.load_projects()
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to update unit status: {str(e)}")
+                logger.error(f"Failed to update unit status for Unit '{unit_name}' in Project ID {project.id}: {e}")
 
     def format_date(self, date_str):
         try:
@@ -175,7 +273,7 @@ class BaseProjectsTab(QWidget):
                 QMessageBox.information(self, "No Data", f"There are no {self.title.lower()} to export.")
                 return
 
-            headers = ["Project Name", "Project Number", "Main Contractor", "Complex", "Start Date", "End Date", "Status", "Worker", "Extra"]
+            headers = ["Project Name", "Project Number", "Main Contractor", "Complex", "Completed Units", "Status", "Extra", "Innregulering", "Sjekkliste", "Move(1)", "Move(2)", "Start Date", "End Date", "Worker"]
             table = document.add_table(rows=1, cols=len(headers))
             table.style = 'Light List Accent 1'
 
@@ -189,11 +287,21 @@ class BaseProjectsTab(QWidget):
                 row_cells[1].text = project.number
                 row_cells[2].text = project.main_contractor if project.main_contractor else ""
                 row_cells[3].text = "Yes" if project.is_residential_complex else "No"
-                row_cells[4].text = self.format_date(project.start_date)
-                row_cells[5].text = self.format_date(project.end_date) if project.end_date else ""
-                row_cells[6].text = project.status
-                row_cells[7].text = project.worker
-                row_cells[8].text = project.extra if project.extra else ""
+                if project.is_residential_complex:
+                    completed = self.db.session.query(UnitModel).filter_by(project_id=project.id, is_done=True).count()
+                    total = len(project.units)
+                    row_cells[4].text = f"{completed}/{total}"
+                else:
+                    row_cells[4].text = "N/A"
+                row_cells[5].text = project.status
+                row_cells[6].text = project.extra if project.extra else ""
+                row_cells[7].text = "View DOCX"
+                row_cells[8].text = "View DOCX"
+                row_cells[9].text = "Active"
+                row_cells[10].text = "Completed"
+                row_cells[11].text = self.format_date(project.start_date)
+                row_cells[12].text = self.format_date(project.end_date) if project.end_date else ""
+                row_cells[13].text = project.worker
 
             document.add_paragraph(f"Generated on: {datetime.now().strftime('%d-%m-%Y')}", style='Intense Quote')
             document.save(self.docx_path)

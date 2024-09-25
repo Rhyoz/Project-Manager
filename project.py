@@ -1,6 +1,12 @@
 # project.py
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Optional, List
+
+@dataclass
+class Unit:
+    id: Optional[int] = field(default=None)
+    name: str = ""
+    is_done: bool = False
 
 @dataclass
 class Project:
@@ -16,3 +22,4 @@ class Project:
     residential_details: str = ""
     extra: str = ""
     main_contractor: Optional[str] = None  # New Optional Attribute
+    units: List[str] = field(default_factory=list)  # List of Unit Names
