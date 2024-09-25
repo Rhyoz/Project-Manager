@@ -1,11 +1,12 @@
 # database.py
 from sqlalchemy import create_engine, Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker, relationship, scoped_session
 from project import Project, Unit
 from logger import get_logger
 import os
 from configparser import ConfigParser
+from PyQt5.QtCore import QObject, pyqtSignal
 
 logger = get_logger(__name__)
 
@@ -42,7 +43,6 @@ class ProjectModel(Base):
     status = Column(String, nullable=False)
     is_residential_complex = Column(Boolean, default=False)
     number_of_units = Column(Integer, default=0)
-    residential_details = Column(String, default="")
     worker = Column(String, nullable=False)
     extra = Column(String, default="")
     main_contractor = Column(String, nullable=True)  # New Field
@@ -59,13 +59,16 @@ class UnitModel(Base):
     
     project = relationship("ProjectModel", back_populates="units")
 
-class Database:
+class Database(QObject):
+    project_updated = pyqtSignal()
+
     def __init__(self):
+        super().__init__()
         try:
             self.engine = create_engine(f'sqlite:///{db_path}', echo=False)
             Base.metadata.create_all(self.engine)
-            Session = sessionmaker(bind=self.engine)
-            self.session = Session()
+            self.Session = scoped_session(sessionmaker(bind=self.engine))
+            self.session = self.Session()
             logger.info(f"Database initialized at {db_path}")
         except Exception as e:
             logger.error(f"Failed to initialize database at {db_path}: {e}")
@@ -81,7 +84,6 @@ class Database:
                 status=project.status,
                 is_residential_complex=project.is_residential_complex,
                 number_of_units=project.number_of_units,
-                residential_details=project.residential_details,
                 worker=project.worker,
                 extra=project.extra,
                 main_contractor=project.main_contractor  # Map New Attribute
@@ -93,7 +95,8 @@ class Database:
                     project_model.units.append(unit_model)
             self.session.add(project_model)
             self.session.commit()
-            logger.info(f"Added project: {project.name} ({project.number})")
+            logger.info(f"Added project: {project.name} ({project.number}) with ID {project_model.id}")
+            self.project_updated.emit()  # Emit signal
             return project_model.id
         except Exception as e:
             logger.error(f"Failed to add project: {e}")
@@ -111,7 +114,6 @@ class Database:
                 project_model.status = project.status
                 project_model.is_residential_complex = project.is_residential_complex
                 project_model.number_of_units = project.number_of_units
-                project_model.residential_details = project.residential_details
                 project_model.worker = project.worker
                 project_model.extra = project.extra
                 project_model.main_contractor = project.main_contractor  # Update New Attribute
@@ -128,6 +130,7 @@ class Database:
                     project_model.units = []
                 self.session.commit()
                 logger.info(f"Updated project ID {project.id}: {project.name} ({project.number})")
+                self.project_updated.emit()  # Emit signal
         except Exception as e:
             logger.error(f"Failed to update project ID {project.id}: {e}")
             self.session.rollback()
@@ -140,6 +143,7 @@ class Database:
                 self.session.delete(project_model)
                 self.session.commit()
                 logger.info(f"Deleted project ID {project_id}")
+                self.project_updated.emit()  # Emit signal
         except Exception as e:
             logger.error(f"Failed to delete project ID {project_id}: {e}")
             self.session.rollback()
@@ -148,13 +152,13 @@ class Database:
     def load_projects(self, status=None):
         try:
             query = self.session.query(ProjectModel)
-            if status:
+            if status is not None:
                 query = query.filter_by(status=status)
             projects = query.all()
-            if status:
-                logger.info(f"Loaded projects with status='{status}'")
+            if status is not None:
+                logger.info(f"Loaded projects with status='{status}'. Count: {len(projects)}")
             else:
-                logger.info("Loaded all projects")
+                logger.info(f"Loaded all projects. Count: {len(projects)}")
             return [Project(
                 id=p.id,
                 name=p.name,
@@ -164,11 +168,10 @@ class Database:
                 status=p.status,
                 is_residential_complex=p.is_residential_complex,
                 number_of_units=p.number_of_units,
-                residential_details=p.residential_details,
                 worker=p.worker,
                 extra=p.extra,
                 main_contractor=p.main_contractor,
-                units=[unit.name for unit in p.units]  # Map Units
+                units=[unit.name for unit in p.units]
             ) for p in projects]
         except Exception as e:
             logger.error(f"Failed to load projects: {e}")
@@ -188,7 +191,6 @@ class Database:
                     status=p.status,
                     is_residential_complex=p.is_residential_complex,
                     number_of_units=p.number_of_units,
-                    residential_details=p.residential_details,
                     worker=p.worker,
                     extra=p.extra,
                     main_contractor=p.main_contractor,
@@ -207,6 +209,7 @@ class Database:
                 unit.is_done = is_done
                 self.session.commit()
                 logger.info(f"Unit ID {unit_id} in Project ID {project_id} marked as {'done' if is_done else 'undone'}.")
+                self.project_updated.emit()  # Emit signal
         except Exception as e:
             logger.error(f"Failed to toggle unit status for Unit ID {unit_id} in Project ID {project_id}: {e}")
             self.session.rollback()
@@ -214,4 +217,5 @@ class Database:
 
     def close(self):
         self.session.close()
+        self.Session.remove()
         logger.info("Database session closed.")

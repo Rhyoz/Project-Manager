@@ -14,6 +14,8 @@ class DetailedViewTab(BaseProjectsTab):
         super().__init__(db, status_filter=None, title="Detailed Project View")
         self.current_project = None
         self.setup_add_project_ui()
+        self.db.project_updated.connect(self.load_projects)
+        logger.info("DetailedViewTab initialized and connected to project_updated signal.")
 
     def setup_add_project_ui(self):
         # Add Project Button
