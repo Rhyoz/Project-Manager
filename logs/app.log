@@ -2111,3 +2111,670 @@ FROM projects]
 2024-09-25 22:15:41,674 - database - INFO - Loaded projects with status='Active'. Count: 0
 2024-09-25 22:15:41,685 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
 2024-09-25 22:19:14,287 - database - INFO - Database session closed.
+2024-09-25 22:33:01,032 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 22:33:01,265 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-25 22:33:01,266 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-09-25 22:33:01,275 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-25 22:33:01,286 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-25 22:33:01,286 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-09-25 22:33:01,287 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-25 22:33:01,290 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-09-25 22:33:01,298 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-25 22:33:01,306 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-25 22:33:01,323 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-25 22:33:01,324 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 22:33:01,324 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 22:33:01,331 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 22:33:01,342 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-25 22:33:01,343 - database - INFO - Loaded all projects. Count: 1
+2024-09-25 22:33:01,343 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-25 22:33:01,345 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-25 22:33:01,353 - database - INFO - Loaded all projects. Count: 1
+2024-09-25 22:33:01,369 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-25 22:33:01,369 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-09-25 22:33:22,179 - database - INFO - Database session closed.
+2024-09-25 22:33:47,600 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-25 22:33:47,823 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-25 22:33:47,823 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-09-25 22:33:47,833 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-25 22:33:47,843 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-25 22:33:47,843 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-09-25 22:33:47,844 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-25 22:33:47,847 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-09-25 22:33:47,856 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-25 22:33:47,863 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-25 22:33:47,880 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-25 22:33:47,881 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 22:33:47,881 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-25 22:33:47,889 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-25 22:33:47,899 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-25 22:33:47,900 - database - INFO - Loaded all projects. Count: 1
+2024-09-25 22:33:47,900 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-25 22:33:47,902 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-25 22:33:47,910 - database - INFO - Loaded all projects. Count: 1
+2024-09-25 22:33:47,927 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-25 22:33:47,927 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-09-25 22:33:53,590 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-25 22:33:53,606 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-25 22:34:26,955 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-25 22:34:26,971 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-25 22:34:53,415 - database - INFO - Database session closed.
+2024-09-26 17:54:45,673 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-26 17:54:46,014 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-26 17:54:46,014 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-09-26 17:54:46,037 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-26 17:54:46,053 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-26 17:54:46,053 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-09-26 17:54:46,054 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-26 17:54:46,057 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-09-26 17:54:46,069 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-26 17:54:46,079 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-26 17:54:46,096 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-26 17:54:46,097 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-26 17:54:46,097 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-26 17:54:46,107 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-26 17:54:46,118 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-26 17:54:46,119 - database - INFO - Loaded all projects. Count: 1
+2024-09-26 17:54:46,120 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-26 17:54:46,121 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-26 17:54:46,131 - database - INFO - Loaded all projects. Count: 1
+2024-09-26 17:54:46,149 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-26 17:54:46,149 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-09-26 17:55:00,153 - database - INFO - Database session closed.
+2024-09-30 17:41:30,621 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-30 17:41:30,911 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-30 17:41:30,911 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-09-30 17:41:30,938 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-30 17:41:30,954 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:41:30,955 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-09-30 17:41:30,956 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-30 17:41:30,959 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-09-30 17:41:30,971 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-30 17:41:30,982 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-30 17:41:31,000 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:41:31,001 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:41:31,001 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-30 17:41:31,012 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:41:31,023 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-30 17:41:31,025 - database - INFO - Loaded all projects. Count: 1
+2024-09-30 17:41:31,025 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-30 17:41:31,027 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-30 17:41:31,038 - database - INFO - Loaded all projects. Count: 1
+2024-09-30 17:41:31,057 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-30 17:41:31,057 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-09-30 17:45:50,131 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-30 17:45:50,141 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:46:18,068 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-30 17:46:18,087 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:47:30,198 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-30 17:47:30,209 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:47:53,626 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-30 17:47:53,636 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:48:11,603 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-09-30 17:48:11,613 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:49:21,510 - database - INFO - Updated project ID 1: asdfasd (123123)
+2024-09-30 17:49:21,510 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-30 17:49:21,510 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-09-30 17:49:21,512 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:49:21,520 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-30 17:49:21,536 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:49:21,537 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:49:21,537 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-30 17:49:21,544 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:49:21,555 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:49:21,555 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:49:21,555 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-30 17:49:21,563 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:49:21,573 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-30 17:49:21,574 - database - INFO - Loaded all projects. Count: 1
+2024-09-30 17:49:21,574 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-09-30 17:49:21,575 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:49:21,593 - database - INFO - Loaded all projects. Count: 1
+2024-09-30 17:49:21,610 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-30 17:49:21,610 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:49:21,610 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-30 17:49:21,617 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:49:21,627 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:49:22,973 - gui.base_projects_tab - INFO - Moved project ID 1 to Active.
+2024-09-30 17:50:37,997 - database - INFO - Added project: wwwwwww (13111) with ID 2
+2024-09-30 17:50:37,998 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-30 17:50:37,998 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-09-30 17:50:38,000 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:50:38,002 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:50:38,010 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-30 17:50:38,029 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:50:38,029 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:50:38,029 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-30 17:50:38,037 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:50:38,046 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:50:38,047 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:50:38,047 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-30 17:50:38,055 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:50:38,065 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-30 17:50:38,065 - database - INFO - Loaded all projects. Count: 2
+2024-09-30 17:50:38,065 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-30 17:50:38,067 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:50:38,069 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:50:38,079 - database - INFO - Loaded all projects. Count: 2
+2024-09-30 17:50:38,098 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-30 17:50:38,098 - gui.add_project_dialog - INFO - Project 'wwwwwww' with ID 2 added successfully. Residential Complex: True
+2024-09-30 17:50:38,098 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\wwwwwww_13111
+2024-09-30 17:50:38,118 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\wwwwwww_13111
+2024-09-30 17:50:38,118 - gui.add_project_dialog - INFO - Project added successfully: wwwwwww (13111)
+2024-09-30 17:50:38,122 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-30 17:50:38,122 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-09-30 17:50:38,124 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:50:38,127 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:50:38,134 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-30 17:50:38,153 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:50:38,153 - gui.overview_tab - INFO - New project added via dialog.
+2024-09-30 17:51:55,615 - database - INFO - Updated project ID 1: asdfasd (123123)
+2024-09-30 17:51:55,616 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-30 17:51:55,616 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-09-30 17:51:55,618 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:51:55,628 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-30 17:51:55,644 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:51:55,644 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-30 17:51:55,644 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-09-30 17:51:55,647 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-30 17:51:55,654 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-09-30 17:51:55,669 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:51:55,669 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:51:55,669 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-30 17:51:55,677 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:51:55,688 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-30 17:51:55,688 - database - INFO - Loaded all projects. Count: 2
+2024-09-30 17:51:55,689 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-30 17:51:55,690 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Completed' to the tree.
+2024-09-30 17:51:55,692 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:51:55,702 - database - INFO - Loaded all projects. Count: 2
+2024-09-30 17:51:55,721 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-30 17:51:55,721 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-30 17:51:55,721 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-09-30 17:51:55,723 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:51:55,730 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-09-30 17:51:55,746 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:51:56,972 - gui.base_projects_tab - INFO - Moved project ID 1 to Completed with end_date set to 2024-09-30.
+2024-09-30 17:54:19,176 - database - INFO - Updated project ID 1: asdfasd (123123)
+2024-09-30 17:54:19,176 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-30 17:54:19,177 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-09-30 17:54:19,179 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:54:19,181 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:54:19,189 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-30 17:54:19,209 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:54:19,210 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:54:19,210 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-30 17:54:19,217 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:54:19,227 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:54:19,227 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:54:19,227 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-30 17:54:19,235 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:54:19,245 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-30 17:54:19,246 - database - INFO - Loaded all projects. Count: 2
+2024-09-30 17:54:19,246 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-30 17:54:19,247 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:54:19,249 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:54:19,257 - database - INFO - Loaded all projects. Count: 2
+2024-09-30 17:54:19,278 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-30 17:54:19,279 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:54:19,279 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-30 17:54:19,285 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:54:19,296 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:54:19,974 - gui.base_projects_tab - INFO - Moved project ID 1 to Active.
+2024-09-30 17:56:20,986 - database - INFO - Database session closed.
+2024-09-30 17:56:29,626 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-09-30 17:56:29,850 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-30 17:56:29,852 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-09-30 17:56:29,861 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:56:29,863 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:56:29,872 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-09-30 17:56:29,892 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-09-30 17:56:29,892 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-09-30 17:56:29,893 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:56:29,893 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-09-30 17:56:29,901 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-09-30 17:56:29,911 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-09-30 17:56:29,912 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:56:29,912 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-09-30 17:56:29,921 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-09-30 17:56:29,930 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-09-30 17:56:29,932 - database - INFO - Loaded all projects. Count: 2
+2024-09-30 17:56:29,932 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-09-30 17:56:29,936 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-09-30 17:56:29,937 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-09-30 17:56:29,945 - database - INFO - Loaded all projects. Count: 2
+2024-09-30 17:56:29,965 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-09-30 17:56:29,965 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-09-30 18:01:44,977 - database - INFO - Database session closed.
+2024-10-01 20:03:21,763 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 20:03:22,027 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:03:22,029 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 20:03:22,040 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-10-01 20:03:22,042 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-10-01 20:03:22,063 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:03:22,087 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:03:22,087 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 20:03:22,089 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:03:22,089 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 20:03:22,097 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:03:22,107 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:03:22,108 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:03:22,108 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:03:22,117 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:03:22,127 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:03:22,128 - database - INFO - Loaded all projects. Count: 2
+2024-10-01 20:03:22,129 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-10-01 20:03:22,133 - gui.base_projects_tab - DEBUG - Added project 'asdfasd' with status 'Active' to the tree.
+2024-10-01 20:03:22,134 - gui.base_projects_tab - DEBUG - Added project 'wwwwwww' with status 'Active' to the tree.
+2024-10-01 20:03:22,142 - database - INFO - Loaded all projects. Count: 2
+2024-10-01 20:03:22,161 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:03:22,161 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 20:03:34,743 - database - INFO - Database session closed.
+2024-10-01 20:04:03,672 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 20:04:03,885 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 20:04:03,885 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-10-01 20:04:03,894 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 20:04:03,905 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:04:03,905 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 20:04:03,906 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:04:03,906 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 20:04:03,915 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:04:03,925 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:04:03,926 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:04:03,926 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:04:03,936 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:04:03,947 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:04:03,948 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 20:04:03,948 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Detailed Project View' tab.
+2024-10-01 20:04:03,956 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 20:04:03,966 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:04:03,966 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 20:05:39,098 - database - INFO - Database session closed.
+2024-10-01 20:15:09,482 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 20:15:09,694 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 20:15:09,694 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-10-01 20:15:09,704 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 20:15:09,715 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:15:09,715 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 20:15:09,716 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:15:09,716 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 20:15:09,724 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:15:09,734 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:15:09,736 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:15:09,736 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:15:09,746 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:15:09,756 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:15:09,758 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 20:15:09,758 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Detailed Project View' tab.
+2024-10-01 20:15:09,765 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 20:15:09,776 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:15:09,776 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 20:15:23,249 - database - INFO - Database session closed.
+2024-10-01 20:15:34,899 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 20:15:35,107 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 20:15:35,107 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-10-01 20:15:35,118 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 20:15:35,129 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:15:35,129 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 20:15:35,130 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:15:35,130 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 20:15:35,139 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:15:35,149 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:15:35,151 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:15:35,151 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:15:35,163 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:15:35,174 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:15:35,175 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 20:15:35,175 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Detailed Project View' tab.
+2024-10-01 20:15:35,184 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 20:15:35,194 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:15:35,194 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 20:16:24,325 - database - INFO - Added project: risør (123) with ID 1
+2024-10-01 20:16:24,326 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:16:24,327 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 20:16:24,333 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:16:24,342 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:16:24,359 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:16:24,359 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:16:24,359 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 20:16:24,368 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:16:24,378 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:16:24,378 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:16:24,378 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:16:24,386 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:16:24,396 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:16:24,397 - database - INFO - Loaded all projects. Count: 1
+2024-10-01 20:16:24,397 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-10-01 20:16:24,402 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:16:24,410 - database - INFO - Loaded all projects. Count: 1
+2024-10-01 20:16:24,426 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:16:24,426 - gui.add_project_dialog - INFO - Project 'risør' with ID 1 added successfully. Residential Complex: True
+2024-10-01 20:16:24,426 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\Lindal - risør - 123
+2024-10-01 20:16:24,447 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\Lindal - risør - 123
+2024-10-01 20:16:24,447 - gui.add_project_dialog - INFO - Project added successfully: risør (123)
+2024-10-01 20:16:24,451 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:16:24,452 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 20:16:24,454 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:16:24,463 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:16:24,480 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:16:24,480 - gui.overview_tab - INFO - New project added via dialog.
+2024-10-01 20:16:56,317 - database - INFO - Added project: sadfasdff () with ID 2
+2024-10-01 20:16:56,317 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:16:56,318 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 20:16:56,320 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:16:56,322 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:16:56,340 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:16:56,360 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:16:56,360 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:16:56,360 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 20:16:56,368 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:16:56,378 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:16:56,378 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:16:56,378 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:16:56,386 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:16:56,397 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:16:56,397 - database - INFO - Loaded all projects. Count: 2
+2024-10-01 20:16:56,398 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-10-01 20:16:56,400 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:16:56,401 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:16:56,413 - database - INFO - Loaded all projects. Count: 2
+2024-10-01 20:16:56,432 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:16:56,432 - gui.add_project_dialog - INFO - Project 'sadfasdff' with ID 2 added successfully. Residential Complex: False
+2024-10-01 20:16:56,433 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\sadfasdff_
+2024-10-01 20:16:56,434 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\sadfasdff_
+2024-10-01 20:16:56,434 - gui.add_project_dialog - INFO - Project added successfully: sadfasdff ()
+2024-10-01 20:16:56,438 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:16:56,438 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 20:16:56,441 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:16:56,443 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:16:56,450 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:16:56,469 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:16:56,469 - gui.overview_tab - INFO - New project added via dialog.
+2024-10-01 20:17:00,155 - database - INFO - Added project: eadfghadfsgadfg () with ID 3
+2024-10-01 20:17:00,155 - database - INFO - Loaded projects with status='Active'. Count: 3
+2024-10-01 20:17:00,157 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Overview Projects' tab.
+2024-10-01 20:17:00,160 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:17:00,161 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:17:00,163 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:00,173 - database - INFO - Loaded projects with status='Active'. Count: 3
+2024-10-01 20:17:00,195 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:17:00,195 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:17:00,195 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 20:17:00,202 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 20:17:00,212 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:17:00,213 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:17:00,213 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:17:00,221 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:17:00,232 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:17:00,232 - database - INFO - Loaded all projects. Count: 3
+2024-10-01 20:17:00,232 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Detailed Project View' tab.
+2024-10-01 20:17:00,235 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:17:00,236 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:17:00,237 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:00,246 - database - INFO - Loaded all projects. Count: 3
+2024-10-01 20:17:00,268 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:17:00,268 - gui.add_project_dialog - INFO - Project 'eadfghadfsgadfg' with ID 3 added successfully. Residential Complex: False
+2024-10-01 20:17:00,268 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\eadfghadfsgadfg_
+2024-10-01 20:17:00,269 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\eadfghadfsgadfg_
+2024-10-01 20:17:00,269 - gui.add_project_dialog - INFO - Project added successfully: eadfghadfsgadfg ()
+2024-10-01 20:17:00,274 - database - INFO - Loaded projects with status='Active'. Count: 3
+2024-10-01 20:17:00,275 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Overview Projects' tab.
+2024-10-01 20:17:00,277 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:17:00,279 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:17:00,280 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:00,288 - database - INFO - Loaded projects with status='Active'. Count: 3
+2024-10-01 20:17:00,311 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:17:00,311 - gui.overview_tab - INFO - New project added via dialog.
+2024-10-01 20:17:02,203 - database - INFO - Loaded projects with status='Active'. Count: 3
+2024-10-01 20:17:02,225 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:17:16,212 - database - INFO - Updated project ID 1: risør (123)
+2024-10-01 20:17:16,213 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:17:16,213 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 20:17:16,214 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:17:16,215 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:16,223 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:17:16,242 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:17:16,242 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-10-01 20:17:16,242 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-10-01 20:17:16,245 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:17:16,254 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-10-01 20:17:16,270 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:17:16,270 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:17:16,270 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:17:16,277 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:17:16,287 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:17:16,287 - database - INFO - Loaded all projects. Count: 3
+2024-10-01 20:17:16,287 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Detailed Project View' tab.
+2024-10-01 20:17:16,290 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:17:16,291 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:17:16,291 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:16,299 - database - INFO - Loaded all projects. Count: 3
+2024-10-01 20:17:16,321 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:17:16,322 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:17:16,322 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 20:17:16,323 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Active' to the tree.
+2024-10-01 20:17:16,324 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:16,331 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:17:16,350 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:17:16,837 - gui.base_projects_tab - INFO - Moved project ID 1 to Completed with end_date set to 2024-10-01.
+2024-10-01 20:17:19,372 - database - INFO - Updated project ID 2: sadfasdff ()
+2024-10-01 20:17:19,373 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:17:19,374 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 20:17:19,374 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:19,383 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:17:19,399 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:17:19,400 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:17:19,400 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Completed Projects' tab.
+2024-10-01 20:17:19,403 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:17:19,403 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:17:19,412 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:17:19,434 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:17:19,435 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:17:19,435 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:17:19,442 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:17:19,452 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:17:19,452 - database - INFO - Loaded all projects. Count: 3
+2024-10-01 20:17:19,453 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Detailed Project View' tab.
+2024-10-01 20:17:19,455 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:17:19,455 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:17:19,456 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:19,464 - database - INFO - Loaded all projects. Count: 3
+2024-10-01 20:17:19,487 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:17:19,488 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:17:19,488 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 20:17:19,489 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:17:19,495 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:17:19,511 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:17:20,180 - gui.base_projects_tab - INFO - Moved project ID 2 to Completed with end_date set to 2024-10-01.
+2024-10-01 20:19:33,584 - database - INFO - Database session closed.
+2024-10-01 20:40:30,970 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 20:40:31,204 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:40:31,205 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 20:40:31,216 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:40:31,229 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:40:31,244 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:40:31,245 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 20:40:31,246 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:40:31,247 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Completed Projects' tab.
+2024-10-01 20:40:31,253 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:40:31,254 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:40:31,262 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:40:31,281 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:40:31,281 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:40:31,281 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:40:31,292 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:40:31,302 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:40:31,304 - database - INFO - Loaded all projects. Count: 3
+2024-10-01 20:40:31,306 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Detailed Project View' tab.
+2024-10-01 20:40:31,308 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:40:31,309 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:40:31,309 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:40:31,318 - database - INFO - Loaded all projects. Count: 3
+2024-10-01 20:40:31,340 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:40:31,340 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 20:40:46,080 - database - INFO - Added project: sadfasdf (123) with ID 4
+2024-10-01 20:40:46,081 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:40:46,081 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 20:40:46,082 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:40:46,086 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Active' to the tree.
+2024-10-01 20:40:46,094 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:40:46,117 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:40:46,118 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:40:46,118 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Completed Projects' tab.
+2024-10-01 20:40:46,121 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:40:46,121 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:40:46,130 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:40:46,154 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:40:46,154 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:40:46,154 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:40:46,162 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:40:46,171 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:40:46,172 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 20:40:46,173 - gui.base_projects_tab - INFO - Loading 4 projects into the 'Detailed Project View' tab.
+2024-10-01 20:40:46,175 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:40:46,177 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:40:46,177 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:40:46,180 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Active' to the tree.
+2024-10-01 20:40:46,188 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 20:40:46,214 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:40:46,214 - gui.add_project_dialog - INFO - Project 'sadfasdf' with ID 4 added successfully. Residential Complex: True
+2024-10-01 20:40:46,214 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\sadfasdf_123
+2024-10-01 20:40:46,215 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\sadfasdf_123
+2024-10-01 20:40:46,215 - gui.add_project_dialog - INFO - Project added successfully: sadfasdf (123)
+2024-10-01 20:40:46,219 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:40:46,220 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 20:40:46,221 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:40:46,224 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Active' to the tree.
+2024-10-01 20:40:46,231 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:40:46,251 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:40:46,251 - gui.overview_tab - INFO - New project added via dialog.
+2024-10-01 20:40:52,076 - database - INFO - Updated project ID 4: sadfasdf (123)
+2024-10-01 20:40:52,076 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:40:52,076 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 20:40:52,077 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:40:52,085 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:40:52,102 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:40:52,102 - database - INFO - Loaded projects with status='Completed'. Count: 3
+2024-10-01 20:40:52,103 - gui.base_projects_tab - INFO - Loading 3 projects into the 'Completed Projects' tab.
+2024-10-01 20:40:52,106 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:40:52,106 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:40:52,109 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 20:40:52,118 - database - INFO - Loaded projects with status='Completed'. Count: 3
+2024-10-01 20:40:52,140 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:40:52,141 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:40:52,141 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:40:52,147 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:40:52,158 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:40:52,158 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 20:40:52,159 - gui.base_projects_tab - INFO - Loading 4 projects into the 'Detailed Project View' tab.
+2024-10-01 20:40:52,161 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Completed' to the tree.
+2024-10-01 20:40:52,162 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:40:52,163 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:40:52,165 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 20:40:52,174 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 20:40:52,199 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:40:52,199 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:40:52,199 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 20:40:52,200 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:40:52,207 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 20:40:52,223 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:40:52,614 - gui.base_projects_tab - INFO - Moved project ID 4 to Completed with end_date set to 2024-10-01.
+2024-10-01 20:43:44,295 - database - INFO - Updated project ID 1: risør (123)
+2024-10-01 20:43:44,296 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:43:44,296 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 20:43:44,299 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:43:44,299 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:43:44,310 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:43:44,330 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:43:44,330 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:43:44,331 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Completed Projects' tab.
+2024-10-01 20:43:44,331 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:43:44,335 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 20:43:44,342 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:43:44,361 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:43:44,361 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:43:44,362 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 20:43:44,370 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 20:43:44,380 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 20:43:44,380 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 20:43:44,383 - gui.base_projects_tab - INFO - Loading 4 projects into the 'Detailed Project View' tab.
+2024-10-01 20:43:44,386 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 20:43:44,386 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:43:44,387 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 20:43:44,389 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 20:43:44,396 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 20:43:44,421 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 20:43:44,421 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:43:44,422 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Completed Projects' tab.
+2024-10-01 20:43:44,423 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 20:43:44,426 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 20:43:44,434 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 20:43:44,455 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 20:43:44,935 - gui.base_projects_tab - INFO - Moved project ID 1 to Active.
+2024-10-01 20:44:14,892 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:44:14,912 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:44:37,063 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:44:37,083 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:48:32,172 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:48:32,191 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:48:54,757 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:48:54,777 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 20:49:27,854 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 20:49:27,876 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 21:06:20,820 - database - INFO - Database session closed.
+2024-10-01 21:19:26,278 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 21:19:26,499 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 21:19:26,501 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 21:19:26,510 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 21:19:26,511 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 21:19:26,521 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 21:19:26,540 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 21:19:26,540 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 21:19:26,540 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 21:19:26,541 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Completed Projects' tab.
+2024-10-01 21:19:26,542 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 21:19:26,544 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 21:19:26,553 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 21:19:26,571 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 21:19:26,572 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 21:19:26,572 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 21:19:26,581 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 21:19:26,591 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 21:19:26,594 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 21:19:26,595 - gui.base_projects_tab - INFO - Loading 4 projects into the 'Detailed Project View' tab.
+2024-10-01 21:19:26,598 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 21:19:26,598 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 21:19:26,599 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 21:19:26,601 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 21:19:26,609 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 21:19:26,633 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 21:19:26,633 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 21:29:48,184 - database - INFO - Database session closed.
+2024-10-01 21:34:15,918 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 21:34:16,132 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 21:34:16,134 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 21:34:16,144 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 21:34:16,144 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 21:34:16,154 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 21:34:16,173 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 21:34:16,173 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 21:34:16,174 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 21:34:16,175 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Completed Projects' tab.
+2024-10-01 21:34:16,175 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 21:34:16,178 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 21:34:16,186 - database - INFO - Loaded projects with status='Completed'. Count: 2
+2024-10-01 21:34:16,204 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 21:34:16,205 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 21:34:16,205 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 21:34:16,213 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 21:34:16,224 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 21:34:16,227 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 21:34:16,228 - gui.base_projects_tab - INFO - Loading 4 projects into the 'Detailed Project View' tab.
+2024-10-01 21:34:16,231 - gui.base_projects_tab - DEBUG - Added project 'risør' with status 'Active' to the tree.
+2024-10-01 21:34:16,231 - gui.base_projects_tab - DEBUG - Added project 'sadfasdff' with status 'Completed' to the tree.
+2024-10-01 21:34:16,232 - gui.base_projects_tab - DEBUG - Added project 'eadfghadfsgadfg' with status 'Active' to the tree.
+2024-10-01 21:34:16,234 - gui.base_projects_tab - DEBUG - Added project 'sadfasdf' with status 'Completed' to the tree.
+2024-10-01 21:34:16,242 - database - INFO - Loaded all projects. Count: 4
+2024-10-01 21:34:16,266 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 21:34:16,266 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 21:36:19,018 - database - INFO - Database session closed.
