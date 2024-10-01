@@ -280,19 +280,16 @@ class AddProjectDialog(QDialog):
                     QMessageBox.critical(self, "Error", f"Failed to create unit folder '{unit}':\n{str(e)}")
                     logger.error(f"Failed to create unit folder '{unit}' at {unit_folder}: {e}")
                     return
-                # Create DOCX files for the unit
+                # Create DOCX files for the unit using templates
                 try:
                     innregulering_path = os.path.join(unit_folder, "Innregulering.docx")
                     sjekkliste_path = os.path.join(unit_folder, "Sjekkliste.docx")
-                    if not os.path.exists(innregulering_path):
-                        Document().save(innregulering_path)
-                        logger.info(f"Created Innregulering DOCX at {innregulering_path}")
-                    if not os.path.exists(sjekkliste_path):
-                        Document().save(sjekkliste_path)
-                        logger.info(f"Created Sjekkliste DOCX at {sjekkliste_path}")
+                    shutil.copy(os.path.join(template_dir, "Innregulering.docx"), innregulering_path)
+                    shutil.copy(os.path.join(template_dir, "Sjekkliste.docx"), sjekkliste_path)
+                    logger.info(f"Copied Innregulering and Sjekkliste DOCX to {unit_folder}")
                 except Exception as e:
-                    QMessageBox.critical(self, "Error", f"Failed to create DOCX files for unit '{unit}':\n{str(e)}")
-                    logger.error(f"Failed to create DOCX files for unit '{unit}' in folder '{unit_folder}': {e}")
+                    QMessageBox.critical(self, "Error", f"Failed to copy DOCX files for unit '{unit}':\n{str(e)}")
+                    logger.error(f"Failed to copy DOCX files for unit '{unit}' in folder '{unit_folder}': {e}")
                     return
 
         # Optional: Initiate PDF conversion if needed

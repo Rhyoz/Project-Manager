@@ -135,6 +135,32 @@ class BaseProjectsTab(QWidget):
                     self.tree.setItemWidget(unit_item, 0, checkbox)
                     project_item.addChild(unit_item)
 
+                    # Innregulering Split Button for Unit
+                    innregulering_split_btn = QToolButton()
+                    innregulering_split_btn.setText("View")
+                    innregulering_split_btn.setToolTip("View Innregulering DOCX")
+                    innregulering_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
+                    innregulering_menu = QMenu(self)
+                    innregulering_save_as_action = QAction("Save As...", self)
+                    innregulering_save_as_action.triggered.connect(lambda checked, p=project, u=unit_name: self.save_docx_as(p, "Innregulering", u))
+                    innregulering_menu.addAction(innregulering_save_as_action)
+                    innregulering_split_btn.setMenu(innregulering_menu)
+                    innregulering_split_btn.clicked.connect(lambda checked, p=project, u=unit_name: self.view_docx(p, "Innregulering", u))
+                    self.tree.setItemWidget(unit_item, 6, innregulering_split_btn)
+
+                    # Sjekkliste Split Button for Unit
+                    sjekkliste_split_btn = QToolButton()
+                    sjekkliste_split_btn.setText("View")
+                    sjekkliste_split_btn.setToolTip("View Sjekkliste DOCX")
+                    sjekkliste_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
+                    sjekkliste_menu = QMenu(self)
+                    sjekkliste_save_as_action = QAction("Save As...", self)
+                    sjekkliste_save_as_action.triggered.connect(lambda checked, p=project, u=unit_name: self.save_docx_as(p, "Sjekkliste", u))
+                    sjekkliste_menu.addAction(sjekkliste_save_as_action)
+                    sjekkliste_split_btn.setMenu(sjekkliste_menu)
+                    sjekkliste_split_btn.clicked.connect(lambda checked, p=project, u=unit_name: self.view_docx(p, "Sjekkliste", u))
+                    self.tree.setItemWidget(unit_item, 7, sjekkliste_split_btn)
+
                 # Expand the project item to show unit names by default
                 self.tree.expandItem(project_item)
                 
@@ -178,51 +204,51 @@ class BaseProjectsTab(QWidget):
                     Document().save(sjekkliste_path)
                     logger.info(f"Created Sjekkliste DOCX at {sjekkliste_path}")
 
-            # Innregulering Split Button
-            innregulering_split_btn = QToolButton()
-            innregulering_split_btn.setText("View")
-            innregulering_split_btn.setToolTip("View Innregulering DOCX")
-            innregulering_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
-            innregulering_menu = QMenu(self)
-            innregulering_save_as_action = QAction("Save As...", self)
-            innregulering_save_as_action.triggered.connect(lambda checked, p=project: self.save_docx_as(p, "Innregulering"))
-            innregulering_menu.addAction(innregulering_save_as_action)
-            innregulering_split_btn.setMenu(innregulering_menu)
-            innregulering_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
-            self.tree.setItemWidget(project_item, 6, innregulering_split_btn)
+                # Innregulering Split Button
+                innregulering_split_btn = QToolButton()
+                innregulering_split_btn.setText("View")
+                innregulering_split_btn.setToolTip("View Innregulering DOCX")
+                innregulering_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
+                innregulering_menu = QMenu(self)
+                innregulering_save_as_action = QAction("Save As...", self)
+                innregulering_save_as_action.triggered.connect(lambda checked, p=project: self.save_docx_as(p, "Innregulering"))
+                innregulering_menu.addAction(innregulering_save_as_action)
+                innregulering_split_btn.setMenu(innregulering_menu)
+                innregulering_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
+                self.tree.setItemWidget(project_item, 6, innregulering_split_btn)
 
-            # Sjekkliste Split Button
-            sjekkliste_split_btn = QToolButton()
-            sjekkliste_split_btn.setText("View")
-            sjekkliste_split_btn.setToolTip("View Sjekkliste DOCX")
-            sjekkliste_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
-            sjekkliste_menu = QMenu(self)
-            sjekkliste_save_as_action = QAction("Save As...", self)
-            sjekkliste_save_as_action.triggered.connect(lambda checked, p=project: self.save_docx_as(p, "Sjekkliste"))
-            sjekkliste_menu.addAction(sjekkliste_save_as_action)
-            sjekkliste_split_btn.setMenu(sjekkliste_menu)
-            sjekkliste_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
-            self.tree.setItemWidget(project_item, 7, sjekkliste_split_btn)
+                # Sjekkliste Split Button
+                sjekkliste_split_btn = QToolButton()
+                sjekkliste_split_btn.setText("View")
+                sjekkliste_split_btn.setToolTip("View Sjekkliste DOCX")
+                sjekkliste_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
+                sjekkliste_menu = QMenu(self)
+                sjekkliste_save_as_action = QAction("Save As...", self)
+                sjekkliste_save_as_action.triggered.connect(lambda checked, p=project: self.save_docx_as(p, "Sjekkliste"))
+                sjekkliste_menu.addAction(sjekkliste_save_as_action)
+                sjekkliste_split_btn.setMenu(sjekkliste_menu)
+                sjekkliste_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
+                self.tree.setItemWidget(project_item, 7, sjekkliste_split_btn)
 
-            # Move(1) Button
-            move1_btn = QPushButton("Active")
-            move1_btn.setToolTip("Move Project to Active")
-            move1_btn.setStyleSheet("background-color: yellow")
-            move1_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
-            self.tree.setItemWidget(project_item, 8, move1_btn)
+                # Move(1) Button
+                move1_btn = QPushButton("Active")
+                move1_btn.setToolTip("Move Project to Active")
+                move1_btn.setStyleSheet("background-color: yellow")
+                move1_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
+                self.tree.setItemWidget(project_item, 8, move1_btn)
 
-            # Move(2) Button
-            move2_btn = QPushButton("Completed")
-            move2_btn.setToolTip("Move Project to Completed")
-            move2_btn.setStyleSheet("background-color: green")
-            move2_btn.clicked.connect(lambda checked, p=project: self.move_to_completed(p))
-            self.tree.setItemWidget(project_item, 9, move2_btn)
+                # Move(2) Button
+                move2_btn = QPushButton("Completed")
+                move2_btn.setToolTip("Move Project to Completed")
+                move2_btn.setStyleSheet("background-color: green")
+                move2_btn.clicked.connect(lambda checked, p=project: self.move_to_completed(p))
+                self.tree.setItemWidget(project_item, 9, move2_btn)
 
-            if not project.is_residential_complex:
-                # Set Completed Units to N/A
-                project_item.setText(3, "N/A")
+                if not project.is_residential_complex:
+                    # Set Completed Units to N/A
+                    project_item.setText(3, "N/A")
 
-            logger.debug(f"Added project '{project.name}' with status '{project.status}' to the tree.")
+                logger.debug(f"Added project '{project.name}' with status '{project.status}' to the tree.")
     
     def open_context_menu(self, position: QPoint):
         item = self.tree.itemAt(position)
@@ -365,20 +391,35 @@ class BaseProjectsTab(QWidget):
             QMessageBox.critical(self, "DOCX Generation Error", f"Failed to generate DOCX:\n{str(e)}")
             logger.error(f"Failed to generate DOCX at {self.docx_path}: {e}")
 
-    def save_docx_as(self, project, doc_type):
+    def save_docx_as(self, project, doc_type, unit_name=None):
         options = QFileDialog.Options()
-        save_path, _ = QFileDialog.getSaveFileName(
-            self,
-            f"Save {doc_type} As...",
-            f"{sanitize_filename(project.name)}_{doc_type}.docx",
-            "Word Documents (*.docx)",
-            options=options
-        )
+        if unit_name:
+            save_path, _ = QFileDialog.getSaveFileName(
+                self,
+                f"Save {doc_type} As for {unit_name}...",
+                f"{sanitize_filename(project.name)}_{sanitize_filename(unit_name)}_{doc_type}.docx",
+                "Word Documents (*.docx)",
+                options=options
+            )
+        else:
+            save_path, _ = QFileDialog.getSaveFileName(
+                self,
+                f"Save {doc_type} As...",
+                f"{sanitize_filename(project.name)}_{doc_type}.docx",
+                "Word Documents (*.docx)",
+                options=options
+            )
         if save_path:
             try:
-                folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
-                project_folder = os.path.join(get_project_dir(), folder_name)
-                src_file = os.path.join(project_folder, f"{doc_type}.docx")
+                if unit_name:
+                    folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
+                    project_folder = os.path.join(get_project_dir(), folder_name)
+                    unit_folder = os.path.join(project_folder, sanitize_filename(unit_name))
+                    src_file = os.path.join(unit_folder, f"{doc_type}.docx")
+                else:
+                    folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
+                    project_folder = os.path.join(get_project_dir(), folder_name)
+                    src_file = os.path.join(project_folder, f"{doc_type}.docx")
                 shutil.copy(src_file, save_path)
                 QMessageBox.information(self, "Success", f"{doc_type} saved successfully at:\n{save_path}")
                 logger.info(f"{doc_type} saved as {save_path}")
@@ -407,20 +448,59 @@ class BaseProjectsTab(QWidget):
         except:
             return date_str
 
-    def view_docx(self, project, doc_type):
-        folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
-        project_folder = os.path.join(get_project_dir(), folder_name)
-        docx_file = os.path.join(project_folder, f"{doc_type}.docx")
+    def view_docx(self, project, doc_type, unit_name=None):
+        if unit_name:
+            folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
+            project_folder = os.path.join(get_project_dir(), folder_name)
+            docx_file = os.path.join(project_folder, sanitize_filename(unit_name), f"{doc_type}.docx")
+        else:
+            folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
+            project_folder = os.path.join(get_project_dir(), folder_name)
+            docx_file = os.path.join(project_folder, f"{doc_type}.docx")
 
         if not os.path.exists(docx_file):
-            QMessageBox.warning(self, "DOCX Error", f"{doc_type}.docx does not exist for this project.")
-            logger.warning(f"{doc_type}.docx not found for project ID {project.id}")
+            QMessageBox.warning(self, "DOCX Error", f"{doc_type}.docx does not exist for this {'unit ' + unit_name if unit_name else 'project'}.")
+            logger.warning(f"{doc_type}.docx not found for project ID {project.id}" + (f" and unit '{unit_name}'." if unit_name else "."))
             return
 
         success, message = open_docx_file(docx_file)
         if not success:
             QMessageBox.warning(self, "DOCX Error", message)
-            logger.error(f"Failed to open {doc_type}.docx for project ID {project.id}: {message}")
+            logger.error(f"Failed to open {doc_type}.docx for project ID {project.id}" + (f" and unit '{unit_name}': {message}" if unit_name else f": {message}"))
+
+    def view_docx_overview(self):
+        # This method is called from the "View DOCX" action in the split button
+        # Implement logic to open the current tab's DOCX file
+        self.generate_docx()
+        if not os.path.exists(self.docx_path):
+            QMessageBox.warning(self, "DOCX Error", f"{self.title} DOCX does not exist.")
+            logger.warning(f"{self.title} DOCX not found.")
+            return
+
+        success, message = open_docx_file(self.docx_path)
+        if not success:
+            QMessageBox.warning(self, "DOCX Error", message)
+            logger.error(f"Failed to open {self.title} DOCX: {message}")
+
+    def save_docx_overview(self):
+        # This method is called from the "Save As..." action in the split button
+        self.generate_docx()
+        options = QFileDialog.Options()
+        save_path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Save Overview As...",
+            f"{sanitize_filename(self.title)}_Projects.docx",
+            "Word Documents (*.docx)",
+            options=options
+        )
+        if save_path:
+            try:
+                shutil.copy(self.docx_path, save_path)
+                QMessageBox.information(self, "Success", f"Overview saved successfully at:\n{save_path}")
+                logger.info(f"Overview saved as {save_path}")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to save Overview:\n{str(e)}")
+                logger.error(f"Failed to save Overview DOCX: {e}")
 
     def move_to_active(self, project):
         reply = QMessageBox.question(
