@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import (
         QWidget, QVBoxLayout, QToolButton, QMenu, QAction, QTreeWidget, QTreeWidgetItem, QHBoxLayout, QMessageBox, QCheckBox, QPushButton, QFileDialog
     )
 from PyQt5.QtGui import QColor
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QPoint
 from datetime import datetime
 import os
 import sys
@@ -61,7 +61,6 @@ class BaseProjectsTab(QWidget):
                 "Project Name",
                 "Project Number",
                 "Main Contractor",
-                "Complex",
                 "Completed Units",
                 "Status",
                 "Extra",
@@ -73,7 +72,9 @@ class BaseProjectsTab(QWidget):
                 "End Date",
                 "Worker"
             ])
-            self.tree.setColumnCount(14)
+            self.tree.setColumnCount(13)
+            self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
+            self.tree.customContextMenuRequested.connect(self.open_context_menu)
             self.layout.addWidget(self.tree)
     
             # Temporary DOCX path
@@ -88,7 +89,6 @@ class BaseProjectsTab(QWidget):
                     project.name,
                     project.number,
                     project.main_contractor if project.main_contractor else "",
-                    "Yes" if project.is_residential_complex else "No",
                     "",
                     project.status,
                     project.extra if project.extra else "",
@@ -100,17 +100,17 @@ class BaseProjectsTab(QWidget):
                     self.format_date(project.end_date) if project.end_date else "",
                     project.worker
                 ])
+                project_item.setData(0, Qt.UserRole, project.id)
                 self.tree.addTopLevelItem(project_item)
                 if project.is_residential_complex and project.units:
                     # Calculate completed units
                     completed = self.db.session.query(UnitModel).filter_by(project_id=project.id, is_done=True).count()
                     total = len(project.units)
-                    project_item.setText(4, f"{completed}/{total}")
+                    project_item.setText(3, f"{completed}/{total}")
     
                     for unit_name in project.units:
                         unit_item = QTreeWidgetItem([
                             unit_name,
-                            "",
                             "",
                             "",
                             "",
@@ -149,7 +149,7 @@ class BaseProjectsTab(QWidget):
                 innregulering_menu.addAction(innregulering_save_as_action)
                 innregulering_split_btn.setMenu(innregulering_menu)
                 innregulering_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
-                self.tree.setItemWidget(project_item, 7, innregulering_split_btn)
+                self.tree.setItemWidget(project_item, 6, innregulering_split_btn)
     
                 # Sjekkliste Split Button
                 sjekkliste_split_btn = QToolButton()
@@ -162,43 +162,82 @@ class BaseProjectsTab(QWidget):
                 sjekkliste_menu.addAction(sjekkliste_save_as_action)
                 sjekkliste_split_btn.setMenu(sjekkliste_menu)
                 sjekkliste_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
-                self.tree.setItemWidget(project_item, 8, sjekkliste_split_btn)
+                self.tree.setItemWidget(project_item, 7, sjekkliste_split_btn)
     
                 # Move(1) Button
                 move1_btn = QPushButton("Active")
                 move1_btn.setToolTip("Move Project to Active")
                 move1_btn.setStyleSheet("background-color: yellow")
                 move1_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
-                self.tree.setItemWidget(project_item, 9, move1_btn)
+                self.tree.setItemWidget(project_item, 8, move1_btn)
     
                 # Move(2) Button
                 move2_btn = QPushButton("Completed")
                 move2_btn.setToolTip("Move Project to Completed")
                 move2_btn.setStyleSheet("background-color: green")
                 move2_btn.clicked.connect(lambda checked, p=project: self.move_to_completed(p))
-                self.tree.setItemWidget(project_item, 10, move2_btn)
+                self.tree.setItemWidget(project_item, 9, move2_btn)
     
                 if not project.is_residential_complex:
                     # Set Completed Units to N/A
-                    project_item.setText(4, "N/A")
+                    project_item.setText(3, "N/A")
     
                 logger.debug(f"Added project '{project.name}' with status '{project.status}' to the tree.")
             
             self.generate_docx()
+    
+        def open_context_menu(self, position: QPoint):
+            item = self.tree.itemAt(position)
+            if item and not item.parent():
+                menu = QMenu(self)
+                edit_action = QAction("Edit", self)
+                delete_action = QAction("Delete", self)
+                menu.addAction(edit_action)
+                menu.addAction(delete_action)
+                action = menu.exec_(self.tree.viewport().mapToGlobal(position))
+                if action == edit_action:
+                    # Placeholder for Edit functionality
+                    pass
+                elif action == delete_action:
+                    project_id = item.data(0, Qt.UserRole)
+                    project = self.db.get_project_by_id(project_id)
+                    if project:
+                        reply = QMessageBox.question(
+                            self,
+                            "Confirm Deletion",
+                            f"Are you sure you want to delete project '{project.name}'?",
+                            QMessageBox.Yes | QMessageBox.No
+                        )
+                        if reply == QMessageBox.Yes:
+                            try:
+                                # Delete project folder
+                                folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
+                                project_folder = os.path.join(get_project_dir(), folder_name)
+                                if os.path.exists(project_folder):
+                                    shutil.rmtree(project_folder)
+                                    logger.info(f"Deleted project folder at {project_folder}")
+                                # Delete project from database
+                                self.db.delete_project(project.id)
+                                self.load_projects()
+                                QMessageBox.information(self, "Deleted", f"Project '{project.name}' has been deleted.")
+                                logger.info(f"Deleted project '{project.name}' with ID {project.id}")
+                            except Exception as e:
+                                QMessageBox.critical(self, "Error", f"Failed to delete project: {str(e)}")
+                                logger.error(f"Failed to delete project ID {project.id}: {e}")
     
         def view_docx_overview(self):
             # This method is called from the "View DOCX" action in the split button
             # Implement logic to open the current tab's DOCX file
             self.generate_docx()
             if not os.path.exists(self.docx_path):
-                QMessageBox.warning(self, "DOCX Error", "Overview DOCX does not exist.")
-                logger.warning("Overview DOCX not found.")
+                QMessageBox.warning(self, "DOCX Error", f"{self.title} DOCX does not exist.")
+                logger.warning(f"{self.title} DOCX not found.")
                 return
     
             success, message = open_docx_file(self.docx_path)
             if not success:
                 QMessageBox.warning(self, "DOCX Error", message)
-                logger.error(f"Failed to open Overview DOCX: {message}")
+                logger.error(f"Failed to open {self.title} DOCX: {message}")
     
         def save_docx_overview(self):
             # This method is called from the "Save As..." action in the split button
@@ -242,38 +281,36 @@ class BaseProjectsTab(QWidget):
                 if not projects:
                     document.add_paragraph("No projects to display.")
                 else:
-                    table = document.add_table(rows=1, cols=9)
+                    table = document.add_table(rows=1, cols=8)
                     table.style = 'Light List Accent 1'
                     hdr_cells = table.rows[0].cells
                     hdr_cells[0].text = 'Project Name'
                     hdr_cells[1].text = 'Project Number'
                     hdr_cells[2].text = 'Main Contractor'
-                    hdr_cells[3].text = 'Complex'
-                    hdr_cells[4].text = 'Completed Units'
-                    hdr_cells[5].text = 'Status'
-                    hdr_cells[6].text = 'Start Date'
-                    hdr_cells[7].text = 'End Date'
-                    hdr_cells[8].text = 'Worker'
+                    hdr_cells[3].text = 'Completed Units'
+                    hdr_cells[4].text = 'Status'
+                    hdr_cells[5].text = 'Start Date'
+                    hdr_cells[6].text = 'End Date'
+                    hdr_cells[7].text = 'Worker'
     
                     for project in projects:
                         row_cells = table.add_row().cells
                         row_cells[0].text = project.name
                         row_cells[1].text = project.number
                         row_cells[2].text = project.main_contractor if project.main_contractor else "N/A"
-                        row_cells[3].text = "Yes" if project.is_residential_complex else "No"
                         if project.is_residential_complex:
                             completed = self.db.session.query(UnitModel).filter_by(project_id=project.id, is_done=True).count()
                             total = len(project.units)
-                            row_cells[4].text = f"{completed}/{total}"
+                            row_cells[3].text = f"{completed}/{total}"
                         else:
-                            row_cells[4].text = "N/A"
-                        row_cells[5].text = project.status
-                        row_cells[6].text = self.format_date(project.start_date)
-                        row_cells[7].text = self.format_date(project.end_date) if project.end_date else "N/A"
-                        row_cells[8].text = project.worker
+                            row_cells[3].text = "N/A"
+                        row_cells[4].text = project.status
+                        row_cells[5].text = self.format_date(project.start_date)
+                        row_cells[6].text = self.format_date(project.end_date) if project.end_date else "N/A"
+                        row_cells[7].text = project.worker
     
                     # Adjust column widths to fit the page
-                    widths = [Inches(1.5), Inches(1.0), Inches(1.5), Inches(0.8), Inches(1.2), Inches(1.0), Inches(1.0), Inches(1.0), Inches(1.2)]
+                    widths = [Inches(1.5), Inches(1.0), Inches(1.5), Inches(1.2), Inches(1.0), Inches(1.0), Inches(1.0), Inches(1.2)]
                     for row in table.rows:
                         for idx, width in enumerate(widths):
                             row.cells[idx].width = width
@@ -352,14 +389,14 @@ class BaseProjectsTab(QWidget):
             # Implement logic to open the current tab's DOCX file
             self.generate_docx()
             if not os.path.exists(self.docx_path):
-                QMessageBox.warning(self, "DOCX Error", "Overview DOCX does not exist.")
-                logger.warning("Overview DOCX not found.")
+                QMessageBox.warning(self, "DOCX Error", f"{self.title} DOCX does not exist.")
+                logger.warning(f"{self.title} DOCX not found.")
                 return
     
             success, message = open_docx_file(self.docx_path)
             if not success:
                 QMessageBox.warning(self, "DOCX Error", message)
-                logger.error(f"Failed to open Overview DOCX: {message}")
+                logger.error(f"Failed to open {self.title} DOCX: {message}")
     
         def save_docx_overview(self):
             # This method is called from the "Save As..." action in the split button
