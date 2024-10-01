@@ -134,35 +134,34 @@ class BaseProjectsTab(QWidget):
                         checkbox.stateChanged.connect(lambda state, p=project, u=unit_name: self.toggle_unit_status(p, u, state))
                         self.tree.setItemWidget(unit_item, 0, checkbox)
                         project_item.addChild(unit_item)
-                    
+    
+                    # Expand the project item to show unit names by default
+                    self.tree.expandItem(project_item)
+                
                 # Innregulering Split Button
                 innregulering_split_btn = QToolButton()
-                innregulering_split_btn.setText("Innregulering")
-                innregulering_split_btn.setToolTip("Innregulering DOCX")
+                innregulering_split_btn.setText("View")
+                innregulering_split_btn.setToolTip("View Innregulering DOCX")
                 innregulering_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
                 innregulering_menu = QMenu(self)
-                innregulering_view_action = QAction("View DOCX", self)
-                innregulering_view_action.triggered.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
                 innregulering_save_as_action = QAction("Save As...", self)
                 innregulering_save_as_action.triggered.connect(lambda checked, p=project: self.save_docx_as(p, "Innregulering"))
-                innregulering_menu.addAction(innregulering_view_action)
                 innregulering_menu.addAction(innregulering_save_as_action)
                 innregulering_split_btn.setMenu(innregulering_menu)
+                innregulering_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Innregulering"))
                 self.tree.setItemWidget(project_item, 7, innregulering_split_btn)
     
                 # Sjekkliste Split Button
                 sjekkliste_split_btn = QToolButton()
-                sjekkliste_split_btn.setText("Sjekkliste")
-                sjekkliste_split_btn.setToolTip("Sjekkliste DOCX")
+                sjekkliste_split_btn.setText("View")
+                sjekkliste_split_btn.setToolTip("View Sjekkliste DOCX")
                 sjekkliste_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
                 sjekkliste_menu = QMenu(self)
-                sjekkliste_view_action = QAction("View DOCX", self)
-                sjekkliste_view_action.triggered.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
                 sjekkliste_save_as_action = QAction("Save As...", self)
                 sjekkliste_save_as_action.triggered.connect(lambda checked, p=project: self.save_docx_as(p, "Sjekkliste"))
-                sjekkliste_menu.addAction(sjekkliste_view_action)
                 sjekkliste_menu.addAction(sjekkliste_save_as_action)
                 sjekkliste_split_btn.setMenu(sjekkliste_menu)
+                sjekkliste_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
                 self.tree.setItemWidget(project_item, 8, sjekkliste_split_btn)
     
                 # Move(1) Button
@@ -192,14 +191,14 @@ class BaseProjectsTab(QWidget):
             # Implement logic to open the current tab's DOCX file
             self.generate_docx()
             if not os.path.exists(self.docx_path):
-                QMessageBox.warning(self, "DOCX Error", f"{self.title} DOCX does not exist.")
-                logger.warning(f"{self.title} DOCX not found.")
+                QMessageBox.warning(self, "DOCX Error", "Overview DOCX does not exist.")
+                logger.warning("Overview DOCX not found.")
                 return
     
             success, message = open_docx_file(self.docx_path)
             if not success:
                 QMessageBox.warning(self, "DOCX Error", message)
-                logger.error(f"Failed to open {self.title} DOCX: {message}")
+                logger.error(f"Failed to open Overview DOCX: {message}")
     
         def save_docx_overview(self):
             # This method is called from the "Save As..." action in the split button
@@ -231,12 +230,6 @@ class BaseProjectsTab(QWidget):
                 new_width, new_height = section.page_height, section.page_width
                 section.page_width = new_width
                 section.page_height = new_height
-                
-                # Set smaller margins
-                section.top_margin = Inches(0.5)
-                section.bottom_margin = Inches(0.5)
-                section.left_margin = Inches(0.5)
-                section.right_margin = Inches(0.5)
     
                 # Add header
                 header = section.header
@@ -280,17 +273,7 @@ class BaseProjectsTab(QWidget):
                         row_cells[8].text = project.worker
     
                     # Adjust column widths to fit the page
-                    widths = [
-                        Inches(2.0),  # Project Name
-                        Inches(1.2),  # Project Number
-                        Inches(1.8),  # Main Contractor
-                        Inches(0.8),  # Complex
-                        Inches(1.2),  # Completed Units
-                        Inches(1.0),  # Status
-                        Inches(1.2),  # Start Date
-                        Inches(1.2),  # End Date
-                        Inches(1.2)   # Worker
-                    ]
+                    widths = [Inches(1.5), Inches(1.0), Inches(1.5), Inches(0.8), Inches(1.2), Inches(1.0), Inches(1.0), Inches(1.0), Inches(1.2)]
                     for row in table.rows:
                         for idx, width in enumerate(widths):
                             row.cells[idx].width = width
