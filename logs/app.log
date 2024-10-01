@@ -3317,3 +3317,164 @@ WHERE projects.id = ?
 2024-10-01 22:25:08,399 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
 2024-10-01 22:25:08,980 - gui.base_projects_tab - INFO - Deleted project 'sadfasdf' with ID 1
 2024-10-01 22:25:12,635 - database - INFO - Database session closed.
+2024-10-01 22:27:37,605 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 22:27:37,812 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 22:27:37,812 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-10-01 22:27:37,822 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 22:27:37,832 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Overview Projects_Projects.docx
+2024-10-01 22:27:37,832 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 22:27:37,833 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:27:37,833 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 22:27:37,842 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:27:37,851 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Completed Projects_Projects.docx
+2024-10-01 22:27:37,853 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:27:37,853 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 22:27:37,863 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:27:37,874 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Finished Projects_Projects.docx
+2024-10-01 22:27:37,875 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 22:27:37,875 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Detailed Project View' tab.
+2024-10-01 22:27:37,882 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 22:27:37,893 - gui.base_projects_tab - INFO - Generated DOCX at C:\Users\JohnPC\AppData\Local\Temp\Detailed Project View_Projects.docx
+2024-10-01 22:27:37,893 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 22:33:45,444 - database - INFO - Database session closed.
+2024-10-01 22:39:27,329 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 22:41:01,746 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 22:43:29,136 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 22:44:13,270 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 22:44:33,913 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 22:47:14,046 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 22:51:25,369 - database - INFO - Database initialized at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\projects.db
+2024-10-01 22:51:25,575 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 22:51:25,575 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-10-01 22:51:25,575 - gui.overview_tab - INFO - OverviewTab initialized and connected to project_updated signal.
+2024-10-01 22:51:25,576 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:51:25,576 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 22:51:25,577 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:51:25,577 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 22:51:25,579 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 22:51:25,579 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Detailed Project View' tab.
+2024-10-01 22:51:25,579 - gui.detailed_view_tab - INFO - DetailedViewTab initialized and connected to project_updated signal.
+2024-10-01 22:51:49,840 - database - INFO - Added project: aaaa () with ID 1
+2024-10-01 22:51:49,841 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 22:51:49,842 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 22:51:49,847 - gui.base_projects_tab - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_
+2024-10-01 22:51:49,847 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_\1
+2024-10-01 22:51:49,866 - gui.base_projects_tab - INFO - Created Innregulering DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_\1\Innregulering.docx
+2024-10-01 22:51:49,882 - gui.base_projects_tab - INFO - Created Sjekkliste DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_\1\Sjekkliste.docx
+2024-10-01 22:51:49,883 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_\2
+2024-10-01 22:51:49,900 - gui.base_projects_tab - INFO - Created Innregulering DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_\2\Innregulering.docx
+2024-10-01 22:51:49,919 - gui.base_projects_tab - INFO - Created Sjekkliste DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_\2\Sjekkliste.docx
+2024-10-01 22:51:49,920 - gui.base_projects_tab - DEBUG - Added project 'aaaa' with status 'Active' to the tree.
+2024-10-01 22:51:49,921 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:51:49,921 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 22:51:49,921 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:51:49,921 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 22:51:49,921 - database - INFO - Loaded all projects. Count: 1
+2024-10-01 22:51:49,921 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-10-01 22:51:49,923 - gui.base_projects_tab - DEBUG - Added project 'aaaa' with status 'Active' to the tree.
+2024-10-01 22:51:49,923 - gui.add_project_dialog - INFO - Project 'aaaa' with ID 1 added successfully. Residential Complex: True
+2024-10-01 22:51:49,923 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_
+2024-10-01 22:51:49,925 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_
+2024-10-01 22:51:49,925 - gui.add_project_dialog - INFO - Project added successfully: aaaa ()
+2024-10-01 22:51:49,929 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 22:51:49,929 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 22:51:49,931 - gui.base_projects_tab - DEBUG - Added project 'aaaa' with status 'Active' to the tree.
+2024-10-01 22:51:49,931 - gui.overview_tab - INFO - New project added via dialog.
+2024-10-01 22:52:03,381 - database - INFO - Retrieved project ID 1
+2024-10-01 22:52:04,371 - gui.base_projects_tab - INFO - Deleted project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaa_
+2024-10-01 22:52:04,377 - database - INFO - Deleted project ID 1
+2024-10-01 22:52:04,377 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 22:52:04,377 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-10-01 22:52:04,378 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:52:04,378 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 22:52:04,378 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:52:04,378 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 22:52:04,378 - database - INFO - Loaded all projects. Count: 0
+2024-10-01 22:52:04,378 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Detailed Project View' tab.
+2024-10-01 22:52:04,379 - database - INFO - Loaded projects with status='Active'. Count: 0
+2024-10-01 22:52:04,379 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Overview Projects' tab.
+2024-10-01 22:52:08,289 - gui.base_projects_tab - INFO - Deleted project 'aaaa' with ID 1
+2024-10-01 22:52:18,134 - database - INFO - Added project: aaaaaa (123) with ID 1
+2024-10-01 22:52:18,134 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 22:52:18,135 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 22:52:18,136 - gui.base_projects_tab - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123
+2024-10-01 22:52:18,136 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123\1
+2024-10-01 22:52:18,154 - gui.base_projects_tab - INFO - Created Innregulering DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123\1\Innregulering.docx
+2024-10-01 22:52:18,170 - gui.base_projects_tab - INFO - Created Sjekkliste DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123\1\Sjekkliste.docx
+2024-10-01 22:52:18,170 - gui.base_projects_tab - INFO - Created unit folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123\2
+2024-10-01 22:52:18,187 - gui.base_projects_tab - INFO - Created Innregulering DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123\2\Innregulering.docx
+2024-10-01 22:52:18,204 - gui.base_projects_tab - INFO - Created Sjekkliste DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123\2\Sjekkliste.docx
+2024-10-01 22:52:18,204 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Active' to the tree.
+2024-10-01 22:52:18,205 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:52:18,205 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 22:52:18,205 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:52:18,205 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 22:52:18,205 - database - INFO - Loaded all projects. Count: 1
+2024-10-01 22:52:18,205 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Detailed Project View' tab.
+2024-10-01 22:52:18,213 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Active' to the tree.
+2024-10-01 22:52:18,213 - gui.add_project_dialog - INFO - Project 'aaaaaa' with ID 1 added successfully. Residential Complex: True
+2024-10-01 22:52:18,213 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123
+2024-10-01 22:52:18,214 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\aaaaaa_123
+2024-10-01 22:52:18,215 - gui.add_project_dialog - INFO - Project added successfully: aaaaaa (123)
+2024-10-01 22:52:18,218 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 22:52:18,219 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 22:52:18,220 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Active' to the tree.
+2024-10-01 22:52:18,221 - gui.overview_tab - INFO - New project added via dialog.
+2024-10-01 22:52:27,814 - database - INFO - Added project: bbbbb (22222) with ID 2
+2024-10-01 22:52:27,815 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 22:52:27,815 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 22:52:27,817 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Active' to the tree.
+2024-10-01 22:52:27,818 - gui.base_projects_tab - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbbb_22222
+2024-10-01 22:52:27,837 - gui.base_projects_tab - INFO - Created Innregulering DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbbb_22222\Innregulering.docx
+2024-10-01 22:52:27,853 - gui.base_projects_tab - INFO - Created Sjekkliste DOCX at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbbb_22222\Sjekkliste.docx
+2024-10-01 22:52:27,854 - gui.base_projects_tab - DEBUG - Added project 'bbbbb' with status 'Active' to the tree.
+2024-10-01 22:52:27,854 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:52:27,854 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 22:52:27,854 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:52:27,854 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 22:52:27,855 - database - INFO - Loaded all projects. Count: 2
+2024-10-01 22:52:27,855 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-10-01 22:52:27,857 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Active' to the tree.
+2024-10-01 22:52:27,857 - gui.base_projects_tab - DEBUG - Added project 'bbbbb' with status 'Active' to the tree.
+2024-10-01 22:52:27,858 - gui.add_project_dialog - INFO - Project 'bbbbb' with ID 2 added successfully. Residential Complex: False
+2024-10-01 22:52:27,858 - gui.add_project_dialog - INFO - Created project folder at C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbbb_22222
+2024-10-01 22:52:27,859 - gui.add_project_dialog - INFO - Copied templates to C:\Users\JohnPC\Desktop\Project Manager\Boligventilasjon_Prosjekter\bbbbb_22222
+2024-10-01 22:52:27,859 - gui.add_project_dialog - INFO - Project added successfully: bbbbb (22222)
+2024-10-01 22:52:27,863 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 22:52:27,863 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 22:52:27,865 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Active' to the tree.
+2024-10-01 22:52:27,867 - gui.base_projects_tab - DEBUG - Added project 'bbbbb' with status 'Active' to the tree.
+2024-10-01 22:52:27,867 - gui.overview_tab - INFO - New project added via dialog.
+2024-10-01 22:53:05,706 - database - INFO - Updated project ID 1: aaaaaa (123)
+2024-10-01 22:53:05,706 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 22:53:05,707 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 22:53:05,708 - gui.base_projects_tab - DEBUG - Added project 'bbbbb' with status 'Active' to the tree.
+2024-10-01 22:53:05,708 - database - INFO - Loaded projects with status='Completed'. Count: 1
+2024-10-01 22:53:05,708 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Completed Projects' tab.
+2024-10-01 22:53:05,711 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Completed' to the tree.
+2024-10-01 22:53:05,711 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:53:05,711 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 22:53:05,712 - database - INFO - Loaded all projects. Count: 2
+2024-10-01 22:53:05,712 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-10-01 22:53:05,714 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Completed' to the tree.
+2024-10-01 22:53:05,714 - gui.base_projects_tab - DEBUG - Added project 'bbbbb' with status 'Active' to the tree.
+2024-10-01 22:53:05,715 - database - INFO - Loaded projects with status='Active'. Count: 1
+2024-10-01 22:53:05,715 - gui.base_projects_tab - INFO - Loading 1 projects into the 'Overview Projects' tab.
+2024-10-01 22:53:05,716 - gui.base_projects_tab - DEBUG - Added project 'bbbbb' with status 'Active' to the tree.
+2024-10-01 22:53:07,041 - gui.base_projects_tab - INFO - Moved project ID 1 to Completed with end_date set to 2024-10-01.
+2024-10-01 22:53:09,778 - database - INFO - Updated project ID 1: aaaaaa (123)
+2024-10-01 22:53:09,779 - database - INFO - Loaded projects with status='Active'. Count: 2
+2024-10-01 22:53:09,779 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Overview Projects' tab.
+2024-10-01 22:53:09,782 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Active' to the tree.
+2024-10-01 22:53:09,783 - gui.base_projects_tab - DEBUG - Added project 'bbbbb' with status 'Active' to the tree.
+2024-10-01 22:53:09,783 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:53:09,783 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 22:53:09,783 - database - INFO - Loaded projects with status='Finished'. Count: 0
+2024-10-01 22:53:09,783 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Finished Projects' tab.
+2024-10-01 22:53:09,784 - database - INFO - Loaded all projects. Count: 2
+2024-10-01 22:53:09,784 - gui.base_projects_tab - INFO - Loading 2 projects into the 'Detailed Project View' tab.
+2024-10-01 22:53:09,786 - gui.base_projects_tab - DEBUG - Added project 'aaaaaa' with status 'Active' to the tree.
+2024-10-01 22:53:09,787 - gui.base_projects_tab - DEBUG - Added project 'bbbbb' with status 'Active' to the tree.
+2024-10-01 22:53:09,787 - database - INFO - Loaded projects with status='Completed'. Count: 0
+2024-10-01 22:53:09,787 - gui.base_projects_tab - INFO - Loading 0 projects into the 'Completed Projects' tab.
+2024-10-01 22:53:10,538 - gui.base_projects_tab - INFO - Moved project ID 1 to Active.

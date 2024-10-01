@@ -17,4 +17,4 @@ here is the full codebase, read it and tell me when your ready to make changes -
 
 instructions
 
-provide the full code for the parts you changed. do not explain, and tell me when your done
+provide the full code for the parts you changed. do not explain it. Tell me when your done.
