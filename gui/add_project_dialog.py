@@ -247,6 +247,16 @@ class AddProjectDialog(QDialog):
             logger.error(f"Failed to create project folder at {project_folder}: {e}")
             return
 
+        # Create "Floor plan" subfolder
+        floor_plan_folder = os.path.join(project_folder, "Floor plan")
+        try:
+            os.makedirs(floor_plan_folder, exist_ok=True)
+            logger.info(f"Created 'Floor plan' folder at {floor_plan_folder}")
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to create 'Floor plan' folder:\n{str(e)}")
+            logger.error(f"Failed to create 'Floor plan' folder at {floor_plan_folder}: {e}")
+            return
+
         # Check for Template directory and required files
         valid, message = check_template_files()
         if not valid:
@@ -279,6 +289,15 @@ class AddProjectDialog(QDialog):
                 except Exception as e:
                     QMessageBox.critical(self, "Error", f"Failed to create unit folder '{unit}':\n{str(e)}")
                     logger.error(f"Failed to create unit folder '{unit}' at {unit_folder}: {e}")
+                    return
+                # Create "Floor plan" subfolder inside unit folder
+                floor_plan_subfolder = os.path.join(unit_folder, "Floor plan")
+                try:
+                    os.makedirs(floor_plan_subfolder, exist_ok=True)
+                    logger.info(f"Created 'Floor plan' subfolder at {floor_plan_subfolder}")
+                except Exception as e:
+                    QMessageBox.critical(self, "Error", f"Failed to create 'Floor plan' subfolder for unit '{unit}':\n{str(e)}")
+                    logger.error(f"Failed to create 'Floor plan' subfolder for unit '{unit}' at {floor_plan_subfolder}: {e}")
                     return
                 # Create DOCX files for the unit using templates
                 try:

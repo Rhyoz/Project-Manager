@@ -66,13 +66,14 @@ class BaseProjectsTab(QWidget):
             "Extra",
             "Innregulering",
             "Sjekkliste",
+            "Floor Plan(s)",
             "Move(1)",
             "Move(2)",
             "Start Date",
             "End Date",
             "Worker"
         ])
-        self.tree.setColumnCount(13)
+        self.tree.setColumnCount(14)
         self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
         self.tree.customContextMenuRequested.connect(self.open_context_menu)
         self.layout.addWidget(self.tree)
@@ -96,6 +97,7 @@ class BaseProjectsTab(QWidget):
                 "",
                 "",
                 "",
+                "",
                 self.format_date(project.start_date),
                 self.format_date(project.end_date) if project.end_date else "",
                 project.worker
@@ -111,6 +113,7 @@ class BaseProjectsTab(QWidget):
                 for unit_name in project.units:
                     unit_item = QTreeWidgetItem([
                         unit_name,
+                        "",
                         "",
                         "",
                         "",
@@ -230,19 +233,23 @@ class BaseProjectsTab(QWidget):
                 sjekkliste_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
                 self.tree.setItemWidget(project_item, 7, sjekkliste_split_btn)
 
+                # Floor Plan(s) Column Placeholder (No buttons yet)
+                floor_plan_placeholder = QWidget()
+                self.tree.setItemWidget(project_item, 8, floor_plan_placeholder)
+
                 # Move(1) Button
                 move1_btn = QPushButton("Active")
                 move1_btn.setToolTip("Move Project to Active")
                 move1_btn.setStyleSheet("background-color: yellow")
                 move1_btn.clicked.connect(lambda checked, p=project: self.move_to_active(p))
-                self.tree.setItemWidget(project_item, 8, move1_btn)
+                self.tree.setItemWidget(project_item, 9, move1_btn)
 
                 # Move(2) Button
                 move2_btn = QPushButton("Completed")
                 move2_btn.setToolTip("Move Project to Completed")
                 move2_btn.setStyleSheet("background-color: green")
                 move2_btn.clicked.connect(lambda checked, p=project: self.move_to_completed(p))
-                self.tree.setItemWidget(project_item, 9, move2_btn)
+                self.tree.setItemWidget(project_item, 10, move2_btn)
 
                 if not project.is_residential_complex:
                     # Set Completed Units to N/A
@@ -467,40 +474,6 @@ class BaseProjectsTab(QWidget):
         if not success:
             QMessageBox.warning(self, "DOCX Error", message)
             logger.error(f"Failed to open {doc_type}.docx for project ID {project.id}" + (f" and unit '{unit_name}': {message}" if unit_name else f": {message}"))
-
-    def view_docx_overview(self):
-        # This method is called from the "View DOCX" action in the split button
-        # Implement logic to open the current tab's DOCX file
-        self.generate_docx()
-        if not os.path.exists(self.docx_path):
-            QMessageBox.warning(self, "DOCX Error", f"{self.title} DOCX does not exist.")
-            logger.warning(f"{self.title} DOCX not found.")
-            return
-
-        success, message = open_docx_file(self.docx_path)
-        if not success:
-            QMessageBox.warning(self, "DOCX Error", message)
-            logger.error(f"Failed to open {self.title} DOCX: {message}")
-
-    def save_docx_overview(self):
-        # This method is called from the "Save As..." action in the split button
-        self.generate_docx()
-        options = QFileDialog.Options()
-        save_path, _ = QFileDialog.getSaveFileName(
-            self,
-            "Save Overview As...",
-            f"{sanitize_filename(self.title)}_Projects.docx",
-            "Word Documents (*.docx)",
-            options=options
-        )
-        if save_path:
-            try:
-                shutil.copy(self.docx_path, save_path)
-                QMessageBox.information(self, "Success", f"Overview saved successfully at:\n{save_path}")
-                logger.info(f"Overview saved as {save_path}")
-            except Exception as e:
-                QMessageBox.critical(self, "Error", f"Failed to save Overview:\n{str(e)}")
-                logger.error(f"Failed to save Overview DOCX: {e}")
 
     def move_to_active(self, project):
         reply = QMessageBox.question(
