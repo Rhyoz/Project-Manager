@@ -1,7 +1,7 @@
 # File: gui/base_projects_tab.py
 from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QToolButton, QMenu, QAction, QTreeWidget, QTreeWidgetItem, 
-    QHBoxLayout, QMessageBox, QCheckBox, QPushButton, QFileDialog
+    QHBoxLayout, QMessageBox, QCheckBox, QPushButton, QFileDialog, QLabel
 )
 from PyQt5.QtGui import QColor
 from PyQt5.QtCore import Qt, QPoint
@@ -75,7 +75,7 @@ class BaseProjectsTab(QWidget):
             "End Date",
             "Worker"
         ])
-        self.tree.setColumnCount(14)
+        self.tree.setColumnCount(14)  # Updated column count
         self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
         self.tree.customContextMenuRequested.connect(self.open_context_menu)
         self.layout.addWidget(self.tree)
@@ -181,6 +181,24 @@ class BaseProjectsTab(QWidget):
                     floor_plan_split_btn.setMenu(floor_plan_menu)
                     floor_plan_split_btn.clicked.connect(lambda checked, p=project, u=unit_name: self.view_floor_plan(p, u))
                     self.tree.setItemWidget(unit_item, 8, floor_plan_split_btn)
+
+                # Add Master Split Button for Residential Projects in "Floor Plan(s)" column
+                master_split_btn = QToolButton()
+                master_split_btn.setText("Master")
+                master_split_btn.setToolTip("Manage Master Floor Plan")
+                master_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
+                master_menu = QMenu(self)
+                master_import_pdf_action = QAction("Import PDF", self)
+                master_import_pdf_action.triggered.connect(lambda checked, p=project: self.import_master_floor_plan(p))
+                master_save_as_action = QAction("Save As...", self)
+                master_save_as_action.triggered.connect(lambda checked, p=project: self.save_master_floor_plan_as(p))
+                master_menu.addAction(master_import_pdf_action)
+                master_menu.addAction(master_save_as_action)
+                master_split_btn.setMenu(master_menu)
+                master_split_btn.clicked.connect(lambda checked, p=project: self.view_master_floor_plan(p))
+
+                # Set only the master_split_btn in the "Floor Plan(s)" column for project row
+                self.tree.setItemWidget(project_item, 8, master_split_btn)  # "Floor Plan(s)" column
 
                 # Expand the project item to show unit names by default
                 self.tree.expandItem(project_item)
@@ -462,14 +480,14 @@ class BaseProjectsTab(QWidget):
             try:
                 folder_name = get_project_folder_name(project)  # Changed here
                 if unit_name:
-                    floor_plan_file = os.path.join(get_project_dir(), folder_name, sanitize_filename(unit_name), f"{doc_type}.docx")
+                    docx_file = os.path.join(get_project_dir(), folder_name, sanitize_filename(unit_name), f"{doc_type}.docx")
                 else:
-                    floor_plan_file = os.path.join(get_project_dir(), folder_name, f"{doc_type}.docx")
-                if not os.path.exists(floor_plan_file):
+                    docx_file = os.path.join(get_project_dir(), folder_name, f"{doc_type}.docx")
+                if not os.path.exists(docx_file):
                     QMessageBox.warning(self, "File Not Found", f"{doc_type}.docx does not exist.")
                     logger.warning(f"{doc_type}.docx not found for project '{project.name}'" + (f" and unit '{unit_name}'." if unit_name else "."))
                     return
-                shutil.copy(floor_plan_file, save_path)
+                shutil.copy(docx_file, save_path)
                 QMessageBox.information(self, "Success", f"{doc_type} saved successfully at:\n{save_path}")
                 logger.info(f"{doc_type} saved as {save_path}")
             except Exception as e:
@@ -636,3 +654,75 @@ class BaseProjectsTab(QWidget):
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Failed to save Floor Plan:\n{str(e)}")
                 logger.error(f"Failed to save Floor Plan for project '{project.name}'" + (f" and unit '{unit_name}': {e}" if unit_name else f": {e}"))
+
+    # New Methods for Master Floor Plan
+
+    def import_master_floor_plan(self, project):
+        options = QFileDialog.Options()
+        file_path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Import Master Floor Plan PDF",
+            "",
+            "PDF Files (*.pdf)",
+            options=options
+        )
+        if file_path:
+            try:
+                folder_name = get_project_folder_name(project)  # Changed here
+                master_folder = os.path.join(get_project_dir(), folder_name, "Master")
+                target_file = os.path.join(master_folder, "MasterFloorPlan.pdf")
+                shutil.copy(file_path, target_file)
+                QMessageBox.information(self, "Success", f"Master Floor Plan imported successfully to '{target_file}'.")
+                logger.info(f"Imported Master Floor Plan PDF to {target_file}")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to import Master Floor Plan PDF:\n{str(e)}")
+                logger.error(f"Failed to import Master Floor Plan PDF for project '{project.name}': {e}")
+
+    def view_master_floor_plan(self, project):
+        try:
+            folder_name = get_project_folder_name(project)  # Changed here
+            master_floor_plan_file = os.path.join(get_project_dir(), folder_name, "Master", "MasterFloorPlan.pdf")
+
+            if not os.path.exists(master_floor_plan_file):
+                QMessageBox.warning(self, "Master Floor Plan Error", "Master Floor Plan PDF does not exist.")
+                logger.warning(f"Master Floor Plan PDF not found for project '{project.name}'.")
+                return
+
+            try:
+                if sys.platform == "win32":
+                    os.startfile(master_floor_plan_file)
+                elif sys.platform == "darwin":
+                    subprocess.call(["open", master_floor_plan_file])
+                else:
+                    subprocess.call(["xdg-open", master_floor_plan_file])
+                logger.info(f"Opened Master Floor Plan PDF: {master_floor_plan_file}")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to open Master Floor Plan PDF:\n{str(e)}")
+                logger.error(f"Failed to open Master Floor Plan PDF '{master_floor_plan_file}': {e}")
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"An error occurred while trying to view the Master Floor Plan:\n{str(e)}")
+            logger.error(f"Error in view_master_floor_plan for project '{project.name}': {e}")
+
+    def save_master_floor_plan_as(self, project):
+        options = QFileDialog.Options()
+        save_path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Save Master Floor Plan As...",
+            f"{sanitize_filename(project.name)}_MasterFloorPlan.pdf",
+            "PDF Files (*.pdf)",
+            options=options
+        )
+        if save_path:
+            try:
+                folder_name = get_project_folder_name(project)  # Changed here
+                master_floor_plan_file = os.path.join(get_project_dir(), folder_name, "Master", "MasterFloorPlan.pdf")
+                if not os.path.exists(master_floor_plan_file):
+                    QMessageBox.warning(self, "File Not Found", "Master Floor Plan PDF does not exist.")
+                    logger.warning(f"Master Floor Plan PDF not found for project '{project.name}'.")
+                    return
+                shutil.copy(master_floor_plan_file, save_path)
+                QMessageBox.information(self, "Success", f"Master Floor Plan saved successfully at:\n{save_path}")
+                logger.info(f"Master Floor Plan saved as {save_path}")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to save Master Floor Plan:\n{str(e)}")
+                logger.error(f"Failed to save Master Floor Plan for project '{project.name}': {e}")
