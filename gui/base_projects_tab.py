@@ -1,6 +1,7 @@
 # File: gui/base_projects_tab.py
 from PyQt5.QtWidgets import (
-    QWidget, QVBoxLayout, QToolButton, QMenu, QAction, QTreeWidget, QTreeWidgetItem, QHBoxLayout, QMessageBox, QCheckBox, QPushButton, QFileDialog
+    QWidget, QVBoxLayout, QToolButton, QMenu, QAction, QTreeWidget, QTreeWidgetItem, 
+    QHBoxLayout, QMessageBox, QCheckBox, QPushButton, QFileDialog
 )
 from PyQt5.QtGui import QColor
 from PyQt5.QtCore import Qt, QPoint
@@ -11,7 +12,7 @@ import subprocess
 import shutil
 import tempfile
 from logger import get_logger
-from utils import sanitize_filename, open_docx_file, get_project_dir, get_template_dir
+from utils import sanitize_filename, open_docx_file, get_project_dir, get_template_dir, get_project_folder_name
 from docx import Document
 from docx.enum.section import WD_ORIENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -26,6 +27,7 @@ class BaseProjectsTab(QWidget):
         self.db = db
         self.status_filter = status_filter
         self.title = title
+        self.template_dir = get_template_dir()  # Added this line
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
         self.setup_ui()
@@ -164,11 +166,27 @@ class BaseProjectsTab(QWidget):
                     sjekkliste_split_btn.clicked.connect(lambda checked, p=project, u=unit_name: self.view_docx(p, "Sjekkliste", u))
                     self.tree.setItemWidget(unit_item, 7, sjekkliste_split_btn)
 
+                    # Floor Plan(s) Split Button for Unit
+                    floor_plan_split_btn = QToolButton()
+                    floor_plan_split_btn.setText("View")
+                    floor_plan_split_btn.setToolTip("View Floor Plan(s)")
+                    floor_plan_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
+                    floor_plan_menu = QMenu(self)
+                    import_pdf_action = QAction("Import PDF", self)
+                    import_pdf_action.triggered.connect(lambda checked, p=project, u=unit_name: self.import_floor_plan(p, u))
+                    save_as_floor_plan_action = QAction("Save As...", self)
+                    save_as_floor_plan_action.triggered.connect(lambda checked, p=project, u=unit_name: self.save_floor_plan_as(p, u))
+                    floor_plan_menu.addAction(import_pdf_action)
+                    floor_plan_menu.addAction(save_as_floor_plan_action)
+                    floor_plan_split_btn.setMenu(floor_plan_menu)
+                    floor_plan_split_btn.clicked.connect(lambda checked, p=project, u=unit_name: self.view_floor_plan(p, u))
+                    self.tree.setItemWidget(unit_item, 8, floor_plan_split_btn)
+
                 # Expand the project item to show unit names by default
                 self.tree.expandItem(project_item)
                 
                 # Create project folder
-                folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
+                folder_name = get_project_folder_name(project)  # Changed here
                 project_folder = os.path.join(get_project_dir(), folder_name)
                 if not os.path.exists(project_folder):
                     os.makedirs(project_folder)
@@ -180,18 +198,30 @@ class BaseProjectsTab(QWidget):
                     if not os.path.exists(unit_folder):
                         os.makedirs(unit_folder)
                         logger.info(f"Created unit folder at {unit_folder}")
-                    innregulering_path = os.path.join(unit_folder, "Innregulering.docx")
-                    sjekkliste_path = os.path.join(unit_folder, "Sjekkliste.docx")
-                    if not os.path.exists(innregulering_path):
-                        Document().save(innregulering_path)
-                        logger.info(f"Created Innregulering DOCX at {innregulering_path}")
-                    if not os.path.exists(sjekkliste_path):
-                        Document().save(sjekkliste_path)
-                        logger.info(f"Created Sjekkliste DOCX at {sjekkliste_path}")
+                    # Create "Floor plan" subfolder inside unit folder
+                    floor_plan_subfolder = os.path.join(unit_folder, "Floor plan")
+                    try:
+                        os.makedirs(floor_plan_subfolder, exist_ok=True)
+                        logger.info(f"Created 'Floor plan' subfolder at {floor_plan_subfolder}")
+                    except Exception as e:
+                        QMessageBox.critical(self, "Error", f"Failed to create 'Floor plan' subfolder for unit '{unit}':\n{str(e)}")
+                        logger.error(f"Failed to create 'Floor plan' subfolder for unit '{unit}' at {floor_plan_subfolder}: {e}")
+                        return
+                    # Create DOCX files for the unit using templates
+                    try:
+                        innregulering_path = os.path.join(unit_folder, "Innregulering.docx")
+                        sjekkliste_path = os.path.join(unit_folder, "Sjekkliste.docx")
+                        shutil.copy(os.path.join(self.template_dir, "Innregulering.docx"), innregulering_path)
+                        shutil.copy(os.path.join(self.template_dir, "Sjekkliste.docx"), sjekkliste_path)
+                        logger.info(f"Copied Innregulering and Sjekkliste DOCX to {unit_folder}")
+                    except Exception as e:
+                        QMessageBox.critical(self, "Error", f"Failed to copy DOCX files for unit '{unit}':\n{str(e)}")
+                        logger.error(f"Failed to copy DOCX files for unit '{unit}' in folder '{unit_folder}': {e}")
+                        return
 
             else:
                 # Create project folder
-                folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
+                folder_name = get_project_folder_name(project)  # Changed here
                 project_folder = os.path.join(get_project_dir(), folder_name)
                 if not os.path.exists(project_folder):
                     os.makedirs(project_folder)
@@ -233,9 +263,21 @@ class BaseProjectsTab(QWidget):
                 sjekkliste_split_btn.clicked.connect(lambda checked, p=project: self.view_docx(p, "Sjekkliste"))
                 self.tree.setItemWidget(project_item, 7, sjekkliste_split_btn)
 
-                # Floor Plan(s) Column Placeholder (No buttons yet)
-                floor_plan_placeholder = QWidget()
-                self.tree.setItemWidget(project_item, 8, floor_plan_placeholder)
+                # Floor Plan(s) Split Button for Project
+                floor_plan_split_btn = QToolButton()
+                floor_plan_split_btn.setText("View")
+                floor_plan_split_btn.setToolTip("View Floor Plan(s)")
+                floor_plan_split_btn.setPopupMode(QToolButton.MenuButtonPopup)
+                floor_plan_menu = QMenu(self)
+                import_floor_plan_action = QAction("Import PDF", self)
+                import_floor_plan_action.triggered.connect(lambda checked, p=project: self.import_floor_plan(p))
+                save_as_floor_plan_action = QAction("Save As...", self)
+                save_as_floor_plan_action.triggered.connect(lambda checked, p=project: self.save_floor_plan_as(p))
+                floor_plan_menu.addAction(import_floor_plan_action)
+                floor_plan_menu.addAction(save_as_floor_plan_action)
+                floor_plan_split_btn.setMenu(floor_plan_menu)
+                floor_plan_split_btn.clicked.connect(lambda checked, p=project: self.view_floor_plan(p))
+                self.tree.setItemWidget(project_item, 8, floor_plan_split_btn)
 
                 # Move(1) Button
                 move1_btn = QPushButton("Active")
@@ -256,7 +298,7 @@ class BaseProjectsTab(QWidget):
                     project_item.setText(3, "N/A")
 
                 logger.debug(f"Added project '{project.name}' with status '{project.status}' to the tree.")
-    
+
     def open_context_menu(self, position: QPoint):
         item = self.tree.itemAt(position)
         if item and not item.parent():
@@ -282,7 +324,7 @@ class BaseProjectsTab(QWidget):
                     if reply == QMessageBox.Yes:
                         try:
                             # Delete project folder
-                            folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
+                            folder_name = get_project_folder_name(project)  # Changed here
                             project_folder = os.path.join(get_project_dir(), folder_name)
                             if os.path.exists(project_folder):
                                 shutil.rmtree(project_folder)
@@ -418,21 +460,21 @@ class BaseProjectsTab(QWidget):
             )
         if save_path:
             try:
+                folder_name = get_project_folder_name(project)  # Changed here
                 if unit_name:
-                    folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
-                    project_folder = os.path.join(get_project_dir(), folder_name)
-                    unit_folder = os.path.join(project_folder, sanitize_filename(unit_name))
-                    src_file = os.path.join(unit_folder, f"{doc_type}.docx")
+                    floor_plan_file = os.path.join(get_project_dir(), folder_name, sanitize_filename(unit_name), f"{doc_type}.docx")
                 else:
-                    folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
-                    project_folder = os.path.join(get_project_dir(), folder_name)
-                    src_file = os.path.join(project_folder, f"{doc_type}.docx")
-                shutil.copy(src_file, save_path)
+                    floor_plan_file = os.path.join(get_project_dir(), folder_name, f"{doc_type}.docx")
+                if not os.path.exists(floor_plan_file):
+                    QMessageBox.warning(self, "File Not Found", f"{doc_type}.docx does not exist.")
+                    logger.warning(f"{doc_type}.docx not found for project '{project.name}'" + (f" and unit '{unit_name}'." if unit_name else "."))
+                    return
+                shutil.copy(floor_plan_file, save_path)
                 QMessageBox.information(self, "Success", f"{doc_type} saved successfully at:\n{save_path}")
                 logger.info(f"{doc_type} saved as {save_path}")
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Failed to save {doc_type}:\n{str(e)}")
-                logger.error(f"Failed to save {doc_type} for project ID {project.id}: {e}")
+                logger.error(f"Failed to save {doc_type} for project '{project.name}'" + (f" and unit '{unit_name}': {e}" if unit_name else f": {e}"))
 
     def toggle_unit_status(self, project, unit_name, state):
         is_done = state == Qt.Checked
@@ -457,59 +499,140 @@ class BaseProjectsTab(QWidget):
 
     def view_docx(self, project, doc_type, unit_name=None):
         if unit_name:
-            folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
-            project_folder = os.path.join(get_project_dir(), folder_name)
-            docx_file = os.path.join(project_folder, sanitize_filename(unit_name), f"{doc_type}.docx")
+            folder_name = get_project_folder_name(project)  # Changed here
+            docx_file = os.path.join(get_project_dir(), folder_name, sanitize_filename(unit_name), f"{doc_type}.docx")
         else:
-            folder_name = sanitize_filename(f"{project.main_contractor} - {project.name} - {project.number}") if project.main_contractor else sanitize_filename(f"{project.name}_{project.number}")
-            project_folder = os.path.join(get_project_dir(), folder_name)
-            docx_file = os.path.join(project_folder, f"{doc_type}.docx")
+            folder_name = get_project_folder_name(project)  # Changed here
+            docx_file = os.path.join(get_project_dir(), folder_name, f"{doc_type}.docx")
 
         if not os.path.exists(docx_file):
             QMessageBox.warning(self, "DOCX Error", f"{doc_type}.docx does not exist for this {'unit ' + unit_name if unit_name else 'project'}.")
-            logger.warning(f"{doc_type}.docx not found for project ID {project.id}" + (f" and unit '{unit_name}'." if unit_name else "."))
+            logger.warning(f"{doc_type}.docx not found for project '{project.name}'" + (f" and unit '{unit_name}'." if unit_name else "."))
             return
 
         success, message = open_docx_file(docx_file)
         if not success:
             QMessageBox.warning(self, "DOCX Error", message)
-            logger.error(f"Failed to open {doc_type}.docx for project ID {project.id}" + (f" and unit '{unit_name}': {message}" if unit_name else f": {message}"))
+            logger.error(f"Failed to open {doc_type}.docx for project '{project.name}'" + (f" and unit '{unit_name}': {message}" if unit_name else f": {message}"))
 
-    def move_to_active(self, project):
-        reply = QMessageBox.question(
-            self,
-            "Confirm Status Change",
-            f"Are you sure you want to move project '{project.name}' to Active?",
-            QMessageBox.Yes | QMessageBox.No
-        )
-        if reply == QMessageBox.Yes:
-            try:
-                project.status = "Active"
-                project.end_date = None  # Clear end date when moving back to Active
-                self.db.update_project(project)
-                self.load_projects()
-                QMessageBox.information(self, "Status Updated", f"Project '{project.name}' moved to Active.")
-                logger.info(f"Moved project ID {project.id} to Active.")
-            except Exception as e:
-                QMessageBox.critical(self, "Error", f"Failed to move to Active: {str(e)}")
-                logger.error(f"Failed to move project ID {project.id} to Active: {e}")
+    def import_floor_plan(self, project, unit_name=None):
+        options = QFileDialog.Options()
+        if unit_name:
+            file_path, _ = QFileDialog.getOpenFileName(
+                self,
+                f"Import Floor Plan PDF for {unit_name}",
+                "",
+                "PDF Files (*.pdf)",
+                options=options
+            )
+            if file_path:
+                try:
+                    folder_name = get_project_folder_name(project)  # Changed here
+                    unit_folder = os.path.join(get_project_dir(), folder_name, sanitize_filename(unit_name), "Floor plan")
+                    target_file = os.path.join(unit_folder, "FloorPlan.pdf")
+                    shutil.copy(file_path, target_file)
+                    QMessageBox.information(self, "Success", f"Floor Plan imported successfully to '{target_file}'.")
+                    logger.info(f"Imported Floor Plan PDF to {target_file}")
+                except Exception as e:
+                    QMessageBox.critical(self, "Error", f"Failed to import Floor Plan PDF:\n{str(e)}")
+                    logger.error(f"Failed to import Floor Plan PDF for unit '{unit_name}' in project '{project.name}': {e}")
+        else:
+            file_path, _ = QFileDialog.getOpenFileName(
+                self,
+                "Import Floor Plan PDF",
+                "",
+                "PDF Files (*.pdf)",
+                options=options
+            )
+            if file_path:
+                try:
+                    folder_name = get_project_folder_name(project)  # Changed here
+                    floor_plan_folder = os.path.join(get_project_dir(), folder_name, "Floor plan")
+                    target_file = os.path.join(floor_plan_folder, "FloorPlan.pdf")
+                    shutil.copy(file_path, target_file)
+                    QMessageBox.information(self, "Success", f"Floor Plan imported successfully to '{target_file}'.")
+                    logger.info(f"Imported Floor Plan PDF to {target_file}")
+                except Exception as e:
+                    QMessageBox.critical(self, "Error", f"Failed to import Floor Plan PDF:\n{str(e)}")
+                    logger.error(f"Failed to import Floor Plan PDF for project '{project.name}': {e}")
 
-    def move_to_completed(self, project):
-        reply = QMessageBox.question(
-            self,
-            "Confirm Status Change",
-            f"Are you sure you want to move project '{project.name}' to Completed?",
-            QMessageBox.Yes | QMessageBox.No
-        )
-        if reply == QMessageBox.Yes:
+    def view_floor_plan(self, project, unit_name=None):
+        if project.is_residential_complex and not unit_name:
+            QMessageBox.warning(self, "Floor Plan Error", "This project is a residential complex. Please select a unit to view its floor plan.")
+            logger.warning(f"Attempted to view project-level floor plan for residential project '{project.name}'.")
+            return
+
+        try:
+            folder_name = get_project_folder_name(project)  # Changed here
+
+            if unit_name:
+                floor_plan_file = os.path.join(
+                    get_project_dir(),
+                    folder_name,
+                    sanitize_filename(unit_name),
+                    "Floor plan",
+                    "FloorPlan.pdf"
+                )
+            else:
+                floor_plan_file = os.path.join(
+                    get_project_dir(),
+                    folder_name,
+                    "Floor plan",
+                    "FloorPlan.pdf"
+                )
+
+            if not os.path.exists(floor_plan_file):
+                QMessageBox.warning(self, "Floor Plan Error", "Floor Plan PDF does not exist.")
+                logger.warning(f"Floor Plan PDF not found for project '{project.name}'" + (f" and unit '{unit_name}'." if unit_name else "."))
+                return
+
             try:
-                project.status = "Completed"
-                # Automatically set end_date for all projects
-                project.end_date = datetime.now().strftime("%Y-%m-%d")
-                self.db.update_project(project)
-                self.load_projects()
-                QMessageBox.information(self, "Status Updated", f"Project '{project.name}' moved to Completed.")
-                logger.info(f"Moved project ID {project.id} to Completed with end_date set to {project.end_date}.")
+                if sys.platform == "win32":
+                    os.startfile(floor_plan_file)
+                elif sys.platform == "darwin":
+                    subprocess.call(["open", floor_plan_file])
+                else:
+                    subprocess.call(["xdg-open", floor_plan_file])
+                logger.info(f"Opened Floor Plan PDF: {floor_plan_file}")
             except Exception as e:
-                QMessageBox.critical(self, "Error", f"Failed to move to Completed: {str(e)}")
-                logger.error(f"Failed to move project ID {project.id} to Completed: {e}")
+                QMessageBox.critical(self, "Error", f"Failed to open Floor Plan PDF:\n{str(e)}")
+                logger.error(f"Failed to open Floor Plan PDF '{floor_plan_file}': {e}")
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"An error occurred while trying to view the Floor Plan:\n{str(e)}")
+            logger.error(f"Error in view_floor_plan for project '{project.name}': {e}")
+
+    def save_floor_plan_as(self, project, unit_name=None):
+        options = QFileDialog.Options()
+        if unit_name:
+            save_path, _ = QFileDialog.getSaveFileName(
+                self,
+                f"Save Floor Plan As for {unit_name}...",
+                f"{sanitize_filename(project.name)}_{sanitize_filename(unit_name)}_FloorPlan.pdf",
+                "PDF Files (*.pdf)",
+                options=options
+            )
+        else:
+            save_path, _ = QFileDialog.getSaveFileName(
+                self,
+                "Save Floor Plan As...",
+                f"{sanitize_filename(project.name)}_FloorPlan.pdf",
+                "PDF Files (*.pdf)",
+                options=options
+            )
+        if save_path:
+            try:
+                folder_name = get_project_folder_name(project)  # Changed here
+                if unit_name:
+                    floor_plan_file = os.path.join(get_project_dir(), folder_name, sanitize_filename(unit_name), "Floor plan", "FloorPlan.pdf")
+                else:
+                    floor_plan_file = os.path.join(get_project_dir(), folder_name, "Floor plan", "FloorPlan.pdf")
+                if not os.path.exists(floor_plan_file):
+                    QMessageBox.warning(self, "File Not Found", "Floor Plan PDF does not exist.")
+                    logger.warning(f"Floor Plan PDF not found for project '{project.name}'" + (f" and unit '{unit_name}'." if unit_name else "."))
+                    return
+                shutil.copy(floor_plan_file, save_path)
+                QMessageBox.information(self, "Success", f"Floor Plan saved successfully at:\n{save_path}")
+                logger.info(f"Floor Plan saved as {save_path}")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to save Floor Plan:\n{str(e)}")
+                logger.error(f"Failed to save Floor Plan for project '{project.name}'" + (f" and unit '{unit_name}': {e}" if unit_name else f": {e}"))
