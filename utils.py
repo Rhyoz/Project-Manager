@@ -17,6 +17,17 @@ def get_template_dir():
 def get_project_dir():
     return os.path.abspath(config['Paths']['project_dir'])
 
+def get_project_folder_name(project):
+    parts = []
+    if project.main_contractor and project.main_contractor.lower() != "none":
+        parts.append(project.main_contractor)
+    if project.name:
+        parts.append(project.name)
+    if project.number:
+        parts.append(str(project.number))
+    folder_name = " - ".join(parts) if parts else "Unnamed_Project"
+    return sanitize_filename(folder_name)
+
 def get_docx_temp_dir():
     return os.path.abspath(config['Paths']['docx_temp_dir'])
 

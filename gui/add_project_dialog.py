@@ -14,7 +14,8 @@ from utils import (
     get_project_dir,
     load_main_contractors,
     add_main_contractor,
-    get_docx_temp_dir
+    get_docx_temp_dir,
+    get_project_folder_name  # Added this import
 )
 from logger import get_logger
 from pdf_converter import PDFConverter
@@ -233,11 +234,7 @@ class AddProjectDialog(QDialog):
             return
 
         # Create Project Folder
-        folder_name = ""
-        if main_contractor:
-            folder_name = sanitize_filename(f"{main_contractor} - {name} - {number}") if (name or number) else f"{main_contractor} - Project_{project_id}"
-        else:
-            folder_name = sanitize_filename(f"{name}_{number}") if (name or number) else f"Project_{project_id}"
+        folder_name = get_project_folder_name(project)  # Changed here
         project_folder = os.path.join(get_project_dir(), folder_name)
         try:
             os.makedirs(project_folder, exist_ok=True)
