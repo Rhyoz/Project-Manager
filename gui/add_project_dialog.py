@@ -244,15 +244,25 @@ class AddProjectDialog(QDialog):
             logger.error(f"Failed to create project folder at {project_folder}: {e}")
             return
 
-        # Create "Floor plan" subfolder
-        floor_plan_folder = os.path.join(project_folder, "Floor plan")
-        try:
-            os.makedirs(floor_plan_folder, exist_ok=True)
-            logger.info(f"Created 'Floor plan' folder at {floor_plan_folder}")
-        except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to create 'Floor plan' folder:\n{str(e)}")
-            logger.error(f"Failed to create 'Floor plan' folder at {floor_plan_folder}: {e}")
-            return
+        # Create "Floor plan" or "Master" subfolder based on residential attribute
+        if is_residential:
+            master_folder = os.path.join(project_folder, "Master")
+            try:
+                os.makedirs(master_folder, exist_ok=True)
+                logger.info(f"Created 'Master' folder at {master_folder}")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to create 'Master' folder:\n{str(e)}")
+                logger.error(f"Failed to create 'Master' folder at {master_folder}: {e}")
+                return
+        else:
+            floor_plan_folder = os.path.join(project_folder, "Floor plan")
+            try:
+                os.makedirs(floor_plan_folder, exist_ok=True)
+                logger.info(f"Created 'Floor plan' folder at {floor_plan_folder}")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to create 'Floor plan' folder:\n{str(e)}")
+                logger.error(f"Failed to create 'Floor plan' folder at {floor_plan_folder}: {e}")
+                return
 
         # Check for Template directory and required files
         valid, message = check_template_files()
