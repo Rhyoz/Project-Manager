@@ -1,9 +1,10 @@
 # File: gui/add_project_dialog.py
+
 from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QFormLayout, QLineEdit, QDateEdit,
-    QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QWidget, QGridLayout
+    QComboBox, QCheckBox, QSpinBox, QPushButton, QMessageBox, QHBoxLayout, QWidget
 )
-from PyQt5.QtCore import Qt, QDate, QThread
+from PyQt5.QtCore import Qt, QDate
 from gui.base_projects_tab import BaseProjectsTab
 from project import Project
 from utils import (
@@ -14,15 +15,13 @@ from utils import (
     get_project_dir,
     load_main_contractors,
     add_main_contractor,
-    get_docx_temp_dir,
-    get_project_folder_name  # Added this import
+    get_project_folder_name
 )
 from logger import get_logger
-from pdf_converter import PDFConverter
-from docx import Document
 import os
 import shutil
 from datetime import datetime
+from controllers.project_controller import ProjectController
 
 logger = get_logger(__name__)
 
@@ -30,6 +29,7 @@ class AddProjectDialog(QDialog):
     def __init__(self, db):
         super().__init__()
         self.db = db
+        self.controller = ProjectController(self.db)
         self.setWindowTitle("Add New Project")
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
@@ -56,7 +56,7 @@ class AddProjectDialog(QDialog):
         self.start_date_input.setDisplayFormat("dd-MM-yyyy")
         self.form_layout.addRow("Start Date:", self.start_date_input)
 
-        # End Date
+        # End Date (Disabled by default)
         self.end_date_input = QDateEdit(calendarPopup=True)
         self.end_date_input.setSpecialValueText("")
         self.end_date_input.setDateRange(QDate.currentDate(), QDate(9999, 12, 31))
@@ -67,7 +67,7 @@ class AddProjectDialog(QDialog):
 
         # Status Selection
         self.status_input = QComboBox()
-        self.status_input.addItems(["Active", "Awaiting Completion", "Paused", "Finished"])  # Removed "Completed"
+        self.status_input.addItems(["Active", "Awaiting Completion", "Paused", "Finished"])
         self.status_input.setCurrentText("Active")  # Default to "Active"
         self.form_layout.addRow("Status:", self.status_input)
 
@@ -107,7 +107,7 @@ class AddProjectDialog(QDialog):
         self.unit_names_widget.setVisible(False)
         self.form_layout.addRow("Unit Names:", self.unit_names_widget)
 
-        self.unit_line_edits = []  # Initialize here to prevent AttributeError
+        self.unit_line_edits = []
 
         self.layout.addLayout(self.form_layout)
 
@@ -131,7 +131,7 @@ class AddProjectDialog(QDialog):
                 widget_to_remove = self.unit_names_layout.itemAt(i).widget()
                 if widget_to_remove is not None:
                     widget_to_remove.setParent(None)
-            self.unit_line_edits = []  # Reset the list
+            self.unit_line_edits = []
 
     def toggle_main_contractor(self, state):
         is_checked = state == Qt.Checked
@@ -157,7 +157,6 @@ class AddProjectDialog(QDialog):
         number = self.number_input.text().strip()
         worker = self.worker_input.currentText().strip()
         start_date = self.start_date_input.date().toPyDate()
-        # Ensure end_date is None upon creation
         end_date = None  # Always None when adding a new project
         status = self.status_input.currentText()
         is_residential = self.residential_checkbox.isChecked()
@@ -209,24 +208,24 @@ class AddProjectDialog(QDialog):
                         logger.error(f"Failed to add main contractor '{main_contractor}': {e}")
                         return
 
-        # Create Project instance without 'id' and ensure end_date is None
+        # Create Project instance
         project = Project(
             name=name,
             number=number,
             start_date=start_date.strftime("%Y-%m-%d"),
-            end_date=None,  # Explicitly set to None
+            end_date=None,
             status=status,
             is_residential_complex=is_residential,
             number_of_units=self.units_input.value() if is_residential else 0,
             worker=worker,
             extra=extra,
-            main_contractor=main_contractor,  # Set New Attribute
-            units=units  # Set Unit Names
+            main_contractor=main_contractor,
+            units=units
         )
 
-        # Add project to database
+        # Add project using ProjectController
         try:
-            project_id = self.db.add_project(project)
+            project_id = self.controller.add_project(project)
             logger.info(f"Project '{project.name}' with ID {project_id} added successfully. Residential Complex: {is_residential}")
         except Exception as e:
             QMessageBox.critical(self, "Database Error", f"Failed to add project: {str(e)}")
@@ -234,7 +233,7 @@ class AddProjectDialog(QDialog):
             return
 
         # Create Project Folder
-        folder_name = get_project_folder_name(project)  # Changed here
+        folder_name = get_project_folder_name(project)
         project_folder = os.path.join(get_project_dir(), folder_name)
         try:
             os.makedirs(project_folder, exist_ok=True)
@@ -318,34 +317,5 @@ class AddProjectDialog(QDialog):
                     logger.error(f"Failed to copy DOCX files for unit '{unit}' in folder '{unit_folder}': {e}")
                     return
 
-        # Optional: Initiate PDF conversion if needed
-        # self.convert_pdf(project)
-
-        # Removed the following line as per instruction:
-        # QMessageBox.information(self, "Success", "Project added successfully.")
-        
         logger.info(f"Project added successfully: {project.name} ({project.number})")
         self.accept()
-
-    def convert_pdf(self, project):
-        # Example method to convert a related Excel file to PDF
-        excel_path = os.path.join(get_project_dir(), sanitize_filename(f"{project.name}_{project.number}"), "Data.xlsx")
-        pdf_path = os.path.join(get_docx_temp_dir(), f"{project.name}_{project.number}_Data.pdf")
-
-        self.converter = PDFConverter(excel_path, pdf_path)
-        self.thread = QThread()
-        self.converter.moveToThread(self.thread)
-        self.converter.conversion_complete.connect(self.on_conversion_complete)
-        self.converter.conversion_failed.connect(self.on_conversion_failed)
-        self.thread.started.connect(self.converter.run_conversion)
-        self.converter.conversion_complete.connect(self.thread.quit)
-        self.converter.conversion_failed.connect(self.thread.quit)
-        self.thread.start()
-
-    def on_conversion_complete(self, pdf_path):
-        QMessageBox.information(self, "Conversion Complete", f"PDF saved at {pdf_path}")
-        logger.info(f"PDF conversion completed: {pdf_path}")
-
-    def on_conversion_failed(self, error_message):
-        QMessageBox.critical(self, "Conversion Failed", f"Failed to convert PDF:\n{error_message}")
-        logger.error(f"PDF conversion failed: {error_message}")

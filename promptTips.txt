@@ -18,3 +18,5 @@ here is the full codebase, read it and tell me when your ready to make changes -
 instructions
 
 provide the full code for the parts you changed. do not explain it. Tell me when your done.
+
+provide the full code for the parts you changed, but if you have many modules to provide, or a very long one you can break your answer up in more answers. give me a short description of what you did when your done.
