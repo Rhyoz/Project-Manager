@@ -1,11 +1,8 @@
 # File: main.py
+
 import sys
 import os
-from PyQt5.QtWidgets import (
-    QApplication, QMainWindow, QTabWidget, QMessageBox, QFileDialog, QShortcut
-)
-from PyQt5.QtGui import QKeySequence
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTabWidget, QMessageBox, QFileDialog
 from database import Database
 from gui.overview_tab import OverviewTab
 from gui.completed_projects_tab import CompletedProjectsTab
@@ -38,7 +35,6 @@ class MainWindow(QMainWindow):
         self.tabs.addTab(self.detailed_view_tab, "  Detailed Project View  ")
 
         self.setup_menu_bar()
-        self.setup_shortcuts()
         self.apply_stylesheet()
 
     def setup_menu_bar(self):
@@ -60,9 +56,6 @@ class MainWindow(QMainWindow):
         """
         from utils import get_template_dir
         from shutil import copy
-        from logger import get_logger
-
-        logger = get_logger(__name__)
 
         template_dir = get_template_dir()
 
@@ -127,13 +120,6 @@ class MainWindow(QMainWindow):
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to copy template files:\n{str(e)}")
             logger.error(f"Failed to copy templates: {e}")
-
-    def setup_shortcuts(self):
-        # Shortcuts to switch tabs
-        QShortcut(QKeySequence("Alt+1"), self).activated.connect(lambda: self.tabs.setCurrentIndex(0))
-        QShortcut(QKeySequence("Alt+2"), self).activated.connect(lambda: self.tabs.setCurrentIndex(1))
-        QShortcut(QKeySequence("Alt+3"), self).activated.connect(lambda: self.tabs.setCurrentIndex(2))
-        QShortcut(QKeySequence("Alt+4"), self).activated.connect(lambda: self.tabs.setCurrentIndex(3))
 
     def apply_stylesheet(self):
         """
